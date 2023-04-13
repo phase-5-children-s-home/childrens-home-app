@@ -16,5 +16,4 @@ jobs:
         with:
           ruby-version: '2.7.4'
       - run: cd backend && bundle install
-      - run: cd backend && bundle exec rails db:migrate RAILS_ENV=test
       - run: cd backend && bundle exec rspec spec

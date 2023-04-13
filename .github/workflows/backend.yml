@@ -1,24 +1,20 @@
-name: Rails CI
+name: Childrens home donations
 
+# conditions that trigger this action
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - main
-
+    branches: [main]
+  pull_request:
+    branches: [main]
+# functions that will run within the workflow
 jobs:
-  test:
+  rspec:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7.4'
+      - run: cd backend && bundle install
 
-      - name: Install dependencies
-        run: |
-          cd backend
-          bundle install
-
-      - name: Run tests
-        run: |
-          cd backend
-          bundle exec rspec

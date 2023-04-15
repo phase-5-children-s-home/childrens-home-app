@@ -1,0 +1,384 @@
+  [1m[35m (216.9ms)[0m  [1m[35mCREATE DATABASE "backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (144.9ms)[0m  [1m[35mCREATE DATABASE "backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230415103706)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230415103706)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (40.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "firstname" character varying, "lastname" character varying, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230415103706"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (4.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-15 11:13:40.028476"], ["updated_at", "2023-04-15 11:13:40.028476"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for 127.0.0.1 at 2023-04-15 14:34:51 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started POST "/users" for 127.0.0.1 at 2023-04-15 14:35:04 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"levy", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"levy", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f98487f11a0>, params: {"username"=>"levy", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"levy", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 207ms (Views: 1.4ms | ActiveRecord: 11.1ms | Allocations: 36587)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 14:38:41 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"levy", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"levy", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f98400bbf00>, params: {"username"=>"levy", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"levy", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 19ms (Views: 1.3ms | ActiveRecord: 11.0ms | Allocations: 1961)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 14:41:11 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"levy", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"levy", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f983c008288>, params: {"username"=>"levy", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"levy", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 5ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 329)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 14:42:11 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f9834022e60>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 357)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 14:43:20 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameters: :firstname, :lastname, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f9838d9f8f0>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 14ms (Views: 0.4ms | ActiveRecord: 11.9ms | Allocations: 1971)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:03:23 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f9830203490>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 17ms (Views: 0.4ms | ActiveRecord: 26.0ms | Allocations: 1958)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:04:57 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f98385981c0>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 34ms (Views: 1.1ms | ActiveRecord: 30.2ms | Allocations: 1998)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:05:44 +0300
+Processing by UsersController#register as */*
+  Parameters: {"user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f983c0247f8>, params: {"user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"users", "action"=>"register"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", nil], ["lastname", nil], ["username", nil], ["email", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:05:44.642913"], ["updated_at", "2023-04-15 12:05:44.642913"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 33ms (Views: 1.5ms | ActiveRecord: 2.7ms | Allocations: 2234)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:07:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f5fb8d701f8>, params: {"user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"users", "action"=>"register"} }[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (4.6ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", nil], ["lastname", nil], ["username", nil], ["email", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:07:17.279199"], ["updated_at", "2023-04-15 12:07:17.279199"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 252ms (Views: 1.2ms | ActiveRecord: 83.3ms | Allocations: 39495)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:07:35 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f5fa00104d0>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 7ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 417)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:08:01 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f90aaacc8>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 190ms (Views: 1.1ms | ActiveRecord: 13.0ms | Allocations: 37005)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:10:12 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f880ba4c8>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 21ms (Views: 0.4ms | ActiveRecord: 9.4ms | Allocations: 2001)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:10:43 +0300
+Processing by UsersController#register as */*
+  Parameters: {"user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f9c013240>, params: {"user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"users", "action"=>"register"} }[0m
+Completed 201 Created in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 310)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:11:30 +0300
+Processing by UsersController#register as */*
+  Parameters: {"user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f940cb0a0>, params: {"user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"users", "action"=>"register"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (2.6ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", nil], ["lastname", nil], ["username", nil], ["email", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:11:30.333455"], ["updated_at", "2023-04-15 12:11:30.333455"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 41ms (Views: 0.4ms | ActiveRecord: 15.3ms | Allocations: 4384)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:11:38 +0300
+Processing by UsersController#register as */*
+  Parameters: {"user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f8c012620>, params: {"user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"users", "action"=>"register"} }[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (4.7ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", nil], ["lastname", nil], ["username", nil], ["email", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:11:38.523454"], ["updated_at", "2023-04-15 12:11:38.523454"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 54ms (Views: 0.4ms | ActiveRecord: 8.9ms | Allocations: 2048)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:14:37 +0300
+Processing by UsersController#register as */*
+  Parameters: {"user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f90de63b0>, params: {"user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]"}, "controller"=>"users", "action"=>"register"} }[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", nil], ["lastname", nil], ["username", nil], ["email", nil], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:14:37.927358"], ["updated_at", "2023-04-15 12:14:37.927358"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 43ms (Views: 0.9ms | ActiveRecord: 13.6ms | Allocations: 4204)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:15:40 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f80020038>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 384)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:18:00 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f8c1240b8>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 19ms (Views: 0.4ms | ActiveRecord: 17.7ms | Allocations: 1987)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:18:28 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f90ea2560>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 422 Unprocessable Entity in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:20:16 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f88201660>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", "levy"], ["lastname", "kipkoech"], ["username", "kips"], ["email", "kipkoechlevy096@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:20:17.325641"], ["updated_at", "2023-04-15 12:20:17.325641"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 433ms (Views: 0.9ms | ActiveRecord: 19.0ms | Allocations: 4733)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:21:50 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+Completed 422 Unprocessable Entity in 62ms (Views: 35.1ms | ActiveRecord: 14.5ms | Allocations: 4770)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:22:31 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", "levy"], ["lastname", "kipkoech"], ["username", "kips"], ["email", "kipkoechlevy096@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:22:31.823114"], ["updated_at", "2023-04-15 12:22:31.823114"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 26ms (Views: 0.4ms | ActiveRecord: 16.2ms | Allocations: 3588)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:23:00 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+Completed 422 Unprocessable Entity in 23ms (Views: 3.9ms | ActiveRecord: 14.1ms | Allocations: 2342)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:33:39 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+Completed 422 Unprocessable Entity in 48ms (Views: 2.5ms | ActiveRecord: 22.1ms | Allocations: 3457)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:38:10 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f943be0f0>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", "levy"], ["lastname", "kipkoech"], ["username", "kips"], ["email", "kipkoechlevy096@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:38:11.088010"], ["updated_at", "2023-04-15 12:38:11.088010"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 376ms (Views: 0.7ms | ActiveRecord: 24.4ms | Allocations: 3715)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:40:36 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f8c312f50>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", "levy"], ["lastname", "kipkoech"], ["username", "kips"], ["email", "kipkoechlevy096@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:40:37.384245"], ["updated_at", "2023-04-15 12:40:37.384245"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 395ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 2034)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:41:54 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f90ed6540>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", "levy"], ["lastname", "kipkoech"], ["username", "kips"], ["email", "kipkoechlevy096@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:41:54.593113"], ["updated_at", "2023-04-15 12:41:54.593113"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 361ms (Views: 0.3ms | ActiveRecord: 5.5ms | Allocations: 2035)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:42:08 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f880d8630>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", "levy"], ["lastname", "kipkoech"], ["username", "kips"], ["email", "kipkoechlevy096@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:42:09.365858"], ["updated_at", "2023-04-15 12:42:09.365858"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 378ms (Views: 0.3ms | ActiveRecord: 3.9ms | Allocations: 2033)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:43:14 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameters: :firstname, :lastname, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f9c2a6c78>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", nil], ["lastname", nil], ["username", "kips"], ["email", "kipkoechlevy096@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:43:14.960272"], ["updated_at", "2023-04-15 12:43:14.960272"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 422 Unprocessable Entity in 391ms (Views: 0.7ms | ActiveRecord: 11.1ms | Allocations: 3687)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:44:39 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2fa0375d30>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (4.6ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", "levy"], ["lastname", "kipkoech"], ["username", "kips"], ["email", "kipkoechlevy096@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:44:40.117510"], ["updated_at", "2023-04-15 12:44:40.117510"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 422 Unprocessable Entity in 393ms (Views: 1.1ms | ActiveRecord: 18.6ms | Allocations: 3673)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:46:55 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x0000557a16549fd0>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", "levy"], ["lastname", "kipkoech"], ["username", "kips"], ["email", "kipkoechlevy096@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:46:56.191309"], ["updated_at", "2023-04-15 12:46:56.191309"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 422 Unprocessable Entity in 401ms (Views: 0.4ms | ActiveRecord: 5.3ms | Allocations: 2020)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:47:36 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f2f945e5f90>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", "levy"], ["lastname", "kipkoech"], ["username", "kips"], ["email", "kipkoechlevy096@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:47:36.627954"], ["updated_at", "2023-04-15 12:47:36.627954"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 422 Unprocessable Entity in 394ms (Views: 0.5ms | ActiveRecord: 2.2ms | Allocations: 2017)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-15 15:55:08 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f8a10c367b0>, params: {"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"levy", "lastname"=>"kipkoech", "username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["firstname", "levy"], ["lastname", "kipkoech"], ["username", "kips"], ["email", "kipkoechlevy096@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-15 12:55:09.500078"], ["updated_at", "2023-04-15 12:55:09.500078"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 201 Created in 386ms (Views: 0.7ms | ActiveRecord: 7.7ms | Allocations: 39611)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-15 15:55:54 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f8a080121f8>, params: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f8a080121f8>, params: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'kips' OR email = 'kipkoechlevy096@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f8a080121f8>, params: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 200 OK in 340ms (Views: 1.1ms | ActiveRecord: 1.3ms | Allocations: 1861)
+
+
+Started POST "/logout" for 127.0.0.1 at 2023-04-15 15:56:05 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/logout"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-15 15:56:20 +0300
+Processing by UsersController#logout as */*
+  Parameters: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 289)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-15 16:03:46 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f8a203d7d70>, params: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f8a203d7d70>, params: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'kips' OR email = 'kipkoechlevy096@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f8a203d7d70>, params: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 200 OK in 395ms (Views: 0.8ms | ActiveRecord: 19.8ms | Allocations: 4303)
+
+

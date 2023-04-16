@@ -1,0 +1,21 @@
+#sign-up{
+    width: 550px;
+    margin-left: 150px;
+}
+#submit{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 150px;
+    margin-left: 180px;
+}
+#inputs{
+    border-radius: 10px;
+}
+#signup_home{
+    display: flex;
+}
+#signup-img{
+    height: 350px;
+    width: 350px;
+    border-radius: 80px;
+}

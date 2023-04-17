@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
-=======
     before_action :session_expired?, only: [:check_login_status]
 
     before_action :session_expired?, only: [:check_login_status]
@@ -66,6 +64,4 @@ class UsersController < ApplicationController
     def user_params
         params.permit(:firstname, :lastname, :username, :email, :password)
     end
-
->>>>>>> main
 end

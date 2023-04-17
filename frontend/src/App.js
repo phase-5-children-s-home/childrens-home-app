@@ -2,24 +2,22 @@ import React, {useState} from 'react';
 import './App.css';
 import { Login } from "./Login"
 import { Passwordreset } from './Passwordreset';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { Register } from "./Register"
 
 
 function App() {
-  const [currentForm, setCurrentForm] = useState('login')
+  const isLoginPage = location.pathname === '/login' || location.pathname === '/register'|| location.pathname === '/reset';
 
-  const toggleForm = (formName) => {
-    setCurrentForm(formName)
-  }
+  
   return (
     <div className="App">
-    {
-      currentForm === "login" ? <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm}/>
-      
-    }
-
-    <Passwordreset/>
-      
+    <Routes>
+          <Route path='/login' element={<Login
+           setIsLoggedIn={setLoggedIn}/>}></Route>
+          <Route path='/register' element={<Register/>}></Route>
+          <Route path='/reset' element={<Passwordreset/>}></Route>
+        </Routes>
     </div>
   );
 }

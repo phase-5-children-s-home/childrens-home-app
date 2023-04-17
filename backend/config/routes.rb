@@ -15,4 +15,14 @@ Rails.application.routes.draw do
   # post '/forgot_password', to: 'users#forgot_password'
   # get '/reset_password', to: 'users#edit'
   patch '/reset_password', to: 'password_resets#reset_password'
+   #childrens home
+   get '/search', to: 'home_details#search'
+  resources :home_details, only: [:index, :create, :update, :destroy, :show]
+
+  #donation routes 
+  post '/donations', to: 'donations#create'
+
+  #reviews routes
+  resources :reviews, only: [:index, :create, :update, :destroy, :show]
+
 end

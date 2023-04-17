@@ -1,5 +1,4 @@
-name: Childrens home donations
-
+name: childrend's home backend
 # conditions that trigger this action
 on:
   workflow_dispatch:
@@ -17,4 +16,3 @@ jobs:
         with:
           ruby-version: '2.7.4'
       - run: cd backend && bundle install
-

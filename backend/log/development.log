@@ -80,3 +80,166 @@ Processing by UsersController#login as */*
 Completed 200 OK in 550ms (Views: 1.8ms | ActiveRecord: 12.1ms | Allocations: 39928)
 
 
+Started POST "/users" for 127.0.0.1 at 2023-04-17 15:09:56 +0300
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 6 pending migrations:
+
+20230414183723_create_reviews.rb
+20230414183834_create_donations.rb
+20230415103706_create_users.rb
+20230416122000_add_reset_password_token_to_users.rb
+20230416122137_create_password_resets.rb
+20230416124342_add_reset_password_sent_at_to_users.rb
+
+
+):
+  
+activerecord (7.0.4.3) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4.3) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4.3) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4.3) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+rack-cors (2.0.1) lib/rack/cors.rb:102:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateReviews (20230414183723)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "rating" integer, "comment" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230414183723"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDonations (20230414183834)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "donations" ("id" bigserial primary key, "amount" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230414183834"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20230415103706)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "firstname" character varying, "lastname" character varying, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230415103706"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddResetPasswordTokenToUsers (20230416122000)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230416122000"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePasswordResets (20230416122137)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "password_resets" ("id" bigserial primary key, "user_id" bigint NOT NULL, "token" character varying NOT NULL, "expires_at" timestamp(6) NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_526379cd99"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE INDEX "index_password_resets_on_user_id" ON "password_resets" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230416122137"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddResetPasswordSentAtToUsers (20230416124342)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230416124342"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-17 12:10:25.590725"], ["updated_at", "2023-04-17 12:10:25.590725"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for 127.0.0.1 at 2023-04-17 15:10:30 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}}
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f98d4f9fe88>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at", "reset_password_token", "reset_password_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["firstname", nil], ["lastname", nil], ["username", "Waweru"], ["email", "job@mail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-17 12:10:30.929958"], ["updated_at", "2023-04-17 12:10:30.929958"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 201 Created in 338ms (Views: 0.5ms | ActiveRecord: 12.0ms | Allocations: 41571)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-17 15:10:46 +0300
+Processing by UsersController#login as */*
+  Parameters: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}}
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f98d4f09a50>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f98d4f09a50>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Waweru' OR email = 'job@mail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f98d4f09a50>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+Completed 200 OK in 248ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 1900)
+
+
+Started POST "/logout" for 127.0.0.1 at 2023-04-17 15:10:59 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/logout"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-17 15:11:31 +0300
+Processing by UsersController#logout as */*
+  Parameters: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}}
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 20301)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-17 15:11:47 +0300
+Processing by UsersController#register as */*
+  Parameters: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}}
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x0000564327636f80>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "created_at", "updated_at", "reset_password_token", "reset_password_sent_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["firstname", nil], ["lastname", nil], ["username", "Waweru"], ["email", "job@mail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2023-04-17 12:11:47.338848"], ["updated_at", "2023-04-17 12:11:47.338848"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 201 Created in 286ms (Views: 0.6ms | ActiveRecord: 10.0ms | Allocations: 19867)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-17 15:11:54 +0300
+Processing by UsersController#login as */*
+  Parameters: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}}
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f98d4e5d980>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f98d4e5d980>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Waweru' OR email = 'job@mail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f98d4e5d980>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+Completed 200 OK in 227ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1541)
+
+

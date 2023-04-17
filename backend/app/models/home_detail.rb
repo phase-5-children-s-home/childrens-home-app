@@ -1,0 +1,2 @@
+class HomeDetail < ApplicationRecord
+end

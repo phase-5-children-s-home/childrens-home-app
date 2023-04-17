@@ -1,0 +1,2 @@
+class HomeDetailsController < ApplicationController
+end

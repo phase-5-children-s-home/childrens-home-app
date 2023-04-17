@@ -7,5 +7,12 @@ Rails.application.routes.draw do
   post '/users', to: 'users#register'
   post '/login', to: 'users#login'
   delete '/logout', to: 'users#logout'
-  
+
+  # post '/forgot_password', to: 'password_resets#forgot_password'
+  # get '/reset_password', to: 'password_resets#edit'
+  # patch '/reset_password', to: 'password_resets#reser_password'
+
+  post '/forgot_password', to: 'users#forgot_password'
+  get '/reset_password', to: 'users#edit'
+  patch '/reset_password', to: 'password_resets#reset_password'
 end

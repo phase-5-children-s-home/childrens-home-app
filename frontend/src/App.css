@@ -7,7 +7,7 @@
   color: yellow;
   background-color:rgba(0, 0, 0, 0.9)
 }
-.auth-form-container, .login-form, .register-form, passwordreset-form {
+.auth-form-container, .login-form, .register-form, .passwordreset-form {
   display: flex;
   flex-direction: column;
   background-color: rgb(29, 27, 27);

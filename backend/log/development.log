@@ -1687,3 +1687,14 @@ Processing by PasswordResetsController#reset_password as */*
 Completed 201 Created in 440ms (Views: 0.8ms | ActiveRecord: 15.6ms | Allocations: 7971)
 
 
+Started POST "/login" for 127.0.0.1 at 2023-04-17 09:48:34 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fcf50181fb0>, params: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fcf50181fb0>, params: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'kips' OR email = 'kipkoechlevy096@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fcf50181fb0>, params: {"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"kips", "email"=>"kipkoechlevy096@gmail.com"}} }[0m
+Completed 200 OK in 348ms (Views: 0.9ms | ActiveRecord: 1.3ms | Allocations: 1741)
+
+

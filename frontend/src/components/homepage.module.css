@@ -4,7 +4,6 @@
     display: flex;
     position: relative;
     align-items: flex-start;
-    flex-shrink: 0;
     border-color: transparent;
   }
   .mac-book1 {
@@ -28,16 +27,6 @@
     position: absolute;
     border-color: transparent;
     border-radius: 18px;
-  }
-  .rectangle12 {
-    top: 30px;
-    left: 943px;
-    width: 116px;
-    height: 41px;
-    position: absolute;
-    border-color: rgba(0, 0, 0, 1);
-    border-style: solid;
-    border-width: 1px;
   }
   .rectangle13 {
     top: 30px;
@@ -79,96 +68,6 @@
     text-align: left;
     font-family: Sanchez;
     font-weight: 400;
-    line-height: normal;
-    font-stretch: normal;
-    margin-right: 0;
-    margin-bottom: 0;
-    text-decoration: none;
-  }
-  .text02 {
-    top: 37px;
-    left: 281px;
-    color: rgba(23, 37, 42, 1);
-    height: auto;
-    position: absolute;
-    font-size: 18px;
-    align-self: auto;
-    font-style: Bold;
-    text-align: left;
-    font-family: Tuffy;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    margin-right: 0;
-    margin-bottom: 0;
-    text-decoration: none;
-  }
-  .text04 {
-    top: 37px;
-    left: 437px;
-    color: rgba(23, 37, 42, 1);
-    height: auto;
-    position: absolute;
-    font-size: 18px;
-    align-self: auto;
-    font-style: Bold;
-    text-align: left;
-    font-family: Tuffy;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    margin-right: 0;
-    margin-bottom: 0;
-    text-decoration: none;
-  }
-  .text06 {
-    top: 37px;
-    left: 565px;
-    color: rgba(23, 37, 42, 1);
-    height: auto;
-    position: absolute;
-    font-size: 18px;
-    align-self: auto;
-    font-style: Bold;
-    text-align: left;
-    font-family: Tuffy;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    margin-right: 0;
-    margin-bottom: 0;
-    text-decoration: none;
-  }
-  .text08 {
-    top: 37px;
-    left: 972px;
-    color: rgba(23, 37, 42, 1);
-    height: auto;
-    position: absolute;
-    font-size: 18px;
-    align-self: auto;
-    font-style: Bold;
-    text-align: left;
-    font-family: Tuffy;
-    font-weight: 700;
-    line-height: normal;
-    font-stretch: normal;
-    margin-right: 0;
-    margin-bottom: 0;
-    text-decoration: none;
-  }
-  .text10 {
-    top: 37px;
-    left: 829px;
-    color: rgba(23, 37, 42, 1);
-    height: auto;
-    position: absolute;
-    font-size: 18px;
-    align-self: auto;
-    font-style: Bold;
-    text-align: left;
-    font-family: Tuffy;
-    font-weight: 700;
     line-height: normal;
     font-stretch: normal;
     margin-right: 0;
@@ -293,12 +192,5 @@
     margin-bottom: 0;
     text-decoration: none;
   }
-  .ellipse {
-    top: 24px;
-    left: 1084px;
-    width: 52px;
-    height: 53px;
-    position: absolute;
-    border-color: transparent;
-  }
+
   

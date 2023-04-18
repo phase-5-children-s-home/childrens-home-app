@@ -15,7 +15,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_123045) do
   enable_extension "plpgsql"
 
   create_table "donations", force: :cascade do |t|
-    t.string "amount"
+    t.integer "amount"
+    t.string "name"
+    t.string "payment_method", default: "0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_123045) do
     t.integer "rating"
     t.string "comment"
     t.integer "user_id"
-    t.integer "home_details_id"
+    t.integer "home_detail_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,6 +58,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_123045) do
     t.string "username", null: false
     t.string "email", null: false
     t.string "password_digest", null: false
+    t.string "reset_password_token"
+    t.string "reset_password_sent_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

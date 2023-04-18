@@ -1,8 +1,5 @@
 import React from "react";
 import'./footer.css';
-import instagram from './images/instagram';
-import twitter from './images/twitter';
-
 
 const Footer=()=>{
     return(
@@ -14,8 +11,8 @@ const Footer=()=>{
                         <a href="/employer">
                             <p>Employer</p>
                         </a>
-                        <a href="/healthplan">
-                            <p>Health Plan</p>
+                        <a href="/donationplan">
+                            <p>Donation Plan</p>
                         </a>
                         <a href="/individual">
                             <p>Individual</p>
@@ -56,11 +53,7 @@ const Footer=()=>{
                     </div>
                     <div className="sb__footer-links_div">
                         <h4>Coming Soon</h4>
-                        <div className="socialmedia">                        
-                            <p><img src={twitter} alt=""/></p>                         
-                            <p><img src={instagram} alt=""/></p>
-                        </div>
-                </div>
+              </div>
             </div>
             
             <hr></hr>

@@ -1,0 +1,39 @@
+:root {
+    --colorOne: #03045e;
+    --colorTwo: #0077b6;
+    --colorThree: #00b4d8;
+    --colorFour: #90e0ef;
+    --colorFive: #caf0f8;
+    --colorSix: #ffffff;
+    --colorSeven: #111111;
+    --colorEight: #c81d25;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: var(--colorSix);
+    color: var(--colorThree);
+    /* gap: 2%; */
+}
+  
+.navbar a {
+    color: var(--colorThree);
+    text-decoration: none;
+    margin-right: 1%;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 100px;
+    margin-left: 2%;
+    margin-right: 5%;
+}
+
+.title {
+    align-items: center;
+    text-align: center;
+    margin-right: 10%;
+    font-size: 40px;
+}

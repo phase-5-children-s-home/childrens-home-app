@@ -22,5 +22,13 @@ const saveUser = (uid) => {
   const getToken = () => {
     return localStorage.getItem('token');
   };
+
+  const removeUserToken = () => {
+    localStorage.removeItem('userToken');
+  };
   
-  export { saveUser, getUser, removeUser, isUserLoggedIn, storeToken, getToken };
+  export { saveUser, getUser, removeUser, isUserLoggedIn, storeToken, getToken, removeUserToken };
+  
+
+  
+  

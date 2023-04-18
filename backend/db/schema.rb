@@ -17,7 +17,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_123045) do
   create_table "donations", force: :cascade do |t|
     t.integer "amount"
     t.string "name"
-    t.string "payment_method", default: "0"
+    t.integer "payment_method", default: 0
+    t.string "email"
+    t.integer "home_detail_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

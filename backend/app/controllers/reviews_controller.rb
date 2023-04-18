@@ -10,10 +10,31 @@ class ReviewsController < ApplicationController
         end
     end
 
-    def update
+    def index
+       review = Review.all
+       render json: review
 
     end
-    
+
+    def update
+        review = Review.find_by(id: params[:id])
+
+        if review.update(review_params) 
+            app_response(message: "Updated review successfully", status: :created,data: review)
+        else
+            app_response(message: "couldn't update review successfully", status: :unprocessable_entity, data: review.errors)
+        end
+    end
+
+    def destroy
+        review = Review.find(params[:id])
+        if review.destroy
+            app_response(message: "Deleted reviewsuccessfully")
+        else
+            app_response(messae: "failed to delete")
+        end
+    end
+      
      private
     
     def review_params

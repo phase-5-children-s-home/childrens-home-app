@@ -6,8 +6,8 @@ class CreateDonations < ActiveRecord::Migration[7.0]
       t.string :name 
       t.integer :payment_method, default:0 
       t.string :email
-      t.integer :home_detail_id
-      t.integer :user_id
+      t.belongs_to :home_detail_id
+      t.belongs_to :user_id
 
       t.timestamps
     end

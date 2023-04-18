@@ -1,8 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from './images/logo.png'
 import './Navbar.css'
-import { removeUser, removeUserToken, getToken} from "./utils/auth";
+import { removeUser, removeUserToken, getToken} from "./utils/Auth";
 
 function Navbar({isLoggedIn,setIsLoggedIn}){
   let navigate = useNavigate();

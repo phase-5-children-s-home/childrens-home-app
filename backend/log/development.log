@@ -4782,3 +4782,79 @@ Migrating to CreateLocations (20230418115055)
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/login" for 127.0.0.1 at 2023-04-18 15:03:48 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}}
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f0a7cc33b28>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f0a7cc33b28>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Waweru' OR email = 'job@mail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+Completed 401 Unauthorized in 24ms (Views: 0.3ms | ActiveRecord: 5.1ms | Allocations: 21289)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-18 15:03:58 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}}
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f0a7cc4e3b0>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "reset_password_token", "reset_password_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["firstname", nil], ["lastname", nil], ["username", "Waweru"], ["email", "job@mail.com"], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["created_at", "2023-04-18 12:03:58.696461"], ["updated_at", "2023-04-18 12:03:58.696461"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+Completed 201 Created in 319ms (Views: 0.7ms | ActiveRecord: 19.0ms | Allocations: 39840)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-18 15:04:04 +0300
+Processing by UsersController#login as */*
+  Parameters: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}}
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f0a7cbeadb0>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f0a7cbeadb0>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Waweru' OR email = 'job@mail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f0a7cbeadb0>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+Completed 200 OK in 233ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 1896)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-18 15:04:13 +0300
+Processing by UsersController#login as */*
+  Parameters: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}}
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f0a7cabf170>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f0a7cabf170>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Waweru' OR email = 'job@mail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameters: :first_name, :last_name, :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f0a7cabf170>, params: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}} }[0m
+Completed 200 OK in 243ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1547)
+
+
+Started GET "/home_details" for 127.0.0.1 at 2023-04-18 15:06:26 +0300
+Processing by HomeDetailsController#index as */*
+  Parameters: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "home_detail"=>{"email"=>"job@mail.com"}}
+  [1m[36mHomeDetail Load (0.4ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 1.6ms | Allocations: 702)
+
+
+Started DELETE "/users" for 127.0.0.1 at 2023-04-18 15:07:36 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/users"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-18 15:07:50 +0300
+Processing by UsersController#logout as */*
+  Parameters: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Waweru", "email"=>"job@mail.com"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/home_details" for 127.0.0.1 at 2023-04-18 15:08:02 +0300
+Processing by HomeDetailsController#index as */*
+  Parameters: {"first_name"=>"Job", "last_name"=>"Waweru", "username"=>"Waweru", "email"=>"job@mail.com", "password"=>"[FILTERED]", "home_detail"=>{"email"=>"job@mail.com"}}
+  [1m[36mHomeDetail Load (0.5ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:5:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 1.7ms | Allocations: 700)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

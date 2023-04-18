@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import { useNavigate,Link } from "react-router-dom";
-import { saveUser,storeToken } from "./utils/auth";
+import { saveUser,storeToken } from "./utils/Auth";
 
 export const Login = ({setIsLoggedIn}) => {
   const [errors, setErrors] = useState([]);

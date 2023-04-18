@@ -8,7 +8,6 @@ import { Register } from './components/Register';
 import { isUserLoggedIn } from './components/utils/auth';
 import DonationForm from './componets/DonationForm';
 
-import DonationForm from './componets/DonationForm';
 function App() {
   const location = useLocation();
   const isLoggedIn = isUserLoggedIn();

@@ -8,6 +8,7 @@ import { Register } from './components/Register';
 import { isUserLoggedIn } from './components/utils/Auth';
 import DonationForm from './components/DonationForm';
 import Homepage from './components/homepage';
+import Navbar from './components/Navbar';
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
       cookieDomain={window.location.hostname}
       cookieSecure={window.location.protocol === "https:"}
     >
+    <Navbar/>
       <div className="App">
         <Routes>
           <Route path="/login" element={<Login setIsLoggedIn={setLoggedIn} />} />

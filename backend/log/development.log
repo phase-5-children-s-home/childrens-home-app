@@ -4675,6 +4675,7 @@ Completed 201 Created in 118ms (Views: 1.5ms | ActiveRecord: 33.9ms | Allocation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
@@ -4837,6 +4838,9 @@ Migrating to CreateVisits (20230417123045)
   [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+=======
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+>>>>>>> c1fbd1a597264fc0b34cd4f89892d9bf3158ff2f
   [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
@@ -4933,6 +4937,7 @@ Migrating to CreateHomeDetails (20230417122243)
   [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
 Migrating to CreateVisits (20230417123045)
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+<<<<<<< HEAD
   [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "visits" ("id" bigserial primary key, "visit_date" timestamp(6), "user_id_id" bigint, "home_details_id_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
   [1m[35m (3.2ms)[0m  [1m[35mCREATE INDEX "index_visits_on_user_id_id" ON "visits" ("user_id_id")[0m
   [1m[35m (3.2ms)[0m  [1m[35mCREATE INDEX "index_visits_on_home_details_id_id" ON "visits" ("home_details_id_id")[0m
@@ -5043,3 +5048,5 @@ Processing by ReviewsController#create as */*
 Completed 422 Unprocessable Entity in 6ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 1150)
 
 
+=======
+>>>>>>> c1fbd1a597264fc0b34cd4f89892d9bf3158ff2f

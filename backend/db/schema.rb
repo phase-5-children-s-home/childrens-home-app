@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_123045) do
     t.string "name"
     t.string "description"
     t.string "image_url"
-    t.string "adress"
+    t.string "address"
     t.string "email"
     t.integer "phone_number"
     t.string "location"
@@ -44,6 +44,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_123045) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.string "comment"
+    t.integer "user_id"
+    t.integer "home_details_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,8 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_123045) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
   end
 
   create_table "visits", force: :cascade do |t|

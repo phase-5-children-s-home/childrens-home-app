@@ -1212,3 +1212,374 @@ ActionController::RoutingError (No route matches [POST] "/reviews%20"):
   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateVisits (20230417123045)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mDROP TABLE "visits"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230417123045"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHomeDetails (20230417122243)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "home_details"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230417122243"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddResetPasswordSentAtToUsers (20230416124342)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "reset_password_sent_at"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230416124342"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePasswordResets (20230416122137)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE "password_resets"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230416122137"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddResetPasswordTokenToUsers (20230416122000)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "reset_password_token"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (1.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230416122000"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230415103706)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230415103706"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDonations (20230414183834)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "donations"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (2.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230414183834"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateReviews (20230414183723)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "reviews"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230414183723"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateReviews (20230414183723)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "rating" integer, "comment" character varying, "user_id" integer, "home_details_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230414183723"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDonations (20230414183834)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "donations" ("id" bigserial primary key, "amount" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230414183834"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20230415103706)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "firstname" character varying, "lastname" character varying, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230415103706"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddResetPasswordTokenToUsers (20230416122000)
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230416122000"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePasswordResets (20230416122137)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "password_resets" ("id" bigserial primary key, "user_id" bigint NOT NULL, "token" character varying NOT NULL, "expires_at" timestamp(6) NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_526379cd99"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE INDEX "index_password_resets_on_user_id" ON "password_resets" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230416122137"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddResetPasswordSentAtToUsers (20230416124342)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230416124342"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHomeDetails (20230417122243)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "home_details" ("id" bigserial primary key, "name" character varying, "description" character varying, "image_url" character varying, "address" character varying, "email" character varying, "phone_number" integer, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230417122243"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateVisits (20230417123045)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "visits" ("id" bigserial primary key, "visit_date" timestamp(6), "user_id" integer, "home_details_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230417123045"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateVisits (20230417123045)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE "visits"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230417123045"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateHomeDetails (20230417122243)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE "home_details"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230417122243"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddResetPasswordSentAtToUsers (20230416124342)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "reset_password_sent_at"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230416124342"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePasswordResets (20230416122137)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE "password_resets"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230416122137"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddResetPasswordTokenToUsers (20230416122000)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "reset_password_token"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230416122000"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePasswordResets (20230416122137)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "password_resets" ("id" bigserial primary key, "user_id" bigint NOT NULL, "token" character varying NOT NULL, "expires_at" timestamp(6) NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_526379cd99"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE INDEX "index_password_resets_on_user_id" ON "password_resets" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230416122137"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateHomeDetails (20230417122243)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "home_details" ("id" bigserial primary key, "name" character varying, "description" character varying, "image_url" character varying, "address" character varying, "email" character varying, "phone_number" integer, "location" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230417122243"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateVisits (20230417123045)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "visits" ("id" bigserial primary key, "visit_date" timestamp(6), "user_id" integer, "home_details_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230417123045"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(5073945470573576205)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/reviews%20" for 127.0.0.1 at 2023-04-18 09:25:31 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/reviews%20"):
+  
+Started POST "/reviews%20" for 127.0.0.1 at 2023-04-18 09:25:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/reviews%20"):
+  
+Started GET "/home_details" for 127.0.0.1 at 2023-04-18 09:26:51 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeDetailsController#index as */*
+  Parameters: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}}
+  [1m[36mHomeDetail Load (1.2ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:5:in `index'
+Completed 200 OK in 57ms (Views: 6.1ms | ActiveRecord: 6.8ms | Allocations: 19416)
+
+
+Started GET "/home_details" for 127.0.0.1 at 2023-04-18 09:27:32 +0300
+Processing by HomeDetailsController#index as */*
+  Parameters: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}}
+  [1m[36mHomeDetail Load (1.0ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 1.0ms | Allocations: 655)
+
+
+Started GET "/home_details" for 127.0.0.1 at 2023-04-18 09:27:34 +0300
+Processing by HomeDetailsController#index as */*
+  Parameters: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}}
+  [1m[36mHomeDetail Load (0.9ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:5:in `index'
+Completed 200 OK in 34ms (Views: 3.8ms | ActiveRecord: 6.9ms | Allocations: 19424)
+
+
+Started POST "/home_details" for 127.0.0.1 at 2023-04-18 09:27:48 +0300
+Processing by HomeDetailsController#create as */*
+  Parameters: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}}
+[31mUnpermitted parameters: :address, :home_detail. Context: { controller: HomeDetailsController, action: create, request: #<ActionDispatch::Request:0x00007fd33cc5c6e8>, params: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "controller"=>"home_details", "action"=>"create", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}} }[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mHomeDetail Create (1.4ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "address", "email", "phone_number", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "children2"], ["description", "childrens home"], ["image_url", "image.jpg"], ["address", nil], ["email", "kisumu@gmail.com"], ["phone_number", 115483048], ["location", "newyork"], ["created_at", "2023-04-18 06:27:48.655470"], ["updated_at", "2023-04-18 06:27:48.655470"]]
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+Completed 201 Created in 191ms (Views: 2.7ms | ActiveRecord: 8.8ms | Allocations: 20792)
+
+
+Started POST "/home_details" for 127.0.0.1 at 2023-04-18 09:27:53 +0300
+Processing by HomeDetailsController#create as */*
+  Parameters: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}}
+[31mUnpermitted parameters: :address, :home_detail. Context: { controller: HomeDetailsController, action: create, request: #<ActionDispatch::Request:0x00007fd3300118e0>, params: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "controller"=>"home_details", "action"=>"create", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mHomeDetail Create (0.6ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "address", "email", "phone_number", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "children2"], ["description", "childrens home"], ["image_url", "image.jpg"], ["address", nil], ["email", "kisumu@gmail.com"], ["phone_number", 115483048], ["location", "newyork"], ["created_at", "2023-04-18 06:27:53.994543"], ["updated_at", "2023-04-18 06:27:53.994543"]]
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+Completed 201 Created in 21ms (Views: 1.5ms | ActiveRecord: 5.8ms | Allocations: 2168)
+
+
+Started POST "/home_details" for 127.0.0.1 at 2023-04-18 09:27:54 +0300
+Processing by HomeDetailsController#create as */*
+  Parameters: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}}
+[31mUnpermitted parameters: :address, :home_detail. Context: { controller: HomeDetailsController, action: create, request: #<ActionDispatch::Request:0x00007fd32cc8cc90>, params: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "controller"=>"home_details", "action"=>"create", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mHomeDetail Create (0.7ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "address", "email", "phone_number", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "children2"], ["description", "childrens home"], ["image_url", "image.jpg"], ["address", nil], ["email", "kisumu@gmail.com"], ["phone_number", 115483048], ["location", "newyork"], ["created_at", "2023-04-18 06:27:54.504183"], ["updated_at", "2023-04-18 06:27:54.504183"]]
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+Completed 201 Created in 14ms (Views: 0.7ms | ActiveRecord: 2.1ms | Allocations: 2168)
+
+
+Started POST "/home_details" for 127.0.0.1 at 2023-04-18 09:27:55 +0300
+Processing by HomeDetailsController#create as */*
+  Parameters: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}}
+[31mUnpermitted parameters: :address, :home_detail. Context: { controller: HomeDetailsController, action: create, request: #<ActionDispatch::Request:0x00007fd32cd4fe70>, params: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "controller"=>"home_details", "action"=>"create", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mHomeDetail Create (0.7ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "address", "email", "phone_number", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "children2"], ["description", "childrens home"], ["image_url", "image.jpg"], ["address", nil], ["email", "kisumu@gmail.com"], ["phone_number", 115483048], ["location", "newyork"], ["created_at", "2023-04-18 06:27:55.320496"], ["updated_at", "2023-04-18 06:27:55.320496"]]
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+Completed 201 Created in 18ms (Views: 1.0ms | ActiveRecord: 2.6ms | Allocations: 2151)
+
+
+Started POST "/home_details" for 127.0.0.1 at 2023-04-18 09:27:55 +0300
+Processing by HomeDetailsController#create as */*
+  Parameters: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}}
+[31mUnpermitted parameters: :address, :home_detail. Context: { controller: HomeDetailsController, action: create, request: #<ActionDispatch::Request:0x00007fd324031368>, params: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "controller"=>"home_details", "action"=>"create", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mHomeDetail Create (0.9ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "address", "email", "phone_number", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "children2"], ["description", "childrens home"], ["image_url", "image.jpg"], ["address", nil], ["email", "kisumu@gmail.com"], ["phone_number", 115483048], ["location", "newyork"], ["created_at", "2023-04-18 06:27:55.915258"], ["updated_at", "2023-04-18 06:27:55.915258"]]
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+Completed 201 Created in 19ms (Views: 0.8ms | ActiveRecord: 2.3ms | Allocations: 2152)
+
+
+Started POST "/home_details" for 127.0.0.1 at 2023-04-18 09:27:56 +0300
+Processing by HomeDetailsController#create as */*
+  Parameters: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}}
+[31mUnpermitted parameters: :address, :home_detail. Context: { controller: HomeDetailsController, action: create, request: #<ActionDispatch::Request:0x00007fd33c75f348>, params: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "controller"=>"home_details", "action"=>"create", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mHomeDetail Create (1.0ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "address", "email", "phone_number", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "children2"], ["description", "childrens home"], ["image_url", "image.jpg"], ["address", nil], ["email", "kisumu@gmail.com"], ["phone_number", 115483048], ["location", "newyork"], ["created_at", "2023-04-18 06:27:56.686285"], ["updated_at", "2023-04-18 06:27:56.686285"]]
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+Completed 201 Created in 113ms (Views: 0.9ms | ActiveRecord: 8.9ms | Allocations: 19925)
+
+
+Started POST "/home_details" for 127.0.0.1 at 2023-04-18 09:27:57 +0300
+Processing by HomeDetailsController#create as */*
+  Parameters: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}}
+[31mUnpermitted parameters: :address, :home_detail. Context: { controller: HomeDetailsController, action: create, request: #<ActionDispatch::Request:0x00007fd32cc0b5c8>, params: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "controller"=>"home_details", "action"=>"create", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}} }[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mHomeDetail Create (0.5ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "address", "email", "phone_number", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "children2"], ["description", "childrens home"], ["image_url", "image.jpg"], ["address", nil], ["email", "kisumu@gmail.com"], ["phone_number", 115483048], ["location", "newyork"], ["created_at", "2023-04-18 06:27:57.206789"], ["updated_at", "2023-04-18 06:27:57.206789"]]
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_details_controller.rb:9:in `create'
+Completed 201 Created in 20ms (Views: 0.7ms | ActiveRecord: 3.2ms | Allocations: 2168)
+
+
+Started GET "/home_details" for 127.0.0.1 at 2023-04-18 09:28:01 +0300
+Processing by HomeDetailsController#index as */*
+  Parameters: {"name"=>"children2", "description"=>"childrens home", "address"=>"21768", "location"=>"newyork", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com", "home_detail"=>{"name"=>"children2", "description"=>"childrens home", "image_url"=>"image.jpg", "address"=>"21768", "email"=>"kisumu@gmail.com", "phone_number"=>"0115483048", "location"=>"newyork"}}
+  [1m[36mHomeDetail Load (0.4ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.4ms | Allocations: 1586)
+
+
+Started POST "/reviews%20" for 127.0.0.1 at 2023-04-18 09:28:46 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/reviews%20"):
+  
+Started POST "/reviews%20" for 127.0.0.1 at 2023-04-18 09:28:47 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/reviews%20"):
+  

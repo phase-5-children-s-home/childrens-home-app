@@ -1,24 +1,34 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import { Login } from "./Login"
-import { Passwordreset } from './Passwordreset';
+import { Login } from './components/Login';
+import { Passwordreset } from './components/Passwordreset';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { Register } from "./Register"
-
+import { AuthProvider } from 'react-auth-kit';
+import { Register } from './components/Register';
+import { isUserLoggedIn } from './components/utils/auth';
 
 function App() {
-  const isLoginPage = location.pathname === '/login' || location.pathname === '/register'|| location.pathname === '/reset';
+  const location = useLocation();
+  const isLoggedIn = isUserLoggedIn();
+  const [loggedIn, setLoggedIn] = useState(isLoggedIn);
+  const isLoginPage = location.pathname === '/login' || location.pathname === '/register' || location.pathname === '/reset';
 
-  
   return (
-    <div className="App">
-    <Routes>
-          <Route path='/login' element={<Login
-           setIsLoggedIn={setLoggedIn}/>}></Route>
-          <Route path='/register' element={<Register/>}></Route>
-          <Route path='/reset' element={<Passwordreset/>}></Route>
+    <AuthProvider
+      authType="cookie"
+      authName="_auth"
+      cookieDomain={window.location.hostname}
+      cookieSecure={window.location.protocol === "https:"}
+    >
+      <div className="App">
+        <Routes>
+          <Route path="/login" element={<Login setIsLoggedIn={setLoggedIn} />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/reset" element={<Passwordreset />} />
         </Routes>
-    </div>
+        {isLoginPage ? null : <Login/>||<Passwordreset/>}
+      </div>
+    </AuthProvider>
   );
 }
 

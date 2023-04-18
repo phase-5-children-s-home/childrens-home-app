@@ -1,0 +1,304 @@
+.homepage {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+  }
+  .mac-book1 {
+    top: 0px;
+    left: 0px;
+    width: 1152px;
+    height: 700px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .rectangle9 {
+    top: 596px;
+    left: 72px;
+    width: 290px;
+    height: 106px;
+    position: absolute;
+    border-color: transparent;
+    border-radius: 18px;
+  }
+  .rectangle12 {
+    top: 30px;
+    left: 943px;
+    width: 116px;
+    height: 41px;
+    position: absolute;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    border-width: 1px;
+  }
+  .rectangle13 {
+    top: 30px;
+    left: 814px;
+    width: 116px;
+    height: 41px;
+    position: absolute;
+    border-color: rgba(0, 0, 0, 1);
+    border-style: solid;
+    border-width: 1px;
+  }
+  .rectangle10 {
+    top: 587px;
+    left: 452px;
+    width: 290px;
+    height: 106px;
+    position: absolute;
+    border-color: transparent;
+    border-radius: 18px;
+  }
+  .rectangle11 {
+    top: 596px;
+    left: 806px;
+    width: 298px;
+    height: 106px;
+    position: absolute;
+    border-color: transparent;
+    border-radius: 18px;
+  }
+  .text {
+    top: 18px;
+    left: 24px;
+    color: rgba(23, 37, 42, 1);
+    height: auto;
+    position: absolute;
+    font-size: 36px;
+    align-self: auto;
+    font-style: italic;
+    text-align: left;
+    font-family: Sanchez;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text02 {
+    top: 37px;
+    left: 281px;
+    color: rgba(23, 37, 42, 1);
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    align-self: auto;
+    font-style: Bold;
+    text-align: left;
+    font-family: Tuffy;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text04 {
+    top: 37px;
+    left: 437px;
+    color: rgba(23, 37, 42, 1);
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    align-self: auto;
+    font-style: Bold;
+    text-align: left;
+    font-family: Tuffy;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text06 {
+    top: 37px;
+    left: 565px;
+    color: rgba(23, 37, 42, 1);
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    align-self: auto;
+    font-style: Bold;
+    text-align: left;
+    font-family: Tuffy;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text08 {
+    top: 37px;
+    left: 972px;
+    color: rgba(23, 37, 42, 1);
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    align-self: auto;
+    font-style: Bold;
+    text-align: left;
+    font-family: Tuffy;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text10 {
+    top: 37px;
+    left: 829px;
+    color: rgba(23, 37, 42, 1);
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    align-self: auto;
+    font-style: Bold;
+    text-align: left;
+    font-family: Tuffy;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .akariconslockoff {
+    top: 370px;
+    left: 656px;
+    width: 17px;
+    height: 15px;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-color: transparent;
+  }
+  .peoplehuggingflatdesign2321485765391 {
+    top: 118px;
+    left: 263px;
+    width: 626px;
+    height: 417px;
+    position: absolute;
+    border-color: transparent;
+  }
+  .text12 {
+    top: 96px;
+    left: 298px;
+    color: rgba(162, 154, 154, 1);
+    width: 555px;
+    height: auto;
+    position: absolute;
+    font-size: 64px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: center;
+    font-family: Zeyada;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text14 {
+    top: 481px;
+    left: 298px;
+    color: rgba(245, 79, 91, 1);
+    width: 555px;
+    height: auto;
+    position: absolute;
+    font-size: 64px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: center;
+    font-family: Spicy Rice;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text15 {
+    color: rgba(245, 79, 91, 1);
+  }
+  .text17 {
+    top: 608px;
+    left: 86px;
+    color: rgba(0, 0, 0, 0.800000011920929);
+    width: 284px;
+    height: auto;
+    position: absolute;
+    font-size: 24px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Sanchez;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text22 {
+    top: 601px;
+    left: 474px;
+    color: rgba(0, 0, 0, 0.800000011920929);
+    width: 253px;
+    height: auto;
+    position: absolute;
+    font-size: 24px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Sanchez;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .text27 {
+    top: 608px;
+    left: 832px;
+    color: rgba(0, 0, 0, 0.800000011920929);
+    width: 264px;
+    height: auto;
+    position: absolute;
+    font-size: 24px;
+    align-self: auto;
+    font-style: Regular;
+    text-align: left;
+    font-family: Sanchez;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    margin-right: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .ellipse {
+    top: 24px;
+    left: 1084px;
+    width: 52px;
+    height: 53px;
+    position: absolute;
+    border-color: transparent;
+  }
+  

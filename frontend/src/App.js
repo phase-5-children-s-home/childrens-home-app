@@ -7,6 +7,7 @@ import { AuthProvider } from 'react-auth-kit';
 import { Register } from './components/Register';
 import { isUserLoggedIn } from './components/utils/Auth';
 import DonationForm from './components/DonationForm';
+import Homepage from './components/homepage';
 
 function App() {
   const location = useLocation();
@@ -26,6 +27,8 @@ function App() {
           <Route path="/login" element={<Login setIsLoggedIn={setLoggedIn} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Passwordreset />} />
+          <Route path="/" element={< Homepage />} />
+
           <Route path="/donations" element={<DonationForm />} />
         </Routes>
         {isLoginPage ? null : <Login/>||<Passwordreset/>}

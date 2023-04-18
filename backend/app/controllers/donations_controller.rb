@@ -5,9 +5,9 @@ class DonationsController < ApplicationController
         donation = Donation.create(donation_params)
 
         if donation.save
-          app_response (message: "donations received successfully" status: :ok, data: donation)
+          app_response(message: "Donations received successfully", status: :created, data: donation)
         else
-          app_response(message: "there was an error proccessing donation" status: :unprocessable_entity)
+          app_response(message: "There was an error proccessing donation", status: :unprocessable_entity, data: donation.errors)
         end
       end
     

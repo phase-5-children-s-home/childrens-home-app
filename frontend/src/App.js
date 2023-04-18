@@ -5,7 +5,7 @@ import { Passwordreset } from './components/Passwordreset';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { AuthProvider } from 'react-auth-kit';
 import { Register } from './components/Register';
-import { isUserLoggedIn } from './components/utils/auth';
+import { isUserLoggedIn } from './components/utils/Auth';
 import DonationForm from './components/DonationForm';
 
 function App() {

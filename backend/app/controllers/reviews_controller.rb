@@ -9,11 +9,15 @@ class ReviewsController < ApplicationController
             app_response(message: "Review failed" status: :unprocessable_entity)
         end
     end
+
+    def update
+
+    end
     
-        private
+     private
     
     def review_params
-       params.permit(:rating, :comment)
+       params.permit(:rating, :comment, :user_id, :home_details_id)
     end
   
 

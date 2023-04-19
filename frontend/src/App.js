@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 
 
 import Form from './components/Form';
+import Footer from './components/footer';
 
 
 function App() {
@@ -40,8 +41,9 @@ function App() {
 
           <Route path="/donations" element={<DonationForm />} />
         </Routes>
-        {isLoginPage ? null : <Login/>||<Passwordreset/>}
+        {isLoginPage ? null : <Login/>||<Register/>||<Passwordreset/>}
       </div>
+      <Footer/>
     </AuthProvider>
   );
 }

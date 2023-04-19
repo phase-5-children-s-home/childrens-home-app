@@ -4,14 +4,8 @@ import hug from './images/hug.png';
 import rectangle9 from './images/Rectangle 9.png';
 import rectangle10 from './images/Rectangle 10.png';
 import rectangle11 from './images/Rectangle 11.png';
-<<<<<<< HEAD
-import rectangle13 from './images/Rectangle 13.png';
-import rectangle12 from './images/Rectangle 12.png';
 import { Link } from 'react-router-dom';
 import Whatwedo from './Whatwedo'
-=======
-
->>>>>>> c503aebf2018a2325c015d2373522ea23dcc3458
 
 const Homepage = (props) => {
   const [numPeople, setNumPeople] = useState(0);
@@ -61,7 +55,7 @@ const Homepage = (props) => {
             alt="Rectangle115374"
             className={styles['rectangle11']}
           />
-<<<<<<< HEAD
+
           <span className={styles['text']}>
             <span>LetsCharity</span>
           </span>
@@ -80,10 +74,9 @@ const Homepage = (props) => {
           <span className={styles['text10']}>
             <span>Fundrising</span>
           </span>
-=======
+
          
          
->>>>>>> c503aebf2018a2325c015d2373522ea23dcc3458
           <div className={styles['akariconslockoff']}></div>
           <img
             src={hug}
@@ -124,16 +117,16 @@ const Homepage = (props) => {
             <span>{numTeams.toLocaleString()} + Teams</span>
           </span>
         </span>
-<<<<<<< HEAD
+
        
         </div>
         
         <div id="whatwedo">
         <h1>what we do</h1>
         <Whatwedo /> 
-=======
 
->>>>>>> c503aebf2018a2325c015d2373522ea23dcc3458
+
+
       </div>
       </div>
 

@@ -1,0 +1,10 @@
+#icons{
+
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+h2{
+    color: rgb(20, 6, 104);
+    text-decoration: underline;
+}

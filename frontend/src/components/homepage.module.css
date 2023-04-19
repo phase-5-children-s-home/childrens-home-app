@@ -5,7 +5,7 @@
     position: relative;
     align-items: flex-start;
     border-color: transparent;
-    margin-left: -300px;
+    margin-left: 200px;
   }
   .mac-book1 {
     top: 0px;
@@ -192,6 +192,14 @@
     margin-right: 0;
     margin-bottom: 0;
     text-decoration: none;
+  }
+  .ellipse {
+    top: 24px;
+    left: 1084px;
+    width: 52px;
+    height: 53px;
+    position: absolute;
+    border-color: transparent;
   }
 
   

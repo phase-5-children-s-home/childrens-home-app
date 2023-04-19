@@ -79,14 +79,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_18_115055) do
   end
 
   create_table "visits", force: :cascade do |t|
-    t.datetime "visit_date"
+    t.string "visit_date"
     t.bigint "user_id"
     t.bigint "home_detail_id"
-    t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["home_detail_id"], name: "index_visits_on_home_detail_id"
-    t.index ["location_id"], name: "index_visits_on_location_id"
     t.index ["user_id"], name: "index_visits_on_user_id"
   end
 

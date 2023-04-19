@@ -9,7 +9,11 @@ import { isUserLoggedIn } from './components/utils/Auth';
 import DonationForm from './components/DonationForm';
 import Homepage from './components/homepage';
 import Navbar from './components/Navbar';
+<<<<<<< HEAD
 import whatwedo from './components/Whatwedo'
+=======
+import Form from './components/Form';
+>>>>>>> c503aebf2018a2325c015d2373522ea23dcc3458
 
 function App() {
   const location = useLocation();
@@ -31,7 +35,11 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Passwordreset />} />
           <Route path="/" element={< Homepage />} />
+<<<<<<< HEAD
               
+=======
+          <Route path="/form" element={<Form />} />
+>>>>>>> c503aebf2018a2325c015d2373522ea23dcc3458
           <Route path="/donations" element={<DonationForm />} />
         </Routes>
         {isLoginPage ? null : <Login/>||<Passwordreset/>}

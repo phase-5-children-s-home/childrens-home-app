@@ -6,6 +6,8 @@ import rectangle10 from './images/Rectangle 10.png';
 import rectangle11 from './images/Rectangle 11.png';
 import rectangle13 from './images/Rectangle 13.png';
 import rectangle12 from './images/Rectangle 12.png';
+import { Link } from 'react-router-dom';
+import Whatwedo from './Whatwedo'
 
 const Homepage = (props) => {
   const [numPeople, setNumPeople] = useState(0);
@@ -34,13 +36,13 @@ const Homepage = (props) => {
   
     return () => clearInterval(intervalId);
   }, []);
-
-  // rest of the code
   return (
     <div>
+<div>
+      
       <div className={styles['homepage']}>
-      <div className={styles['mac-book1']}>
-          <img
+        <div className={styles['mac-book1']}>
+        <img
             src={rectangle9}
             alt="Rectangle95372"
             className={styles['rectangle9']}
@@ -78,7 +80,7 @@ const Homepage = (props) => {
             <span>Our Work</span>
           </span>
           <span className={styles['text08']}>
-            <span>Donate</span>
+            <span><Link to="/login">Donate</Link></span>
           </span>
           <span className={styles['text10']}>
             <span>Fundrising</span>
@@ -123,9 +125,20 @@ const Homepage = (props) => {
             <span>{numTeams.toLocaleString()} + Teams</span>
           </span>
         </span>
+       
+        </div>
+        
+        <div id="whatwedo">
+        <h1>what we do</h1>
+        <Whatwedo /> 
       </div>
+      </div>
+
+      
     </div>
+    
     </div>
+    
   );
 };
 

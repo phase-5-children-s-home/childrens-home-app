@@ -6,7 +6,7 @@
     align-items: flex-start;
     flex-shrink: 0;
     border-color: transparent;
-    margin-left: -300px;
+    margin-left: 200px;
   }
   .mac-book1 {
     top: 0px;
@@ -302,4 +302,3 @@
     position: absolute;
     border-color: transparent;
   }
-  

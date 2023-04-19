@@ -4,7 +4,8 @@ import hug from './images/hug.png';
 import rectangle9 from './images/Rectangle 9.png';
 import rectangle10 from './images/Rectangle 10.png';
 import rectangle11 from './images/Rectangle 11.png';
-
+import rectangle13 from './images/Rectangle 13.png';
+import rectangle12 from './images/Rectangle 12.png';
 
 const Homepage = (props) => {
   const [numPeople, setNumPeople] = useState(0);
@@ -12,29 +13,15 @@ const Homepage = (props) => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setNumPeople((numPeople) => {
-        if (numPeople >= 1850) {
-          clearInterval(intervalId);
-          return numPeople;
-        } else {
-          return numPeople + 100;
-        }
-      });
-  
-      setNumTeams((numTeams) => {
-        if (numTeams >= 950) {
-          clearInterval(intervalId);
-          return numTeams;
-        } else {
-          return numTeams + 10;
-        }
-      });
-    }, 20);
-  
+      // Update the number of people and teams
+      setNumPeople(numPeople => numPeople + 1);
+      setNumTeams(numTeams => numTeams + 1);
+    }, 10); // Change the interval time to adjust the speed of the counter
+
+    // Clean up the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
 
-  // rest of the code
   return (
     <div>
       <div className={styles['homepage']}>
@@ -43,6 +30,16 @@ const Homepage = (props) => {
             src={rectangle9}
             alt="Rectangle95372"
             className={styles['rectangle9']}
+          />
+          <img
+            src={rectangle12}
+            alt="Rectangle125394"
+            className={styles['rectangle12']}
+          />
+          <img
+            src={rectangle13}
+            alt="Rectangle135396"
+            className={styles['rectangle13']}
           />
           <img
             src={rectangle10}
@@ -54,8 +51,24 @@ const Homepage = (props) => {
             alt="Rectangle115374"
             className={styles['rectangle11']}
           />
-         
-         
+          <span className={styles['text']}>
+            <span>LetsCharity</span>
+          </span>
+          <span className={styles['text02']}>
+            <span>Why donate?</span>
+          </span>
+          <span className={styles['text04']}>
+            <span>About Us</span>
+          </span>
+          <span className={styles['text06']}>
+            <span>Our Work</span>
+          </span>
+          <span className={styles['text08']}>
+            <span>Donate</span>
+          </span>
+          <span className={styles['text10']}>
+            <span>Fundrising</span>
+          </span>
           <div className={styles['akariconslockoff']}></div>
           <img
             src={hug}
@@ -79,24 +92,23 @@ const Homepage = (props) => {
             <span>
               <span>Funds collected</span>
               <br></br>
-              <span>Ksh 100,255.00</span>
+              <span>RM 100,255.00</span>
             </span>
           </span>
         <span className={styles['text22']}>
           <span>
             <span>Individuals Signed Up</span>
             <br></br>
-            <span>{numPeople.toLocaleString()}+ people</span>
+            <span>{numPeople.toLocaleString()} people</span>
           </span>
         </span>
         <span className={styles['text27']}>
           <span>
             <span>GO/NGO Participation</span>
             <br></br>
-            <span>{numTeams.toLocaleString()} + Teams</span>
+            <span>{numTeams.toLocaleString()} Teams</span>
           </span>
         </span>
-
       </div>
     </div>
     </div>

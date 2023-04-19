@@ -5,6 +5,7 @@
     position: relative;
     align-items: flex-start;
     border-color: transparent;
+    margin-left: -300px;
   }
   .mac-book1 {
     top: 0px;

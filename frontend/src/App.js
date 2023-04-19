@@ -10,6 +10,10 @@ import DonationForm from './components/DonationForm';
 import Homepage from './components/homepage';
 import Navbar from './components/Navbar';
 
+
+import Form from './components/Form';
+
+
 function App() {
   const location = useLocation();
   const isLoggedIn = isUserLoggedIn();
@@ -30,6 +34,9 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Passwordreset />} />
           <Route path="/" element={< Homepage />} />
+
+              
+          <Route path="/form" element={<Form />} />
 
           <Route path="/donations" element={<DonationForm />} />
         </Routes>

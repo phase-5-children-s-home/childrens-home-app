@@ -1,31 +1,49 @@
-import React from 'react'
-import styles from './homepage.module.css'
-import hug from './images/hug.png'
-import rectangle9 from './images/Rectangle 9.png' 
-import rectangle10 from './images/Rectangle 10.png'
-import rectangle11 from './images/Rectangle 11.png'
-import rectangle13 from './images/Rectangle 13.png'
-import rectangle12 from './images/Rectangle 12.png'
+import React, { useState, useEffect } from 'react';
+import styles from './homepage.module.css';
+import hug from './images/hug.png';
+import rectangle9 from './images/Rectangle 9.png';
+import rectangle10 from './images/Rectangle 10.png';
+import rectangle11 from './images/Rectangle 11.png';
+import { Link } from 'react-router-dom';
+import Whatwedo from './Whatwedo'
 
 const Homepage = (props) => {
+  const [numPeople, setNumPeople] = useState(0);
+  const [numTeams, setNumTeams] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setNumPeople((numPeople) => {
+        if (numPeople >= 1850) {
+          clearInterval(intervalId);
+          return numPeople;
+        } else {
+          return numPeople + 100;
+        }
+      });
+  
+      setNumTeams((numTeams) => {
+        if (numTeams >= 950) {
+          clearInterval(intervalId);
+          return numTeams;
+        } else {
+          return numTeams + 10;
+        }
+      });
+    }, 20);
+  
+    return () => clearInterval(intervalId);
+  }, []);
   return (
     <div>
+<div>
+      
       <div className={styles['homepage']}>
         <div className={styles['mac-book1']}>
-          <img
+        <img
             src={rectangle9}
             alt="Rectangle95372"
             className={styles['rectangle9']}
-          />
-          <img
-            src={rectangle12}
-            alt="Rectangle125394"
-            className={styles['rectangle12']}
-          />
-          <img
-            src={rectangle13}
-            alt="Rectangle135396"
-            className={styles['rectangle13']}
           />
           <img
             src={rectangle10}
@@ -37,6 +55,7 @@ const Homepage = (props) => {
             alt="Rectangle115374"
             className={styles['rectangle11']}
           />
+
           <span className={styles['text']}>
             <span>LetsCharity</span>
           </span>
@@ -50,11 +69,14 @@ const Homepage = (props) => {
             <span>Our Work</span>
           </span>
           <span className={styles['text08']}>
-            <span>Donate</span>
+            <span><Link to="/login">Donate</Link></span>
           </span>
           <span className={styles['text10']}>
             <span>Fundrising</span>
           </span>
+
+         
+         
           <div className={styles['akariconslockoff']}></div>
           <img
             src={hug}
@@ -78,32 +100,42 @@ const Homepage = (props) => {
             <span>
               <span>Funds collected</span>
               <br></br>
-              <span>RM 100,255.00</span>
+              <span>Ksh 100,255.00</span>
             </span>
           </span>
-          <span className={styles['text22']}>
-            <span>
-              <span>Individual Signed Up</span>
-              <br></br>
-              <span>8,250 people</span>
-            </span>
+        <span className={styles['text22']}>
+          <span>
+            <span>Individuals Signed Up</span>
+            <br></br>
+            <span>{numPeople.toLocaleString()}+ people</span>
           </span>
-          <span className={styles['text27']}>
-            <span>
-              <span>GO/NGO Participation</span>
-              <br></br>
-              <span>925 Teams</span>
-            </span>
+        </span>
+        <span className={styles['text27']}>
+          <span>
+            <span>GO/NGO Participation</span>
+            <br></br>
+            <span>{numTeams.toLocaleString()} + Teams</span>
           </span>
-        </div>
-        <img
-          src="/playground_assets/ellipse5391-fu2j-200w.png"
-          alt="Ellipse5391"
-          className={styles['ellipse']}
-        />
-      </div>
-    </div>
-  )
-}
+        </span>
 
-export default Homepage
+       
+        </div>
+        
+        <div id="whatwedo">
+        <h1>what we do</h1>
+        <Whatwedo /> 
+
+
+
+      </div>
+      </div>
+
+      
+    </div>
+    
+    </div>
+    
+  );
+};
+
+export default Homepage;

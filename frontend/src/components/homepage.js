@@ -7,6 +7,7 @@ import rectangle11 from './images/Rectangle 11.png';
 import rectangle13 from './images/Rectangle 13.png';
 import rectangle12 from './images/Rectangle 12.png';
 
+
 const Homepage = (props) => {
   const [numPeople, setNumPeople] = useState(0);
   const [numTeams, setNumTeams] = useState(0);
@@ -46,16 +47,6 @@ const Homepage = (props) => {
             className={styles['rectangle9']}
           />
           <img
-            src={rectangle12}
-            alt="Rectangle125394"
-            className={styles['rectangle12']}
-          />
-          <img
-            src={rectangle13}
-            alt="Rectangle135396"
-            className={styles['rectangle13']}
-          />
-          <img
             src={rectangle10}
             alt="Rectangle105373"
             className={styles['rectangle10']}
@@ -65,24 +56,8 @@ const Homepage = (props) => {
             alt="Rectangle115374"
             className={styles['rectangle11']}
           />
-          <span className={styles['text']}>
-            <span>LetsCharity</span>
-          </span>
-          <span className={styles['text02']}>
-            <span>Why donate?</span>
-          </span>
-          <span className={styles['text04']}>
-            <span>About Us</span>
-          </span>
-          <span className={styles['text06']}>
-            <span>Our Work</span>
-          </span>
-          <span className={styles['text08']}>
-            <span>Donate</span>
-          </span>
-          <span className={styles['text10']}>
-            <span>Fundrising</span>
-          </span>
+         
+         
           <div className={styles['akariconslockoff']}></div>
           <img
             src={hug}
@@ -123,6 +98,7 @@ const Homepage = (props) => {
             <span>{numTeams.toLocaleString()} + Teams</span>
           </span>
         </span>
+
       </div>
     </div>
     </div>

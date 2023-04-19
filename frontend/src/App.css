@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: center;
   color: yellow;
-  background-color:rgba(0, 0, 0, 0.9)
+  /* background-color:rgba(0, 0, 0, 0.9) */
+  margin-left: -50px;
 }
 .auth-form-container, .login-form, .register-form, .passwordreset-form {
   display: flex;

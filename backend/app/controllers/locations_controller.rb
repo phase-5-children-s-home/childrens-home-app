@@ -1,2 +1,3 @@
 class LocationsController < ApplicationController
+    
 end

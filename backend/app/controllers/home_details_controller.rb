@@ -6,14 +6,16 @@ class HomeDetailsController < ApplicationController
     end
 
     def create
-       home = HomeDetail.create(home_params)
-       if home.save 
-           app_response(message: "created successfully", status: :created, data: home)
-       else
-           app_response(message: "failed to create", status: :unprocessable_entity, data: home.errors)
-       end
-    end 
+      location = Location.find_or_create_by(city: params[:city])
+      home = HomeDetail.create(home_params.except(:city).merge(location: location))
+      if home.save 
+        app_response(message: "created successfully", status: :created, data: home)
+      else
+        app_response(message: "failed to create", status: :unprocessable_entity, data: home.errors)
+      end
+    end
     
+
     def search
         if params[:name].present?
           homes = HomeDetail.where("name LIKE ?", "%#{params[:name]}%")
@@ -56,7 +58,8 @@ class HomeDetailsController < ApplicationController
      private 
  
      def home_params
-         params.permit(:name, :description, :location, :image_url, :adress, :phone_number, :email)
-     end
+       params.permit(:name, :description, :image_url, :address, :phone_number, :email)
+    end
+
  end
  

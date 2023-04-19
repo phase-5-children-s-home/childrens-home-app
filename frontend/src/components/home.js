@@ -13,29 +13,15 @@ const Homepage = (props) => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setNumPeople((numPeople) => {
-        if (numPeople >= 1850) {
-          clearInterval(intervalId);
-          return numPeople;
-        } else {
-          return numPeople + 100;
-        }
-      });
-  
-      setNumTeams((numTeams) => {
-        if (numTeams >= 950) {
-          clearInterval(intervalId);
-          return numTeams;
-        } else {
-          return numTeams + 10;
-        }
-      });
-    }, 20);
-  
+      // Update the number of people and teams
+      setNumPeople(numPeople => numPeople + 1);
+      setNumTeams(numTeams => numTeams + 1);
+    }, 10); // Change the interval time to adjust the speed of the counter
+
+    // Clean up the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
 
-  // rest of the code
   return (
     <div>
       <div className={styles['homepage']}>
@@ -113,14 +99,14 @@ const Homepage = (props) => {
           <span>
             <span>Individuals Signed Up</span>
             <br></br>
-            <span>{numPeople.toLocaleString()}+ people</span>
+            <span>{numPeople.toLocaleString()} people</span>
           </span>
         </span>
         <span className={styles['text27']}>
           <span>
             <span>GO/NGO Participation</span>
             <br></br>
-            <span>{numTeams.toLocaleString()} + Teams</span>
+            <span>{numTeams.toLocaleString()} Teams</span>
           </span>
         </span>
       </div>

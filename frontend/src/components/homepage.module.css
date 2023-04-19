@@ -6,6 +6,7 @@
     align-items: flex-start;
     flex-shrink: 0;
     border-color: transparent;
+    margin-left: -300px;
   }
   .mac-book1 {
     top: 0px;

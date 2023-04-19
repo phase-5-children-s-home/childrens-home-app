@@ -79,7 +79,7 @@ const Homepage = (props) => {
             <span>
               <span>Funds collected</span>
               <br></br>
-              <span>RM 100,255.00</span>
+              <span>Ksh 100,255.00</span>
             </span>
           </span>
         <span className={styles['text22']}>

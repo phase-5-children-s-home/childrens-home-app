@@ -30,7 +30,6 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Passwordreset />} />
           <Route path="/" element={< Homepage />} />
-
           <Route path="/donations" element={<DonationForm />} />
         </Routes>
         {isLoginPage ? null : <Login/>||<Passwordreset/>}

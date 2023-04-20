@@ -21,16 +21,6 @@ const HomeList = () => {
     item.city.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const [showDetails, setShowDetails] = useState(false);
-
-  const toggleDetails = () => {
-    setShowDetails(!showDetails);
-  };
-
-  const cardStyle = {
-    height: showDetails ? 'auto' : 'fit-content'
-  };
-
   return (
     <div className="home-list-container">
       <div className="search-form">
@@ -49,27 +39,43 @@ const HomeList = () => {
 
       <div className="card-section">
         {filteredData.map((item) => (
-          <Card key={item.id} className="card" style={cardStyle}>
-            <div onClick={toggleDetails}>
-              <Card.Img variant="top" src={item.image_url} className="card-img-top" />
-              <Card.Title>{item.childrens_home_name}</Card.Title>
-            </div>
-            {showDetails && (
-              <Card.Body>
-                <Card.Text>
-                  <p>Description: {item.description}</p>
-                  <p>City: {item.city}</p>
-                  <p>Address: {item.address}</p>
-                  <p>Email: {item.email}</p>
-                  <p>Phone: {item.phone_number}</p>
-                </Card.Text>
-                <Button variant="primary">Donate</Button>
-              </Card.Body>
-            )}
-          </Card>
+          <CardItem key={item.id} item={item} />
         ))}
       </div>
     </div>
+  );
+};
+
+const CardItem = ({ item }) => {
+  const [showDetails, setShowDetails] = useState(false);
+
+  const toggleDetails = () => {
+    setShowDetails(!showDetails);
+  };
+
+  const cardStyle = {
+    height: showDetails ? 'auto' : 'fit-content'
+  };
+
+  return (
+    <Card className="card" style={cardStyle}>
+      <div onClick={toggleDetails}>
+        <Card.Img variant="top" src={item.image_url} className="card-img-top" />
+        <Card.Title>{item.childrens_home_name}</Card.Title>
+      </div>
+      {showDetails && (
+        <Card.Body>
+          <Card.Text>
+            <p>Description: {item.description}</p>
+            <p>City: {item.city}</p>
+            <p>Address: {item.address}</p>
+            <p>Email: {item.email}</p>
+            <p>Phone: {item.phone_number}</p>
+          </Card.Text>
+          <Button variant="primary">Donate</Button>
+        </Card.Body>
+      )}
+    </Card>
   );
 };
 

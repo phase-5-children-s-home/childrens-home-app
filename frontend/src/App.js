@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Login } from './components/Login';
 import { Passwordreset } from './components/Passwordreset';
 import { Route, Routes, useLocation } from 'react-router-dom';
@@ -9,7 +10,7 @@ import { isUserLoggedIn } from './components/utils/Auth';
 import DonationForm from './components/DonationForm';
 import Homepage from './components/homepage';
 import Navbar from './components/Navbar';
-
+import HomeList from './components/Homelist';
 
 import Form from './components/Form';
 import Footer from './components/footer';
@@ -34,7 +35,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Passwordreset />} />
           <Route path="/" element={< Homepage />} />
-
+          <Route path='/homelist' element={<HomeList/>} />
               
           <Route path="/form" element={<Form />} />
 
@@ -43,6 +44,7 @@ function App() {
         </Routes>
         {isLoginPage ? null : <Login/>||<Register/>||<Passwordreset/>}
       </div>
+ 
       <Footer/>
     </AuthProvider>
   );

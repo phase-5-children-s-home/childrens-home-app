@@ -4726,3 +4726,163 @@ Processing by VisitsController#destroy as */*
 Completed 422 Unprocessable Entity in 10ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1128)
 
 
+Started DELETE "/users" for 127.0.0.1 at 2023-04-20 14:18:19 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [DELETE] "/users"):
+  
+Started POST "/users" for 127.0.0.1 at 2023-04-20 14:18:42 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email", "password"=>"[FILTERED]", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f9858635018>, params: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (7.7ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "reset_password_token", "reset_password_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["firstname", "Job home"], ["lastname", "Waweru dlqkanflfj/c"], ["username", "Nairobi"], ["email", "Waweru@email"], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["created_at", "2023-04-20 11:18:42.851589"], ["updated_at", "2023-04-20 11:18:42.851589"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 201 Created in 309ms (Views: 2.1ms | ActiveRecord: 19.4ms | Allocations: 40334)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-20 14:18:50 +0300
+Processing by UsersController#login as */*
+  Parameters: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email", "password"=>"[FILTERED]", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f98482f7208>, params: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f98482f7208>, params: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email"}} }[0m
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'Nairobi' OR email = 'Waweru@email') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f98482f7208>, params: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 200 OK in 241ms (Views: 0.6ms | ActiveRecord: 3.2ms | Allocations: 2017)
+
+
+Started POST "/home_details" for 127.0.0.1 at 2023-04-20 14:19:12 +0300
+Processing by HomeDetailsController#create as */*
+  Parameters: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email", "password"=>"[FILTERED]", "home_detail"=>{"email"=>"Waweru@email"}}
+[31mUnpermitted parameters: :firstname, :lastname, :username, :password, :home_detail. Context: { controller: HomeDetailsController, action: create, request: #<ActionDispatch::Request:0x00007f98585c12f8>, params: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email", "password"=>"[FILTERED]", "controller"=>"home_details", "action"=>"create", "home_detail"=>{"email"=>"Waweru@email"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_details_controller.rb:10:in `create'
+  [1m[36mHomeDetail Create (3.1ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "address", "email", "phone_number", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", nil], ["description", nil], ["image_url", nil], ["address", nil], ["email", "Waweru@email"], ["phone_number", nil], ["location", nil], ["created_at", "2023-04-20 11:19:12.731136"], ["updated_at", "2023-04-20 11:19:12.731136"]]
+  ↳ app/controllers/home_details_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_details_controller.rb:10:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 201 Created in 47ms (Views: 2.1ms | ActiveRecord: 8.7ms | Allocations: 40012)
+
+
+Started GET "/home_details" for 127.0.0.1 at 2023-04-20 14:19:40 +0300
+Processing by HomeDetailsController#index as */*
+  Parameters: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email", "password"=>"[FILTERED]", "home_detail"=>{"email"=>"Waweru@email"}}
+  [1m[36mHomeDetail Load (1.5ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (67.88ms)
+Completed 200 OK in 138ms (Views: 127.8ms | ActiveRecord: 11.3ms | Allocations: 35941)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-04-20 14:32:07 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+Started DELETE "/logout" for 127.0.0.1 at 2023-04-20 14:32:12 +0300
+Processing by UsersController#logout as */*
+  Parameters: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email", "password"=>"[FILTERED]", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 3ms (Views: 1.2ms | Allocations: 382)
+
+
+Started GET "/home_detail" for 127.0.0.1 at 2023-04-20 14:32:31 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/home_detail"):
+  
+Started GET "/home_details" for 127.0.0.1 at 2023-04-20 14:32:37 +0300
+Processing by HomeDetailsController#index as */*
+  Parameters: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Waweru@email", "password"=>"[FILTERED]", "home_detail"=>{"email"=>"Waweru@email"}}
+  [1m[36mHomeDetail Load (0.4ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.02ms)
+Completed 200 OK in 24ms (Views: 24.1ms | ActiveRecord: 6.3ms | Allocations: 5865)
+
+
+Started POST "/home_details" for 127.0.0.1 at 2023-04-20 14:33:44 +0300
+Processing by HomeDetailsController#create as */*
+  Parameters: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Wawu@email", "password"=>"[FILTERED]", "home_detail"=>{"email"=>"Wawu@email"}}
+[31mUnpermitted parameters: :firstname, :lastname, :username, :password, :home_detail. Context: { controller: HomeDetailsController, action: create, request: #<ActionDispatch::Request:0x00007f9848c7c300>, params: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Wawu@email", "password"=>"[FILTERED]", "controller"=>"home_details", "action"=>"create", "home_detail"=>{"email"=>"Wawu@email"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_details_controller.rb:10:in `create'
+  [1m[36mHomeDetail Create (0.8ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "address", "email", "phone_number", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", nil], ["description", nil], ["image_url", nil], ["address", nil], ["email", "Wawu@email"], ["phone_number", nil], ["location", nil], ["created_at", "2023-04-20 11:33:44.939404"], ["updated_at", "2023-04-20 11:33:44.939404"]]
+  ↳ app/controllers/home_details_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_details_controller.rb:10:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 201 Created in 13ms (Views: 1.0ms | ActiveRecord: 2.5ms | Allocations: 2410)
+
+
+Started GET "/home_details" for 127.0.0.1 at 2023-04-20 14:33:50 +0300
+Processing by HomeDetailsController#index as */*
+  Parameters: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Wawu@email", "password"=>"[FILTERED]", "home_detail"=>{"email"=>"Wawu@email"}}
+  [1m[36mHomeDetail Load (0.5ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (59.26ms)
+Completed 200 OK in 109ms (Views: 108.5ms | ActiveRecord: 14.3ms | Allocations: 23657)
+
+
+Started POST "/user" for 127.0.0.1 at 2023-04-20 14:46:39 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+Started POST "/user" for 127.0.0.1 at 2023-04-20 14:47:02 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+Started POST "/users" for 127.0.0.1 at 2023-04-20 14:47:18 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Wawuemail", "password"=>"[FILTERED]", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Wawuemail"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f9848e436e8>, params: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Wawuemail", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Wawuemail"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Wawuemail"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Wawuemail"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1822.99ms)
+Completed 422 Unprocessable Entity in 2076ms (Views: 1823.8ms | ActiveRecord: 7.5ms | Allocations: 1029760)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-20 14:47:31 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Wawue@mail", "password"=>"[FILTERED]", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Wawue@mail"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f9844046c60>, params: {"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Wawue@mail", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru dlqkanflfj/c", "username"=>"Nairobi", "email"=>"Wawue@mail"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Wawue@mail"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "reset_password_token", "reset_password_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["firstname", "Job home"], ["lastname", "Waweru dlqkanflfj/c"], ["username", "Nairobi"], ["email", "Wawue@mail"], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["created_at", "2023-04-20 11:47:31.608585"], ["updated_at", "2023-04-20 11:47:31.608585"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "Wawue@mail"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Completed 201 Created in 266ms (Views: 0.8ms | ActiveRecord: 10.9ms | Allocations: 3901)
+
+

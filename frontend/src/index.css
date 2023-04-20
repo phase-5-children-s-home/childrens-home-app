@@ -3,7 +3,7 @@ body{
   margin: 0;
   padding: 0;
   font-family: "Poppins";
-  background-color: antiquewhite;
+  background-color: white;
 }
 
 *{
@@ -12,7 +12,7 @@ body{
 
 form{
   display: block;
-  background-color: aliceblue;
+  background-color: whitesmoke;
   box-shadow: 1px 1px 3px 2px #ddd;
   margin: 40px auto;
   max-width: 600px;

@@ -4,6 +4,8 @@ import hug from './images/hug.png';
 import rectangle9 from './images/Rectangle 9.png';
 import rectangle10 from './images/Rectangle 10.png';
 import rectangle11 from './images/Rectangle 11.png';
+import Form from './Form';
+import Footer from './footer';
 
 
 const Homepage = (props) => {
@@ -99,6 +101,8 @@ const Homepage = (props) => {
 
       </div>
     </div>
+    <Form />
+    <Footer/>
     </div>
   );
 };

@@ -4,6 +4,8 @@ import hug from './images/hug.png';
 import rectangle9 from './images/Rectangle 9.png';
 import rectangle10 from './images/Rectangle 10.png';
 import rectangle11 from './images/Rectangle 11.png';
+// import rectangle13 from './images/Rectangle 13.png';
+// import rectangle12 from './images/Rectangle 12.png';
 import { Link } from 'react-router-dom';
 import Whatwedo from './Whatwedo'
 

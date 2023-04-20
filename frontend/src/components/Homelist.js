@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Card, Button, Form } from 'react-bootstrap';
-import './Homelist.css'
+import React, { useState, useEffect } from "react";
+import { Card, Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./Homelist.css";
 
 const HomeList = () => {
   const [data, setData] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch('https://api.npoint.io/f2cf33f815ca0db59113/')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.log(error));
+    fetch("https://api.npoint.io/f2cf33f815ca0db59113/")
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((error) => console.log(error));
   }, []);
 
   const handleSearchChange = (event) => {
@@ -54,7 +55,7 @@ const CardItem = ({ item }) => {
   };
 
   const cardStyle = {
-    height: showDetails ? 'auto' : 'fit-content'
+    height: showDetails ? "auto" : "fit-content",
   };
 
   return (
@@ -72,7 +73,9 @@ const CardItem = ({ item }) => {
             <p>Email: {item.email}</p>
             <p>Phone: {item.phone_number}</p>
           </Card.Text>
-          <Button variant="primary">Donate</Button>
+          <Link to="/donation">
+            <Button variant="primary">Donate</Button>
+          </Link>
         </Card.Body>
       )}
     </Card>

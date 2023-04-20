@@ -20,7 +20,7 @@
 .navbar a {
     color: var(--colorThree);
     text-decoration: none;
-    margin-right: 1%;
+    margin-right: 5%;
     align-items: center;
     justify-content: center;
 }
@@ -32,8 +32,9 @@
 }
 
 .title {
+    font-family: Dancing Script;
     align-items: center;
     text-align: center;
-    margin-right: 10%;
-    font-size: 40px;
+    margin-right: 20%;
+    font-size: 50px;
 }

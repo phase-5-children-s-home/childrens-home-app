@@ -1,4 +1,7 @@
 class VisitsController < ApplicationController
+
+  
+
   def create
     home_detail = HomeDetail.find_by(id: params[:home_detail_id])
     
@@ -44,6 +47,8 @@ class VisitsController < ApplicationController
   def visit_params
     params.permit(:user_id, :home_detail_id, :visit_date)
   end
+
+  
 end
 
 

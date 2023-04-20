@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-    
+     
+
     def create
         review = Review.create(review_params)
 
@@ -42,5 +43,6 @@ class ReviewsController < ApplicationController
        params.permit(:rating, :comment, :user_id, :home_detail_id)
     end
   
+   
 
 end

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     before_action :session_expired?, only: [:check_login_status]
-
-    before_action :session_expired?, only: [:check_login_status]
+     
+    
 
     def register
         user = User.create(user_params)
@@ -33,7 +33,57 @@ class UsersController < ApplicationController
     def check_login_status
         app_response(message: 'success', status: :ok)
     end
-
+    
+    def make_admin
+        user = User.find_by(email: params[:email])
+      
+        if !user.present?
+          app_response( message: 'user not found', status: :not_found )
+          return
+        end
+      
+        if user&.admin?
+          if user
+            user.admin = true
+            user.save
+      
+            new_notification_params = {
+              user_id: user.id,
+              receiver_id: user.id,
+              message: "#{user.username} gave you administrative rights.",
+              notification_type: "Granted administrative rights." 
+            }
+      
+            # new_notification  = Notification.create(new_notification_params)
+      
+            app_response(message: "Successful", status: :ok, data: user)
+          else
+            app_response(message: "email not found", status: :unprocessable_entity, data: user.errors)
+          end
+        else
+          app_response(error: "You are not an admin", status: :unauthorized)
+        end
+      end
+      
+  
+  
+      # * Revoking admin rights from a user
+  
+  
+      def remove_admin
+        user = User.find_by(email: params[:email])
+        if user&.admin?
+          if user
+            user.admin = false
+            user.save
+            render json: { message: "Successful", data: user } , status: :ok
+          else
+            render json: { error: user.errors.full_messages }, status: :unprocessable_entity
+          end
+        else
+          render json: { error: "You are not an admin" }, status: :unauthorized
+        end
+      end
     # def forgot_password
     #     user = User.find_by(email: params[:email])
     #     if user
@@ -62,6 +112,6 @@ class UsersController < ApplicationController
     private 
     
     def user_params
-        params.permit(:firstname, :lastname, :username, :email, :password)
+        params.permit(:firstname, :lastname, :username, :email, :password, :admin, :user)
     end
 end

@@ -5,8 +5,8 @@ class User < ApplicationRecord
     has_many :donations
     has_many :reviews
 
-    #validations 
-    validates :username, presence: true
-    validates :email, presence: true, uniqueness: true
-    validates :password, presence: true, on: :create
+    # validates :username, presence: true
+    # validates :email, presence: true, uniqueness: true, format: { with:URI::MailTo::EMAIL_REGEXP}
+    # validates :password, presence: true, on: :create
+
 end

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
-
-    include ActionController::Cookies
+     
+     
 
     rescue_from StandardError, with: :standard_error
 
@@ -11,7 +11,8 @@ class ApplicationController < ActionController::API
         }, status: status
     end
 
-     
+      
+
     def encode(uid, email)
         payload = {
             data: {

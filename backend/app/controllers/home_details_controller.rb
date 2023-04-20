@@ -1,5 +1,7 @@
 class HomeDetailsController < ApplicationController
    
+   
+
     def index
         home = HomeDetail.all
         render json: home
@@ -59,6 +61,8 @@ class HomeDetailsController < ApplicationController
      def home_params
        params.permit(:name, :description, :image_url, :address, :phone_number, :email, :location)
     end
+
+     
 
  end
  

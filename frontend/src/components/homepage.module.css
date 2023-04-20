@@ -3,13 +3,14 @@
     height: 700px;
     display: flex;
     position: relative;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center; /*Center horizontally */
     border-color: transparent;
-    margin-left: 200px;
+    margin-left: -65px;
   }
   .mac-book1 {
-    top: 0px;
-    left: 0px;
+    top: -75px;
+    left: -440px;
     width: 1152px;
     height: 700px;
     display: flex;

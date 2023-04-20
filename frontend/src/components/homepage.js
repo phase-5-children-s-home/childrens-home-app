@@ -4,6 +4,11 @@ import hug from './images/hug.png';
 import rectangle9 from './images/Rectangle 9.png';
 import rectangle10 from './images/Rectangle 10.png';
 import rectangle11 from './images/Rectangle 11.png';
+
+import Form from './Form';
+import Footer from './footer';
+
+
 import { Link } from 'react-router-dom';
 import Whatwedo from './Whatwedo'
 
@@ -56,7 +61,7 @@ const Homepage = (props) => {
             className={styles['rectangle11']}
           />
 
-          <span className={styles['text']}>
+          {/* <span className={styles['text']}>
             <span>LetsCharity</span>
           </span>
           <span className={styles['text02']}>
@@ -73,7 +78,7 @@ const Homepage = (props) => {
           </span>
           <span className={styles['text10']}>
             <span>Fundrising</span>
-          </span>
+          </span> */}
 
          
          
@@ -121,18 +126,21 @@ const Homepage = (props) => {
        
         </div>
         
-        <div id="whatwedo">
+        {/* <div id="whatwedo">
         <h1>what we do</h1>
         <Whatwedo /> 
 
 
 
-      </div>
+      </div> */}
       </div>
 
       
     </div>
     
+    {/* <Form /> */}
+    {/* <Footer/> */}
+
     </div>
     
   );

@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Login } from './components/Login';
 import { Passwordreset } from './components/Passwordreset';
 import { Route, Routes, useLocation } from 'react-router-dom';
@@ -9,11 +10,9 @@ import { isUserLoggedIn } from './components/utils/Auth';
 import DonationForm from './components/DonationForm';
 import Homepage from './components/homepage';
 import Navbar from './components/Navbar';
-
-
+import HomeList from './components/Homelist';
 import Form from './components/Form';
 import Footer from './components/footer';
-
 
 function App() {
   const location = useLocation();
@@ -28,21 +27,20 @@ function App() {
       cookieDomain={window.location.hostname}
       cookieSecure={window.location.protocol === "https:"}
     >
-    <Navbar/>
+      {isLoginPage ? null : <Navbar />}
       <div className="App">
         <Routes>
           <Route path="/login" element={<Login setIsLoggedIn={setLoggedIn} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Passwordreset />} />
           <Route path="/" element={< Homepage />} />
-
-              
-          <Route path="/form" element={<Form />} />
-
+          <Route path='/homelist' element={<HomeList/>} />              
+          <Route path="/contact" element={<Form />} />
           <Route path="/donations" element={<DonationForm />} />
+          {/* <Route path="/footer" element={<Footer />} /> */}
         </Routes>
-        {isLoginPage ? null : <Login/>||<Register/>||<Passwordreset/>}
       </div>
+ 
       <Footer/>
     </AuthProvider>
   );

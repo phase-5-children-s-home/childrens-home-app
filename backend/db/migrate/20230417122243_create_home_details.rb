@@ -4,10 +4,11 @@ class CreateHomeDetails < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :description
       t.string :image_url
+      t.string :location
       t.string :address
       t.string :email
       t.integer :phone_number
-      t.belongs_to :location
+       
              
       t.timestamps
     end

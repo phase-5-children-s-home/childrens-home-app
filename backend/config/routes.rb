@@ -26,5 +26,5 @@ Rails.application.routes.draw do
   resources :reviews, only: [:index, :create, :update, :destroy, :show]
   
   # visits routes
-  resources :visits, only: [:create]
+  resources :visits, only: [:create, :update, :destroy]
 end

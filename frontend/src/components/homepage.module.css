@@ -1,15 +1,15 @@
 .homepage {
-    width: 100%;
+    width: 150%;
     height: 700px;
-    display: flex;
+    display: inline-flex;
     position: relative;
     align-items: flex-start;
     border-color: transparent;
     margin-left: 200px;
   }
   .mac-book1 {
-    top: 0px;
-    left: 0px;
+    top: -75px;
+    left: -440px;
     width: 1152px;
     height: 700px;
     display: flex;

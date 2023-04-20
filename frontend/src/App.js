@@ -37,7 +37,7 @@ function App() {
           <Route path="/" element={< Homepage />} />
           <Route path='/homelist' element={<HomeList/>} />
               
-          <Route path="/form" element={<Form />} />
+          <Route path="/contact" element={<Form />} />
 
           <Route path="/donations" element={<DonationForm />} />
           <Route path="/footer" element={<Footer />} />

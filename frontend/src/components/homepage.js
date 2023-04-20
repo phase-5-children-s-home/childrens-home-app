@@ -61,7 +61,7 @@ const Homepage = (props) => {
             className={styles['rectangle11']}
           />
 
-          <span className={styles['text']}>
+          {/* <span className={styles['text']}>
             <span>LetsCharity</span>
           </span>
           <span className={styles['text02']}>
@@ -78,7 +78,7 @@ const Homepage = (props) => {
           </span>
           <span className={styles['text10']}>
             <span>Fundrising</span>
-          </span>
+          </span> */}
 
          
          
@@ -126,20 +126,20 @@ const Homepage = (props) => {
        
         </div>
         
-        <div id="whatwedo">
+        {/* <div id="whatwedo">
         <h1>what we do</h1>
         <Whatwedo /> 
 
 
 
-      </div>
+      </div> */}
       </div>
 
       
     </div>
     
-    <Form />
-    <Footer/>
+    {/* <Form /> */}
+    {/* <Footer/> */}
 
     </div>
     

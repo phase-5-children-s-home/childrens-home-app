@@ -40,7 +40,7 @@ function App() {
           <Route path="/contact" element={<Form />} />
 
           <Route path="/donations" element={<DonationForm />} />
-          <Route path="/footer" element={<Footer />} />
+          {/* <Route path="/footer" element={<Footer />} /> */}
         </Routes>
         {isLoginPage ? null : <Login/>||<Register/>||<Passwordreset/>}
       </div>

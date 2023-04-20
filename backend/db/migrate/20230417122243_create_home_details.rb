@@ -7,6 +7,7 @@ class CreateHomeDetails < ActiveRecord::Migration[7.0]
       t.string :address
       t.string :email
       t.integer :phone_number
+      t.belongs_to :location
              
       t.timestamps
     end

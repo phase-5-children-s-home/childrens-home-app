@@ -9,6 +9,8 @@ import { isUserLoggedIn } from './components/utils/Auth';
 import DonationForm from './components/DonationForm';
 import Homepage from './components/homepage';
 import Navbar from './components/Navbar';
+
+
 import Form from './components/Form';
 import Footer from './components/footer';
 
@@ -32,12 +34,16 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Passwordreset />} />
           <Route path="/" element={< Homepage />} />
+
+              
           <Route path="/form" element={<Form />} />
+
           <Route path="/donations" element={<DonationForm />} />
           <Route path="/footer" element={<Footer />} />
         </Routes>
-        {isLoginPage ? null : <Login/>||<Passwordreset/>}
+        {isLoginPage ? null : <Login/>||<Register/>||<Passwordreset/>}
       </div>
+      <Footer/>
     </AuthProvider>
   );
 }

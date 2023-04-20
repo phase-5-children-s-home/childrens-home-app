@@ -15,7 +15,6 @@ import HomeList from './components/Homelist';
 import Form from './components/Form';
 import Footer from './components/footer';
 
-
 function App() {
   const location = useLocation();
   const isLoggedIn = isUserLoggedIn();
@@ -41,6 +40,7 @@ function App() {
           <Route path="/form" element={<Form />} />
 
           <Route path="/donations" element={<DonationForm />} />
+          <Route path="/footer" element={<Footer />} />
         </Routes>
         {isLoginPage ? null : <Login/>||<Register/>||<Passwordreset/>}
       </div>

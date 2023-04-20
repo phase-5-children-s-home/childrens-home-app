@@ -1,0 +1,28 @@
+.home-list-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 500px;
+  }
+  
+  .card {
+    width: 500px;
+    height: 550px;
+    margin: 10px;
+    border-color: aqua;
+    box-shadow: black;
+    
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .search-form{
+    margin-left: 500px;
+  }

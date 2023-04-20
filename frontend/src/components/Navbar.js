@@ -11,6 +11,7 @@ function Navbar() {
         <a href='./donation'>Donations</a>
         <a href='./about'>About</a>
         <a href='./contact'>Contact</a>
+        <a href='/homelist'>Homes</a>
     </div>
   )
 }

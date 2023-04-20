@@ -6,8 +6,8 @@ class HomeDetailsController < ApplicationController
     end
 
     def create
-      location = Location.find_or_create_by(city: params[:city])
-      home = HomeDetail.create(home_params.except(:city).merge(location: location))
+       
+      home = HomeDetail.create(home_params)
       if home.save 
         app_response(message: "created successfully", status: :created, data: home)
       else
@@ -17,22 +17,21 @@ class HomeDetailsController < ApplicationController
     
 
     def search
-        if params[:name].present?
-          homes = HomeDetail.where("name LIKE ?", "%#{params[:name]}%")
-        elsif params[:location].present?
-          homes = HomeDetail.where("location LIKE ?", "%#{params[:location]}%")
-        else
-          app_response(message: "could not find children's homes based on the details entered")
-          return
-        end
-      
-        if homes.present?
-          render json: homes
-        else
-          app_response(message: "could not find children's homes based on the details entered")
-        end
-    end
-      
+      if params[:name].present?
+        homes = HomeDetail.where("name LIKE ?", "%#{params[:name]}%")
+      elsif params[:location].present?
+        homes = HomeDetail.where("location LIKE ?", "%#{params[:location]}%")
+      else
+        app_response(message: "could not find children's homes based on the details entered")
+        return
+      end
+    
+      if homes.present?
+        render json: homes
+      else
+        app_response(message: "could not find children's homes based on the details entered")
+      end
+  end
       
     def update
         home = HomeDetail.find(params[:id])
@@ -58,7 +57,7 @@ class HomeDetailsController < ApplicationController
      private 
  
      def home_params
-       params.permit(:name, :description, :image_url, :address, :phone_number, :email)
+       params.permit(:name, :description, :image_url, :address, :phone_number, :email, :location)
     end
 
  end

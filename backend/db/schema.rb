@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_18_115055) do
   create_table "donations", force: :cascade do |t|
     t.integer "amount"
     t.string "name"
-    t.integer "payment_method", default: 0
+    t.string "payment_method"
     t.string "email"
     t.bigint "home_detail_id"
     t.bigint "user_id"
@@ -31,13 +31,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_18_115055) do
     t.string "name"
     t.string "description"
     t.string "image_url"
+    t.string "location"
     t.string "address"
     t.string "email"
     t.integer "phone_number"
-    t.bigint "location_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["location_id"], name: "index_home_details_on_location_id"
   end
 
   create_table "locations", force: :cascade do |t|

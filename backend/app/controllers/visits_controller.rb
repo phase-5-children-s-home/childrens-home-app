@@ -16,6 +16,29 @@ class VisitsController < ApplicationController
     end
   end
 
+  def update 
+
+    visit = Visit.find(params[:id])
+
+    if visit.update(visit_params)
+
+      app_response(message: "date updatpdated successfully", data: visit)
+
+    else
+      app_response(message: "could not be updated")
+    end
+  end
+
+  def destroy
+    visit = Visit.find_by(id: params[:id])
+
+    if visit.destroy
+      app_response(message: "visit deleted successfully", status: :ok)
+    else
+      app_response(message: "visit deletion failed", status: :unprocessable_entity, data: visit.errors)
+    end
+  end
+
   private
 
   def visit_params

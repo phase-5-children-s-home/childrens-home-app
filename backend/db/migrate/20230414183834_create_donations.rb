@@ -4,7 +4,7 @@ class CreateDonations < ActiveRecord::Migration[7.0]
 
       t.integer :amount
       t.string :name 
-      t.integer :payment_method, default:0 
+      t.string :payment_method
       t.string :email
       t.belongs_to :home_detail
       t.belongs_to :user

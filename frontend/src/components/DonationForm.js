@@ -21,6 +21,7 @@ function DonationForm() {
   };
 
   return (
+  <div>
     <form onSubmit={handleSubmit} className="donation-form">
       <h2 className="donation-form__title">Donate Now</h2>
       <div className="donation-form__input-container">
@@ -50,6 +51,7 @@ function DonationForm() {
       </div>
       <button type="submit" className="donation-form__button">Donate</button>
     </form>
+  </div> 
   );
 }
 

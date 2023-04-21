@@ -1,0 +1,363 @@
+Started GET "/ws" for ::1 at 2023-04-21 08:25:34 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/home_details" for 127.0.0.1 at 2023-04-21 08:25:37 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeDetailsController#index as */*
+  Parameters: {"firstname"=>"Job home", "lastname"=>"Waweru", "username"=>"job", "email"=>"waweru@mail.com", "password"=>"[FILTERED]", "home_detail"=>{"email"=>"waweru@mail.com"}}
+  [1m[36mHomeDetail Load (1.2ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (97.72ms)
+Completed 200 OK in 155ms (Views: 125.1ms | ActiveRecord: 19.0ms | Allocations: 72455)
+
+
+Started GET "/ws" for ::1 at 2023-04-21 08:26:06 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-04-21 08:27:10 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/homelist" for ::1 at 2023-04-21 08:27:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/homelist"):
+  
+Started GET "/homelist" for ::1 at 2023-04-21 08:31:46 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/homelist"):
+  
+Started GET "/favicon.ico" for ::1 at 2023-04-21 08:31:46 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/homelist" for ::1 at 2023-04-21 08:31:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/homelist"):
+  
+Started GET "/homelist" for ::1 at 2023-04-21 08:31:48 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/homelist"):
+  
+Started GET "/homelist" for ::1 at 2023-04-21 08:31:49 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/homelist"):
+  
+Started GET "/homelist" for ::1 at 2023-04-21 08:31:50 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/homelist"):
+  
+Started GET "/homelist" for ::1 at 2023-04-21 08:31:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/homelist"):
+  
+Started GET "/homelist" for ::1 at 2023-04-21 08:31:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/homelist"):
+  
+Started GET "/ws" for ::1 at 2023-04-21 08:32:06 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/manifest.json" for ::1 at 2023-04-21 08:32:06 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/ws" for ::1 at 2023-04-21 08:32:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/manifest.json" for ::1 at 2023-04-21 08:32:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/ws" for ::1 at 2023-04-21 08:32:10 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/homelist" for ::1 at 2023-04-21 08:32:11 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/homelist"):
+  
+Started GET "/home_details" for ::1 at 2023-04-21 08:33:01 +0300
+Processing by HomeDetailsController#index as */*
+  [1m[36mHomeDetail Load (0.5ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (1.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (1.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (96.88ms)
+Completed 200 OK in 120ms (Views: 119.0ms | ActiveRecord: 19.9ms | Allocations: 25195)
+
+
+Started GET "/home_details" for ::1 at 2023-04-21 08:33:01 +0300
+Processing by HomeDetailsController#index as */*
+  [1m[36mHomeDetail Load (0.3ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (80.3ms)
+Completed 200 OK in 84ms (Views: 76.7ms | ActiveRecord: 7.2ms | Allocations: 22234)
+
+
+Started GET "/home_details/" for ::1 at 2023-04-21 08:33:47 +0300
+Processing by HomeDetailsController#index as */*
+  [1m[36mHomeDetail Load (0.6ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (77.23ms)
+Completed 200 OK in 151ms (Views: 140.8ms | ActiveRecord: 26.9ms | Allocations: 61926)
+
+
+Started GET "/home_details/" for ::1 at 2023-04-21 08:33:48 +0300
+Processing by HomeDetailsController#index as */*
+  [1m[36mHomeDetail Load (0.3ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (5.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (3.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (1.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (87.76ms)
+Completed 200 OK in 92ms (Views: 70.4ms | ActiveRecord: 21.0ms | Allocations: 22234)
+
+
+Started GET "/home_details" for ::1 at 2023-04-21 08:34:19 +0300
+Processing by HomeDetailsController#index as */*
+  [1m[36mHomeDetail Load (4.3ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (3.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (77.18ms)
+Completed 200 OK in 86ms (Views: 67.6ms | ActiveRecord: 18.1ms | Allocations: 22235)
+
+

@@ -1,6 +1,12 @@
 class HomeDetailsController < ApplicationController
    
-   
+  before_action :verify_auth, only: [:create, :update, :destroy]
+
+
+
+
+
+
 
     def index
         home = HomeDetail.all

@@ -76,6 +76,12 @@ const CardItem = ({ item }) => {
           <Link to="/donation">
             <Button variant="primary">Donate</Button>
           </Link>
+          <Link to="/book">
+            <Button id="book_vist" variant="success" className="ml-2">Book Visit</Button>
+          </Link>
+          <Link to="/review">
+            <Button id="review"  variant="info" className="ml-2">Review</Button>
+          </Link>
         </Card.Body>
       )}
     </Card>

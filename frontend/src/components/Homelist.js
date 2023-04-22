@@ -20,6 +20,9 @@ const HomeList = () => {
 
   const filteredData = data.filter((item) =>
     item.city.toLowerCase().includes(searchQuery.toLowerCase())
+    ||
+    // Or by the item name
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (

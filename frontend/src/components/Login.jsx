@@ -22,7 +22,7 @@ export const Login = ({setIsLoggedIn}) => {
     const handleSumbit = (e) => {
         e.preventDefault()
         setLoading(true)  
-        fetch('https://childrens-home-backend.onrender.com/', {
+        fetch('https://childrens-home-backend.onrender.com/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

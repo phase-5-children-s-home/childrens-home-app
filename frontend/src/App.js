@@ -14,6 +14,7 @@ import Navbar from './components/Navbar';
 import HomeList from './components/Homelist';
 import Form from './components/Form';
 import Footer from './components/footer';
+import AboutUs from './components/About';
 
 function App() {
   const location = useLocation();
@@ -46,6 +47,8 @@ function App() {
           <Route path='/homelist' element={loggedIn ? <HomeList/> : <Navigate to="/login" />}/>              
           <Route path="/contact" element={<Form />} />
           <Route path="/donations" element={<DonationForm />} />
+          <Route path="/about" element={<AboutUs />} />
+
           {/* <Route path="/footer" element={<Footer />} /> */}
         </Routes>
       </div>

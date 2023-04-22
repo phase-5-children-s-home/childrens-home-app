@@ -19,6 +19,7 @@ export const Login = ({setIsLoggedIn}) => {
           [e.target.name]: e.target.value
         });
       }
+
     const handleSumbit = (e) => {
         e.preventDefault()
         setLoading(true)  
@@ -48,7 +49,11 @@ export const Login = ({setIsLoggedIn}) => {
           // Store session ID in browser storage
           saveUser(data.data.user.id)
           storeToken(data.data.token)
+          // Clear the form data
           document.getElementById("login-form").reset();
+          // Set the logged in state to true
+          setIsLoggedIn(true)
+          // Navigate to the home page
           navigate('/');
           //  console.log(data.user.id)
           

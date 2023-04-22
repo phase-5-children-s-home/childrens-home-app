@@ -39,6 +39,7 @@ export const Login = ({setIsLoggedIn}) => {
             // setIsLoggedIn(true);
             // navigate("/profile");
           } else {
+            console.log(response)
             response.json().then((err)=>setErrors(err.errors))
           }
           setLoading(false)

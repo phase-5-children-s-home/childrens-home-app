@@ -2,7 +2,7 @@ import React from 'react'
 import "./Navbar.css"
 
 
-function Navbar() {
+function Navbar({logout}) {
   return (
     <div className="navbar">
         <h1 className='title'>LetsCharity</h1> 
@@ -12,6 +12,7 @@ function Navbar() {
         <a href='/about'>About</a>
         <a href='/contact'>Contact</a>
         <a href='/homelist'>Homes</a>
+        <button className='logout' onClick={logout}>Logout</button>'
     </div>
   )
 }

@@ -805,3 +805,252 @@ Processing by UsersController#login as */*
 Completed 200 OK in 243ms (Views: 1.9ms | ActiveRecord: 5.2ms | Allocations: 3837)
 
 
+Started POST "/users" for 127.0.0.1 at 2023-04-22 17:06:29 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}}
+[31mUnpermitted parameter: :username. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fa424bb1e38>, params: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 422 Unprocessable Entity in 259ms (Views: 1.8ms | ActiveRecord: 5.9ms | Allocations: 38466)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-22 17:08:42 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}}
+[31mUnpermitted parameter: :username. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fa4180155e0>, params: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 422 Unprocessable Entity in 228ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 503)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-22 17:10:39 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}}
+[31mUnpermitted parameter: :username. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fa41c026940>, params: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 254ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 503)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-22 17:12:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}}
+[31mUnpermitted parameter: :username. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fa56cc67820>, params: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 250ms (Views: 1.3ms | ActiveRecord: 2.8ms | Allocations: 38465)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-22 17:16:41 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}}
+[31mUnpermitted parameter: :username. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fa56cccb7d0>, params: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}} }[0m
+[31mUnpermitted parameter: :username. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fa56cccb7d0>, params: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.71ms)
+Completed 422 Unprocessable Entity in 272ms (Views: 2.2ms | ActiveRecord: 4.3ms | Allocations: 38699)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-22 17:20:34 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 224ms (Views: 0.7ms | ActiveRecord: 5.4ms | Allocations: 2668)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-22 17:21:54 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fa55c18e210>, params: {"username"=>"test4", "email"=>"test4@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"username"=>"test4", "email"=>"test4@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "admin", "password_digest", "reset_password_token", "reset_password_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["firstname", nil], ["lastname", nil], ["username", "test4"], ["email", "test4@gmail.com"], ["admin", false], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["created_at", "2023-04-22 14:21:54.664603"], ["updated_at", "2023-04-22 14:21:54.664603"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (12.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Completed 201 Created in 263ms (Views: 1.1ms | ActiveRecord: 16.0ms | Allocations: 4988)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:22:22 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"test4@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"test4@gmail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa558374bc8>, params: {"email"=>"test4@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"test4@gmail.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa558374bc8>, params: {"email"=>"test4@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"test4@gmail.com"}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'test4@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa558374bc8>, params: {"email"=>"test4@gmail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"test4@gmail.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.52ms)
+Completed 200 OK in 243ms (Views: 1.1ms | ActiveRecord: 4.2ms | Allocations: 4183)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:27:24 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa560197b68>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa560197b68>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa560197b68>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Completed 200 OK in 242ms (Views: 0.8ms | ActiveRecord: 3.9ms | Allocations: 4076)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:28:23 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa554355420>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa554355420>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa554355420>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa554355420>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.4ms)
+Completed 200 OK in 240ms (Views: 1.0ms | ActiveRecord: 4.0ms | Allocations: 4052)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:29:49 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000561b9ea7b128>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000561b9ea7b128>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000561b9ea7b128>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x0000561b9ea7b128>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 200 OK in 254ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 1576)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:30:56 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55d19a870>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55d19a870>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55d19a870>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55d19a870>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.0ms)
+Completed 200 OK in 245ms (Views: 1.5ms | ActiveRecord: 7.0ms | Allocations: 4151)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:32:57 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa5601305d0>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa5601305d0>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa5601305d0>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa5601305d0>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 200 OK in 248ms (Views: 1.5ms | ActiveRecord: 5.1ms | Allocations: 4053)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:33:40 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55d0f3200>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55d0f3200>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55d0f3200>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.48ms)
+Completed 200 OK in 233ms (Views: 1.3ms | ActiveRecord: 3.6ms | Allocations: 3927)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:37:28 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55410d168>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55410d168>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55410d168>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.25ms)
+Completed 200 OK in 250ms (Views: 2.8ms | ActiveRecord: 6.7ms | Allocations: 4079)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:37:59 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa56016d188>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa56016d188>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa56016d188>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.66ms)
+Completed 200 OK in 254ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 1484)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:39:17 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa560140188>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa560140188>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa560140188>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.24ms)
+Completed 200 OK in 242ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 1459)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:40:09 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55837c030>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55837c030>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55837c030>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.58ms)
+Completed 200 OK in 251ms (Views: 1.2ms | ActiveRecord: 3.4ms | Allocations: 4504)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:40:34 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa560117580>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa560117580>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa560117580>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.47ms)
+Completed 200 OK in 261ms (Views: 1.1ms | ActiveRecord: 0.6ms | Allocations: 1460)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:40:58 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa5600f3b30>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa5600f3b30>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa5600f3b30>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.43ms)
+Completed 200 OK in 254ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 1458)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:41:34 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa53c00f530>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa53c00f530>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa53c00f530>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.49ms)
+Completed 200 OK in 244ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 1465)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 17:41:49 +0300
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55c408b08>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55c408b08>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fa55c408b08>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 200 OK in 270ms (Views: 1.1ms | ActiveRecord: 1.5ms | Allocations: 1465)
+
+

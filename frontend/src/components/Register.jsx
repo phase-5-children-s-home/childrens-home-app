@@ -18,9 +18,9 @@ export const Register = (props) => {
       }
     let navigate = useNavigate();
     
-    useEffect(() => {
-      console.log(loading);
-    }, [loading])
+    // useEffect(() => {
+    //   console.log(loading);
+    // }, [loading])
     const handleSumbit = (e) => {
         e.preventDefault()
         fetch('https://childrens-home-backend.onrender.com/users', {

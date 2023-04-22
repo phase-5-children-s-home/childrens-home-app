@@ -623,3 +623,31 @@ Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 371)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[36mHomeDetail Create (0.5ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Shelter of Hope Centre Kenya"], ["description", "This is a non-profit organization registered under the societies act. They seek to help women and children with specialized empowerment strategies for women"], ["image_url", "https://i2.wp.com/www.nyumbani.org/wp-content/uploads/2015/07/NyumbaniBoyDenimFood.png?w=403&ssl=1"], ["location", nil], ["address", "Buru Buru Business Complex,2nd Flr, Rm 32"], ["email", "info@shelterofhopekenya.com"], ["phone_number", 725830020], ["created_at", "2023-04-22 10:26:15.519532"], ["updated_at", "2023-04-22 10:26:15.519532"]]
   [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Started DELETE "/users" for 127.0.0.1 at 2023-04-22 13:48:34 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [DELETE] "/users"):
+  
+Started POST "/users" for 127.0.0.1 at 2023-04-22 13:49:17 +0300
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"Job home", "lastname"=>"Waweru", "username"=>"job", "email"=>"waweru@mail.com", "password"=>"[FILTERED]", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru", "username"=>"job", "email"=>"waweru@mail.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007f162c03e708>, params: {"firstname"=>"Job home", "lastname"=>"Waweru", "username"=>"job", "email"=>"waweru@mail.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"Job home", "lastname"=>"Waweru", "username"=>"job", "email"=>"waweru@mail.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "password_digest", "reset_password_token", "reset_password_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["firstname", "Job home"], ["lastname", "Waweru"], ["username", "job"], ["email", "waweru@mail.com"], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["created_at", "2023-04-22 10:49:17.813235"], ["updated_at", "2023-04-22 10:49:17.813235"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 201 Created in 287ms (Views: 1.9ms | ActiveRecord: 12.9ms | Allocations: 40346)
+
+
+Started GET "/homelist" for ::1 at 2023-04-22 14:06:17 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/homelist"):
+  
+Started GET "/users" for 127.0.0.1 at 2023-04-22 14:32:22 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  

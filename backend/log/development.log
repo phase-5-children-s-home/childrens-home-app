@@ -1054,3 +1054,136 @@ Processing by UsersController#login as */*
 Completed 200 OK in 270ms (Views: 1.1ms | ActiveRecord: 1.5ms | Allocations: 1465)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHomeDetail Create (0.8ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Cottolengo Centre"], ["description", "Cottolengo Centre is a  home for the abandoned and HIV positive children. This centre serves the abandoned and neglected. It was founded by the local fathers and sisters of  Saint Giussepe Cottolengo."], ["image_url", "http://asec-sldi.org/contentAsset/image/66927b97-d678-4545-9fd9-cdac98b34f32/binaryImage2/filter/Resize,Jpeg/jpeg_q/65/resize_w/825/v/5e3336bf-6ab2-4aa6-bb3a-afee5b106432/"], ["location", nil], ["address", "123 kinembe rd"], ["email", "cottolengos@gmail.com"], ["phone_number", 570], ["created_at", "2023-04-22 14:59:43.967910"], ["updated_at", "2023-04-22 14:59:43.967910"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHomeDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Imani Children’s Home"], ["description", "Imani Children’s home caters for over 350 orphaned, abandoned, neglected children by giving them basic needs and equipping them to be able members of the society."], ["image_url", "https://theflowerhub.net/wp-content/uploads/2021/07/WhatsApp-Image-2021-06-30-at-12.28.58-PM-8.jpeg"], ["location", nil], ["address", "PW98+58X, Nairobi"], ["email", "imanihome@gmail.com"], ["phone_number", 716630900], ["created_at", "2023-04-22 14:59:43.973438"], ["updated_at", "2023-04-22 14:59:43.973438"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHomeDetail Create (0.3ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Rehema Home"], ["description", "Rehema (mercy in Swahili) rescues orphaned and abandoned children in Nairobi, gives them a home and a family. Currently, there are over a hundred kids at Rehema, half of whom are HIV positive."], ["image_url", "https://images.squarespace-cdn.com/content/v1/557332e4e4b0601c9ccb9a6e/1440638693391-89K441KTXZ2IBA93L1RD/image-asset.jpeg?format=500w"], ["location", nil], ["address", "Mukima Drive"], ["email", "info@rehemahome.org"], ["phone_number", 722853265], ["created_at", "2023-04-22 14:59:43.976789"], ["updated_at", "2023-04-22 14:59:43.976789"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHomeDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Mully Children’s Home"], ["description", "Since 1989, Mully Children’s Home has rehabilitated and cared for over 12, 000 children and currently has over 3,000 children in Ndalani, Yatta, Kitale, Kilifi, Lodwar and Dar-es-Salaam in Tanzania."], ["image_url", "https://www.facebook.com/photo/?fbid=413974477435231&set=a.413974427435236"], ["location", nil], ["address", "Wood Gardens, Off Wood Avenue"], ["email", "mcf@mullychildrensfamily.org"], ["phone_number", 733333121], ["created_at", "2023-04-22 14:59:43.981480"], ["updated_at", "2023-04-22 14:59:43.981480"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHomeDetail Create (0.3ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Maji Mazuri Children’s Centre"], ["description", "Maji Mazuri cares for orphans, vulnerable children,  mentally and physically children by giving them a home and a family. You can partner with them by volunteering or donating towards the centre."], ["image_url", "https://www.movingmountainstrust.org/media/660328/a-big-ecd-jambo-from-some-of-the-children-who-attend-the-nursery-daily_7514636406_o.jpg?width=490.67300658376007&height=500"], ["location", nil], ["address", "45603 – 00100 G.P.O"], ["email", "info@majimazuri.org"], ["phone_number", 716179304], ["created_at", "2023-04-22 14:59:43.985340"], ["updated_at", "2023-04-22 14:59:43.985340"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHomeDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Angels Centre"], ["description", "Angels Centre takes in little children of age 2 years and under who have been neglected or orphaned. The centre allows the public to volunteer and donate."], ["image_url", "http://4.bp.blogspot.com/-TqrYyv5sgHU/VF0ZQO4-rII/AAAAAAAAE3M/nmE4mqB4Cdc/s1600/tfh%2Bweb.jpg"], ["location", nil], ["address", "465-01 kibiko rd"], ["email", "angelscentre125@gmail.com"], ["phone_number", 712218121], ["created_at", "2023-04-22 14:59:43.989568"], ["updated_at", "2023-04-22 14:59:43.989568"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHomeDetail Create (0.3ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Slum Child Foundation"], ["description", "The foundation supports children living in the slum by paying for their school fees, providing them with books, sanitary hygiene, exposure trips and rehabilitating them from drug use."], ["image_url", "https://slumchildfoundation.org/wp-content/uploads/2022/03/IMG_0124.jpg"], ["location", nil], ["address", "Engyo Plaza, First floor Door Four, Along Kamunde road"], ["email", "slumchildfoundation@gmail.com"], ["phone_number", 254], ["created_at", "2023-04-22 14:59:43.992620"], ["updated_at", "2023-04-22 14:59:43.992620"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHomeDetail Create (0.5ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "New Life Home Trusts"], ["description", "At New Life Home trusts, you can choose to volunteer, adopt a child, donate to New Life or choose to be a corporate social responsibility partner."], ["image_url", "https://newlifehometrust.org.uk/wp-content/uploads/2017/08/New-NLHT-logo-white1.png"], ["location", nil], ["address", "107, Teignmouth,TQ14 4BQ"], ["email", "admin@newlifehometrust.org.uk"], ["phone_number", 254722406], ["created_at", "2023-04-22 14:59:43.996605"], ["updated_at", "2023-04-22 14:59:43.996605"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHomeDetail Create (0.2ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Nyumbani Children’s Home"], ["description", "Nyumbani Children’s homes takes in children affected by HIV/AIDS. It serves the vulnerable children, the elderly and families affected by HIV/AIDS by various outreaches"], ["image_url", "https://i1.wp.com/www.nyumbani.org/wp-content/uploads/2015/07/home_aids_village3.jpg"], ["location", nil], ["address", "710-01 kingwiti rd"], ["email", "info@nyumbani.org"], ["phone_number", 0], ["created_at", "2023-04-22 14:59:44.000491"], ["updated_at", "2023-04-22 14:59:44.000491"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHomeDetail Create (0.5ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Shelter of Hope Centre Kenya"], ["description", "This is a non-profit organization registered under the societies act. They seek to help women and children with specialized empowerment strategies for women"], ["image_url", "https://i2.wp.com/www.nyumbani.org/wp-content/uploads/2015/07/NyumbaniBoyDenimFood.png?w=403&ssl=1"], ["location", nil], ["address", "Buru Buru Business Complex,2nd Flr, Rm 32"], ["email", "info@shelterofhopekenya.com"], ["phone_number", 725830020], ["created_at", "2023-04-22 14:59:44.003693"], ["updated_at", "2023-04-22 14:59:44.003693"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/home_details" for 127.0.0.1 at 2023-04-22 18:01:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeDetailsController#index as */*
+  [1m[36mHomeDetail Load (2.3ms)[0m  [1m[34mSELECT "home_details".* FROM "home_details"[0m
+  ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 1]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 2]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 3]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 4]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 5]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 6]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 7]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 8]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 9]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 10]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 11]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 11]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 12]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 12]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 13]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 13]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 14]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (1.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 14]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 15]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 15]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 16]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 16]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 17]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 17]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 18]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 19]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 19]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."home_detail_id" = $1[0m  [["home_detail_id", 20]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers]   [1m[36mDonation Load (6.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."home_detail_id" = $1[0m  [["home_detail_id", 20]]
+[active_model_serializers]   ↳ app/controllers/home_details_controller.rb:13:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (187.67ms)
+Completed 200 OK in 256ms (Views: 193.2ms | ActiveRecord: 39.3ms | Allocations: 99309)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-22 18:42:13 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "user"=>{"email"=>"ochi@warren.com"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f87ec7780f0>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f87ec7780f0>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = NULL OR email = 'ochi@warren.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f87ec7780f0>, params: {"email"=>"ochi@warren.com", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"login", "user"=>{"email"=>"ochi@warren.com"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.31ms)
+Completed 200 OK in 265ms (Views: 4.0ms | ActiveRecord: 4.8ms | Allocations: 39845)
+
+

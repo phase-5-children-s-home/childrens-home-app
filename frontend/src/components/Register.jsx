@@ -23,7 +23,7 @@ export const Register = (props) => {
     }, [loading])
     const handleSumbit = (e) => {
         e.preventDefault()
-        fetch('https://childrens-home-backend.onrender.com/', {
+        fetch('https://childrens-home-backend.onrender.com/users', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

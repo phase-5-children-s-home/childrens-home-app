@@ -34,6 +34,7 @@ export const Login = ({setIsLoggedIn}) => {
         })
         .then(response => {
           if (response.ok) {
+            setLoading(false)
             return response.json();
             // setIsLoggedIn(true);
             // navigate("/profile");
@@ -44,10 +45,12 @@ export const Login = ({setIsLoggedIn}) => {
         })
         .then(data => {
           // Store session ID in browser storage
-          saveUser(data.user.id)
-          storeToken(data.token)
+          saveUser(data.data.user.id)
+          storeToken(data.data.token)
+          document.getElementById("login-form").reset();
+          navigate('/');
           //  console.log(data.user.id)
-          navigate('/profile');
+          
         })
        ;   
     }
@@ -55,7 +58,7 @@ export const Login = ({setIsLoggedIn}) => {
         <div className="form">
         <div className="auth-form-container">
         <h2>Login</h2>
-        <form className="login-form" onSubmit={handleSumbit}>
+        <form className="login-form" onSubmit={handleSumbit} id="login-form">
             <label className="label" form="email">email</label>
             <input className="input" value={formData.email} onChange={handleChange} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
             <label className="label" form="pasword">password</label>

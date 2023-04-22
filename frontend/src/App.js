@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Login } from './components/Login';
 import { Passwordreset } from './components/Passwordreset';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { AuthProvider } from 'react-auth-kit';
 import { Register } from './components/Register';
 import { isUserLoggedIn } from './components/utils/Auth';
@@ -33,8 +33,8 @@ function App() {
           <Route path="/login" element={<Login setIsLoggedIn={setLoggedIn} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Passwordreset />} />
-          <Route path="/" element={< Homepage />} />
-          <Route path='/homelist' element={<HomeList/>} />              
+          <Route path="/" element={loggedIn ? < Homepage /> : <Navigate to="/login" />} />
+          <Route path='/homelist' element={loggedIn ? <HomeList/> : <Navigate to="/login" />}/>              
           <Route path="/contact" element={<Form />} />
           <Route path="/donations" element={<DonationForm />} />
           {/* <Route path="/footer" element={<Footer />} /> */}

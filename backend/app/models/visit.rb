@@ -15,7 +15,6 @@
 #  index_visits_on_user_id         (user_id)
 #
 class Visit < ApplicationRecord
-
     belongs_to :user
     belongs_to :home_detail
     

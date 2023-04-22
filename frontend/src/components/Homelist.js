@@ -7,6 +7,7 @@ const HomeList = () => {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
+  console.log(data)
   useEffect(() => {
     fetch("https://childrens-home-backend.onrender.com/home_details")
       .then((response) => response.json())
@@ -19,10 +20,10 @@ const HomeList = () => {
   };
 
   const filteredData = data.filter((item) =>
-    item.city.toLowerCase().includes(searchQuery.toLowerCase())
+    item?.city?.toLowerCase().includes(searchQuery?.toLowerCase())
     ||
     // Or by the item name
-    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+    item?.name?.toLowerCase().includes(searchQuery?.toLowerCase())
   );
 
   return (
@@ -65,7 +66,7 @@ const CardItem = ({ item }) => {
     <Card className="card" style={cardStyle}>
       <div onClick={toggleDetails}>
         <Card.Img variant="top" src={item.image_url} className="card-img-top" />
-        <Card.Title>{item.childrens_home_name}</Card.Title>
+        <Card.Title>{item.name}</Card.Title>
       </div>
       {showDetails && (
         <Card.Body>

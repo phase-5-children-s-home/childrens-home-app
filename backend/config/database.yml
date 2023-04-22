@@ -82,6 +82,6 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  # database: mysite_production
-  # username: mysite
-  # password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  database: mysite_production
+  username: mysite
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>

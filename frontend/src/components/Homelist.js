@@ -8,7 +8,7 @@ const HomeList = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch("https://api.npoint.io/f2cf33f815ca0db59113/")
+    fetch("https://childrens-home-backend.onrender.com/home_details")
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.log(error));

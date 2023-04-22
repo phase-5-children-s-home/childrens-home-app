@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Login } from './components/Login';
 import { Passwordreset } from './components/Passwordreset';
+
 import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { AuthProvider } from 'react-auth-kit';
 import { Register } from './components/Register';
@@ -40,6 +41,7 @@ function App() {
           <Route path="/login" element={<Login setIsLoggedIn={setLoggedIn} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Passwordreset />} />
+
           <Route exact path="/" element={loggedIn ? < Homepage /> : <Navigate to="/login" />} />
           <Route path='/homelist' element={loggedIn ? <HomeList/> : <Navigate to="/login" />}/>              
           <Route path="/contact" element={<Form />} />

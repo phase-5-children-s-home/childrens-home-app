@@ -5,7 +5,7 @@ import "./Navbar.css"
 function Navbar({logout}) {
   return (
     <div className="navbar">
-        <h1 className='title'>LetsCharity</h1> 
+        <h1 className='title'>LetsCharity </h1> 
         <a href='/'>Home</a>
         {/* <a href='/login'>Login</a> */}
         <a href='/homelist'>List of homes</a>

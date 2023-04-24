@@ -38,3 +38,12 @@
     margin-right: 20%;
     font-size: 50px;
 }
+.logout{
+    border: none;
+  background-color: yellow;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+}

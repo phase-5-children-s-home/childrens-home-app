@@ -46,7 +46,7 @@ export const Register = (props) => {
     return(
         <div className="form">
         <div className="auth-form-container">
-          <h2>Register</h2>
+          <h2 className="login-title">Register</h2>
         <form className="register-form" onSubmit={handleSumbit}>
             <label  className="label" form="username">Username</label>
             <input className="input" value={formData.username} name="username" onChange={handleChange} id="username" placeholder="username"/>
@@ -69,8 +69,9 @@ export const Register = (props) => {
                 </div>
               ));
             })}
+        <Link className="login-links" to="/login"><p id="link-btn" >Already have an account?Login here</p></Link>
         </form>
-        <Link to="/login"><p id="link-btn" >Already have an account?Login here</p></Link>
+
         </div>
         </div>
     )

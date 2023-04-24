@@ -38,7 +38,7 @@ const Footer=()=>{
                     </div>
                     <div className="sb__footer-links_div">
                         <h4>Company</h4>
-                        <a href="/about">
+                        <a href="https://childrens-home-app.vercel.app/about">
                             <p>About</p>
                         </a>
                         <a href="/press">
@@ -47,7 +47,7 @@ const Footer=()=>{
                         <a href="/career">
                             <p>Career</p>
                         </a>
-                        <a href="/contact">
+                        <a href="/https://childrens-home-app.vercel.app/contact">
                             <p>Contact</p>
                         </a>
                     </div>

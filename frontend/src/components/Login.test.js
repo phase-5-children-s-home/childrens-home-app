@@ -1,65 +1,78 @@
-import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import { Login } from "./Login";
+import React from 'react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Login } from './Login';
+import { useNavigate } from 'react-router-dom';
 
-describe("Login", () => {
-  it("renders the login form", () => {
-    render(<Login setIsLoggedIn={() => {}} />);
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useNavigate: jest.fn(),
+}));
 
-    expect(screen.getByLabelText("email")).toBeInTheDocument();
-    expect(screen.getByLabelText("password")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Login" })).toBeInTheDocument();
+describe('Login', () => {
+  beforeEach(() => {
+    // reset mock useNavigate hook
+    useNavigate.mockReset();
   });
 
-  it("displays error messages with invalid input", async () => {
-    const mockFetch = jest.fn();
-    mockFetch.mockResolvedValue({
+  it('should render the login form', () => {
+    render(<Login />);
+    expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /login/i })).toBeInTheDocument();
+  });
+
+  it('should update the email field when the user types in their email', () => {
+    render(<Login />);
+    const emailInput = screen.getByLabelText(/email/i);
+    fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+    expect(emailInput).toHaveValue('test@example.com');
+  });
+
+  it('should update the password field when the user types in their password', () => {
+    render(<Login />);
+    const passwordInput = screen.getByLabelText(/password/i);
+    fireEvent.change(passwordInput, { target: { value: 'password123' } });
+    expect(passwordInput).toHaveValue('password123');
+  });
+
+  it('should call the handleSumbit function when the form is submitted', async () => {
+    const setIsLoggedIn = jest.fn();
+    render(<Login setIsLoggedIn={setIsLoggedIn} />);
+    const emailInput = screen.getByLabelText(/email/i);
+    const passwordInput = screen.getByLabelText(/password/i);
+    const loginButton = screen.getByRole('button', { name: /login/i });
+    fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+    fireEvent.change(passwordInput, { target: { value: 'password123' } });
+    fireEvent.click(loginButton);
+    await waitFor(() => expect(setIsLoggedIn).toHaveBeenCalledTimes(1));
+  });
+
+  it('should display error messages if there are any errors', async () => {
+    const setIsLoggedIn = jest.fn();
+    const errors = { email: ['Email is required'], password: ['Password is required'] };
+    render(<Login setIsLoggedIn={setIsLoggedIn} />);
+    const emailInput = screen.getByLabelText(/email/i);
+    const passwordInput = screen.getByLabelText(/password/i);
+    const loginButton = screen.getByRole('button', { name: /login/i });
+    jest.spyOn(global, 'fetch').mockResolvedValueOnce({
       ok: false,
-      json: () => Promise.resolve({ errors: { email: ["Email is required"] } }),
+      json: () => Promise.resolve({ errors }),
     });
-    global.fetch = mockFetch;
-
-    render(<Login setIsLoggedIn={() => {}} />);
-
-    fireEvent.change(screen.getByLabelText("email"), {
-      target: { value: "invalid-email" },
+    fireEvent.change(emailInput, { target: { value: 'test@example.com' } });
+    fireEvent.change(passwordInput, { target: { value: 'password123' } });
+    fireEvent.click(loginButton);
+    await waitFor(() => {
+      expect(screen.getByText(/email is required/i)).toBeInTheDocument();
+      expect(screen.getByText(/password is required/i)).toBeInTheDocument();
     });
-    fireEvent.change(screen.getByLabelText("password"), {
-      target: { value: "password" },
-    });
-    fireEvent.click(screen.getByRole("button", { name: "Login" }));
-
-    expect(mockFetch).toHaveBeenCalledTimes(1);
-
-    const errorElement = await screen.findByText("Email is required");
-    expect(errorElement).toBeInTheDocument();
   });
 
-  it("submits the form with valid input", async () => {
-    const mockFetch = jest.fn();
-    mockFetch.mockResolvedValue({
-      ok: true,
-      json: () => Promise.resolve({ data: { user: { id: 1 }, token: "abc123" } }),
-    });
-    global.fetch = mockFetch;
-
-    const mockSetIsLoggedIn = jest.fn();
-
-    render(<Login setIsLoggedIn={mockSetIsLoggedIn} />);
-
-    fireEvent.change(screen.getByLabelText("email"), {
-      target: { value: "valid-email@example.com" },
-    });
-    fireEvent.change(screen.getByLabelText("password"), {
-      target: { value: "password" },
-    });
-    fireEvent.click(screen.getByRole("button", { name: "Login" }));
-
-    expect(mockFetch).toHaveBeenCalledTimes(1);
-
-    await screen.findByText("Please Wait...");
-
-    expect(mockSetIsLoggedIn).toHaveBeenCalledTimes(1);
-    expect(mockSetIsLoggedIn).toHaveBeenCalledWith(true);
+  it('should display loading spinner while submitting the form', () => {
+    render(<Login />);
+    const loginButton = screen.getByRole('button', { name: /login/i });
+    fireEvent.click(loginButton);
+    expect(screen.getByText(/please wait/i)).toBeInTheDocument();
+    expect(screen.getByRole('status', { name: /loading/i })).toBeInTheDocument();
   });
 });

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
      
-     
+    include Pundit::Authorization
 
     rescue_from StandardError, with: :standard_error
 
@@ -10,7 +10,9 @@ class ApplicationController < ActionController::API
             data: data
         }, status: status
     end
-
+     
+    
+     
       
 
     def encode(uid, email)
@@ -18,7 +20,7 @@ class ApplicationController < ActionController::API
             data: {
                 uid: uid,
                 email: email,
-                role: 'admin'
+                # role: 'admin'
             },
             exp: Time.now.to_i + (6 * 3600)
         }
@@ -28,8 +30,21 @@ class ApplicationController < ActionController::API
      
     def decode(token)
         JWT.decode(token, ENV['task_train_key'], true, { algorithm: 'HS256' })
-    end
 
+    end
+     
+    # def decoded_token
+    #     auth_header = request.headers['Authorization']
+    #     if auth_header
+    #         token = auth_header.split(' ')[1]
+
+    #         begin 
+    #             JWT.decode(token, 'secret', true, algorithm: 'HS256')
+    #         rescue JWT::DecodeError, JWT::VerificationError, JWT::ExpiredSignature
+    #             head :unauthorized
+    #         end
+    #     end
+    # end
     
     def verify_auth
         auth_headers = request.headers['Authorization']
@@ -40,6 +55,13 @@ class ApplicationController < ActionController::API
             save_user_id(token)
         end
     end
+    
+    # def current_user 
+    #     if decoded_token
+    #         user_id = decoded_token[0]['user_id']
+    #         @user = User.find_by(id: user_id)
+    #     end
+    # end
 
     
     def save_user(id)

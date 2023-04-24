@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'users#logout'
 
   # admin routes
-  post '/make_admin', to: 'users#make_admin' # *
+  post '/make_admin', to: 'users#make_admin' 
   delete '/remove_admin', to: 'users#remove_admin' 
 
   # post '/forgot_password', to: 'password_resets#forgot_password'

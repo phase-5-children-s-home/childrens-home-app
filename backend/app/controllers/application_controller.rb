@@ -24,13 +24,12 @@ class ApplicationController < ActionController::API
             },
             exp: Time.now.to_i + (6 * 3600)
         }
-        JWT.encode(payload, Rails.application.credentials.task_train_key, 'HS256')
-
+        JWT.encode(payload, ENV['task_train_key'], 'HS256')
     end
 
      
     def decode(token)
-        JWT.decode(token, Rails.application.credentials.task_train_key, true, { algorithm: 'HS256' })
+        JWT.decode(token, ENV['task_train_key'], true, { algorithm: 'HS256' })
 
     end
      

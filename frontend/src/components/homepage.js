@@ -14,7 +14,7 @@ const Homepage = (props) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setNumPeople((numPeople) => {
-        if (numPeople >= 1850) {
+        if (numPeople >= 50) {
           clearInterval(intervalId);
           return numPeople;
         } else {

@@ -47,7 +47,7 @@ function App() {
           <Route path='/homelist' element={loggedIn ? <HomeList/> : <Navigate to="/login" />}/>              
           <Route path="/contact" element={<Form />} />
 
-          <Route path="/donation" element={<DonationForm />} />
+          <Route path="/donation" element={loggedIn ? < DonationForm /> : <Navigate to="/login" />} />
           <Route path="/about" element={<AboutUs />} />
 
           {/* <Route path="/footer" element={<Footer />} /> */}

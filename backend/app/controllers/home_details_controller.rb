@@ -2,6 +2,8 @@ class HomeDetailsController < ApplicationController
    
     before_action :verify_auth, only: [:create, :update, :destroy]
   # before_action :set_user, only: [:create, :update, :destroy]
+
+
     def index
         home = HomeDetail.all
         render json: home

@@ -13,8 +13,8 @@ export const Passwordreset = (props) => {
     const handleSumbit = (e) => {
         e.preventDefault()
         setLoading(true)
-        fetch('https://childrens-home-backend.onrender.com/', {
-          method: 'POST',
+        fetch('https://childrens-home-backend.onrender.com/reset_password', {
+          method: 'PATCH',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -42,7 +42,7 @@ export const Passwordreset = (props) => {
     return(
         <div className="form">
         <div className="auth-form-container">
-        <h2>Password Reset</h2>
+        <h2 className="login-title">Password Reset</h2>
         <form className="passwordreset-form" onSubmit={handleSumbit}>
             <label className="label" form="email">email</label>
             <input className="input" value={formData.email} onChange={handleChange} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
@@ -52,7 +52,7 @@ export const Passwordreset = (props) => {
                                         <strong>Please Wait...</strong>
                         <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
                         </div> ): (
-                        <button className="login" type="submit">Reset Password</button>
+                        <button className="login" type="submit">Reset</button>
                         )
             }
          {/* {Object.keys(errors).length > 0 &&

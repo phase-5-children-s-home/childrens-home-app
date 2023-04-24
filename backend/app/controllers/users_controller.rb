@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     end
 
     def login
+        p "User params:  #{params}"
         sql = "username = :username OR email = :email"
         user = User.where(sql, { username: user_params[:username], email: user_params[:email] }).first
         if user&.authenticate(user_params[:password])
@@ -104,9 +105,9 @@ class UsersController < ApplicationController
     #   end
       
 
-    private 
+    private
     
     def user_params
-        params.permit(:firstname, :lastname, :username, :email, :password, :admin, :user)
+        params.permit(:firstname, :lastname, :username, :email, :password, :admin)
     end
 end

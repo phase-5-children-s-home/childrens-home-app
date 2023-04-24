@@ -13,8 +13,8 @@ export const Passwordreset = (props) => {
     const handleSumbit = (e) => {
         e.preventDefault()
         setLoading(true)
-        fetch('https://childrens-home-backend.onrender.com/', {
-          method: 'POST',
+        fetch('https://childrens-home-backend.onrender.com/reset_password', {
+          method: 'PATCH',
           headers: {
             'Content-Type': 'application/json'
           },

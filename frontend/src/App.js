@@ -45,6 +45,7 @@ function App() {
 
           <Route exact path="/" element={loggedIn ? < Homepage /> : <Navigate to="/login" />} />
           <Route path='/homelist' element={loggedIn ? <HomeList/> : <Navigate to="/login" />}/>              
+
           <Route path="/contact" element={<Form />} />
 
           <Route path="/donation" element={loggedIn ? < DonationForm /> : <Navigate to="/login"/>} />

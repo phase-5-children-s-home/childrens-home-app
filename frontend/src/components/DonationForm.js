@@ -9,7 +9,7 @@ function DonationForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch('/api/donate', {
+    const response = await fetch('https://childrens-home-backend.onrender.com/donate', {
       method: 'POST',
       body: JSON.stringify({ name, email, amount, paymentMethod }),
       headers: {

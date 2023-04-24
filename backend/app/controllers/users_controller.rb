@@ -38,7 +38,7 @@ class UsersController < ApplicationController
         user = User.find_by(email: params[:email])
       
         if !user.present?
-          app_response( message: 'user not found', status: :not_found )
+          render json: { message: 'user not found' }, status: :not_found
           return
         end
       
@@ -54,22 +54,17 @@ class UsersController < ApplicationController
               notification_type: "Granted administrative rights." 
             }
       
-            # new_notification  = Notification.create(new_notification_params)
+            
       
-            app_response(message: "Successful", status: :ok, data: user)
+            render json: { message: "Successful", data: user }, status: :ok
           else
-            app_response(message: "email not found", status: :unprocessable_entity, data: user.errors)
+            render json: { message: "email not found", data: user.errors }, status: :unprocessable_entity
           end
         else
-          app_response(error: "You are not an admin", status: :unauthorized)
+          render json: { message: "You are not an admin" }, status: :unauthorized
         end
       end
       
-  
-  
-      # * Revoking admin rights from a user
-  
-  
       def remove_admin
         user = User.find_by(email: params[:email])
         if user&.admin?

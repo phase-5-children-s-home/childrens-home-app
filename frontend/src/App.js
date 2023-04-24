@@ -14,7 +14,7 @@ import Navbar from './components/Navbar';
 import HomeList from './components/Homelist';
 import Form from './components/Form';
 import Footer from './components/footer';
-import AboutUs from './components/About';
+import About from './components/About';
 
 function App() {
   const location = useLocation();
@@ -48,7 +48,7 @@ function App() {
           <Route path="/contact" element={<Form />} />
 
           <Route path="/donation" element={<DonationForm />} />
-          <Route path="/about" element={<AboutUs />} />
+          <Route path="/about" element={<About />} />
 
           {/* <Route path="/footer" element={<Footer />} /> */}
         </Routes>

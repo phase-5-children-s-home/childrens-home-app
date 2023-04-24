@@ -20,7 +20,7 @@ const HomeList = () => {
   };
 
   const filteredData = data.filter((item) =>
-    item?.city?.toLowerCase().includes(searchQuery?.toLowerCase())
+    item?.location?.toLowerCase().includes(searchQuery?.toLowerCase())
     ||
     // Or by the item name
     item?.name?.toLowerCase().includes(searchQuery?.toLowerCase())
@@ -31,7 +31,7 @@ const HomeList = () => {
       <div className="search-form">
         <Form>
           <Form.Group controlId="formSearch">
-            <Form.Label>Search by city name:</Form.Label>
+            <Form.Label>Search by city or name:</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter city name"
@@ -72,7 +72,7 @@ const CardItem = ({ item }) => {
         <Card.Body>
           <Card.Text>
             <p>Description: {item.description}</p>
-            <p>City: {item.city}</p>
+            <p>Location: {item.location}</p>
             <p>Address: {item.address}</p>
             <p>Email: {item.email}</p>
             <p>Phone: {item.phone_number}</p>

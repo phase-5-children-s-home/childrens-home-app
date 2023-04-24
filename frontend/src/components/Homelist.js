@@ -72,7 +72,7 @@ const CardItem = ({ item }) => {
         <Card.Body>
           <Card.Text>
             <p>Description: {item.description}</p>
-            <p>City: {item.city}</p>
+            <p>Location: {item.location}</p>
             <p>Address: {item.address}</p>
             <p>Email: {item.email}</p>
             <p>Phone: {item.phone_number}</p>

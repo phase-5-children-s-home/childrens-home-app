@@ -12,14 +12,9 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
-gem 'dotenv-rails'
-
- 
+gem 'dotenv', '~> 2.8', '>= 2.8.1'
 
 gem "public_activity", "~> 2.0"
-
-
-
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
@@ -34,6 +29,7 @@ gem 'pundit'
 gem "bcrypt", "~> 3.1.7"
 
 gem "shoulda-matchers"
+
 gem "jwt"
 
 #serializer

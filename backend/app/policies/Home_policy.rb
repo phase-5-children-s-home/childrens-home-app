@@ -1,4 +1,4 @@
-class OrderPolicy < ApplicationPolicy
+class HomeDetailPolicy < ApplicationPolicy
     attr_reader :user
 
     def initialize(user)
@@ -12,6 +12,9 @@ class OrderPolicy < ApplicationPolicy
 
     def show
         user.admin?
+    end
+    def create?       
+     user && user.admin?
     end
 
 end

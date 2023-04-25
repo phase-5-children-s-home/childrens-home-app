@@ -20,13 +20,9 @@ class VisitsController < ApplicationController
   end
 
   def update 
-
     visit = Visit.find(params[:id])
-
     if visit.update(visit_params)
-
       app_response(message: "date updatpdated successfully", data: visit)
-
     else
       app_response(message: "could not be updated")
     end

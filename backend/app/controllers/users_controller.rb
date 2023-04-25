@@ -14,6 +14,17 @@ class UsersController < ApplicationController
     end
 
     def login
+
+      sql = "username = :username OR email = :email"
+      user = User.where(sql, { username: user_params[:username], email: user_params[:email] }).first
+      if user&.authenticate(user_params[:password])
+        save_user(user.id)
+        token = encode_token({ user_id: user.id })
+        app_response(message: 'Login was successful', status: :ok, data: { user: user, token: token })
+      else
+        app_response(message: 'Invalid username/email or password', status: :unauthorized)
+      end
+
         p "User params:  #{params}"
         sql = "username = :username OR email = :email"
         user = User.where(sql, { username: user_params[:username], email: user_params[:email] }).first
@@ -24,7 +35,9 @@ class UsersController < ApplicationController
         else
             app_response(message: 'Invalid username/email or password', status: :unauthorized)
         end
+
     end
+    
 
     def logout
         remove_user
@@ -80,32 +93,8 @@ class UsersController < ApplicationController
           render json: { error: "You are not an admin" }, status: :unauthorized
         end
       end
-    # def forgot_password
-    #     user = User.find_by(email: params[:email])
-    #     if user
-    #       token = SecureRandom.hex(20)
-    #       user.update(reset_password_token: token, reset_password_sent_at: Time.now)
-    #       UserMailer.reset_password_email(user, token).deliver_now
-    #       render json: { message: "Password reset instructions sent to #{params[:email]}" }
-    #     else
-    #       render json: { message: "Email address not found" }, status: :unprocessable_entity
-    #     end
-    #   end
-    
-    #   def reset_password
-    #     user = User.find_by(reset_password_token: params[:token])
-    #     if user && user.reset_password_sent_at > 2.hours.ago
-    #       user.update(password: params[:password], reset_password_token: nil, reset_password_sent_at: nil)
-    #       render json: { message: "Password successfully reset" }
-    #     elsif user.nil?
-    #       render json: { message: "Invalid token" }, status: :unprocessable_entity
-    #     else
-    #       render json: { message: "Token expired" }, status: :unprocessable_entity
-    #     end
-    #   end
-      
-
-    private
+   
+      private
     
     def user_params
         params.permit(:firstname, :lastname, :username, :email, :password, :admin)

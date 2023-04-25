@@ -90,7 +90,7 @@ const CardItem = ({ item }) => {
           <Link to="/donation">
             <Button variant="primary">Donate</Button>
           </Link>
-          <Link to="/book">
+          <Link to="/bookvisit">
             <Button id="book_vist" variant="success" className="ml-2">Book Visit</Button>
           </Link>
           <Link to="/review">

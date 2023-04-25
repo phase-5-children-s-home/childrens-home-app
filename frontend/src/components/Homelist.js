@@ -6,6 +6,8 @@ import "./Homelist.css";
 const HomeList = () => {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  
+
 
   console.log(data)
   useEffect(() => {

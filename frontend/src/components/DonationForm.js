@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './DonationForm.css'; // import the CSS file
-​
+
 function DonationForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [amount, setAmount] = useState(0);
   const [paymentMethod, setPaymentMethod] = useState('');
-​
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await fetch('/api/donate', {
@@ -19,7 +19,7 @@ function DonationForm() {
     const data = await response.json();
     console.log(data);
   };
-​
+
   return (
   <div>
     <form onSubmit={handleSubmit} className="donation-form">
@@ -54,5 +54,5 @@ function DonationForm() {
   </div> 
   );
 }
-​
+
 export default DonationForm;

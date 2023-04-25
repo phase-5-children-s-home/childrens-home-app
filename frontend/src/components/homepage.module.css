@@ -9,8 +9,9 @@
     margin-left: -65px;
   }
   .mac-book1 {
-    top: -87px;
-    left: -340px;
+    top: -40px;
+    bottom: auto;
+    left: 400px;
     width: 1152px;
     height: 700px;
     display: flex;
@@ -208,5 +209,6 @@
     position: absolute;
     border-color: transparent;
   }
-
-  
+.span-top{
+  color: red;
+}

@@ -52,7 +52,9 @@ function App() {
           <Route path="/reset" element={<Passwordreset />} />
 
           <Route exact path="/" element={loggedIn ? < Homepage /> : <Navigate to="/login" />} />
-          <Route path='/homelist' element={loggedIn ? <HomeList/> : <Navigate to="/login" />}/>              
+          <Route path='/homelist' element={loggedIn ? <HomeList/> : <Navigate to="/login" />}/>    
+          <Route path="/about" element={<About />} />
+          
 
           <Route path="/contact" element={<Form />} />
           <Route path="/review" element={<ReviewForm />} />
@@ -62,7 +64,6 @@ function App() {
 
 
           <Route path="/donation" element={loggedIn ? < DonationForm /> : <Navigate to="/login"/>} />
-          <Route path="/about" element={<About />} />
 
           {/* <Route path="/footer" element={<Footer />} /> */}
         </Routes>

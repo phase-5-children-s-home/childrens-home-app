@@ -4,11 +4,13 @@
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 # Lets Charity APP
-Our book store app is the ultimate platform for book lovers. With our app, you can easily browse through a vast collection of books and purchase the ones you love.
+Let's Charity is a powerful and user-friendly app designed to connect users with children's homes in need of support. With this app, users can access a comprehensive list of children's homes and view detailed information about each home, including their location, mission, and the children they serve.
 
-Our app features a user-friendly interface with easy navigation, making it simple to view book titles and descriptions. We offer a wide variety of books, including fiction, non-fiction, biographies, self-help, and much more. Our extensive catalog features the latest and greatest titles from top publishers.
+Users can also leave reviews for the homes they have visited or supported, helping other users make informed decisions when choosing a home to support. Additionally, users can make donations directly through the app, supporting the children and staff in their ongoing efforts to provide a safe and nurturing environment for those in need.
 
-Overall, our book store app is the perfect solution for anyone who loves reading and wants to explore a wide range of books. Hope you enjoy, CHEERS!
+To ensure that users can engage with the children and staff in a meaningful way, the app also allows users to book visit dates directly through the app. This feature ensures that the homes are prepared for your arrival, and that you can make the most of your visit by spending time with the children, learning about the home's needs, and exploring ways to support their ongoing efforts.
+
+With Let's Charity, users can make a real difference in the lives of children in need, providing them with the love, care, and support they need to thrive. Whether you're looking to make a one-time donation, leave a review, or plan a visit, this app provides a powerful and convenient way to get involved and make a positive impact in your community.
 
 ## Screenshot
 
@@ -73,9 +75,13 @@ The following are the concepts covered in this practice session
 - Api creation.
 - Deploying
 
-## A deployed live link to this project:
+## A deployed FRONTEND live link to this project:
 This is the deployed link 
         https://childrens-home-app.vercel.app/
+
+## A deployed API link used in this project:
+This is the deployed link 
+        https://childrens-home-backend.onrender.com/home_details
 
 
 ## Installation
@@ -87,12 +93,12 @@ To use this repo on your machine requires some simple steps
 - Open a terminal / command line interface on your computer
 - Clone the repo by using the following:
 
-        git clone https://github.com/phase4-group-project/phase4-bookstore-app
+        git clone https://github.com/phase-5-children-s-home/childrens-home-app
 
 - Be patient as it creates a copy on your local machine for you.
 - Change directory to the repo folder:
 
-        cd phase4-bookstore-app
+        cd phase4-childrens-home-app
 
 - (Optional) Open it in ``Visual Studio Code``
 
@@ -108,12 +114,14 @@ To use this repo on your machine requires some simple steps
 - Take on the process in ``Alternative One`` above.
 - Remember to replace your username when cloning.
 
-        git clone https://github.com/your-username-here phase4-bookstore-app
+        git clone https://github.com/your-username-here/childrens-home-app
 
 ## Running the application
 Running the application is very straight forward. You can use the following steps to run the app.
 
 1. Ensure the ruby gems are setup in your machine
+     ** Make sure you go in the backend directory
+     cd backend
     ```{shell}
    bundle install
    ```
@@ -129,20 +137,40 @@ Running the application is very straight forward. You can use the following step
     ```
    http://localhost:3000
    ```
+   ** Now go back to the frontend directory to download the dependancies
+5. Open the application from your browser
+    ```
+   cd ..
+
+   cd frontend
+   ```
+   Then press enter 
+
+6. Download the dependancies
+    ```
+   npm install
+   ```
+7. Open the application from your browser
+    ```
+   npm start
+   ```
    
 ## Application
 This application is a simple web API that allows users to:
 
+
+#### Users
 - Register a new account.
 - Log in to existing account.
-- Create a BOOK items.
-- View all BOOK items.
-- Update a BOOK Item
-- Delete a BOOK item.
-- View books categories
-- Get book by author
-- Order for books 
+- View all Children's home items.
+- Donate to a specific children's home
+- Leave a review for a specific children's home
+- Book a visiting day to a children's home
 - Delete order items
+
+#### Admin
+- Perform CRUD opertions to the home list
+- Assign another user tothe account
 
 ### MODELS
 Database schema definitions.

@@ -31,7 +31,7 @@ const HomeList = () => {
       <div className="search-form">
         <Form>
           <Form.Group controlId="formSearch">
-            <Form.Label>Search by city or name of homes:</Form.Label>
+            <Form.Label className="search-label">Search by city or name of homes:</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter city or name"

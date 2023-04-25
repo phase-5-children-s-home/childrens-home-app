@@ -13,7 +13,7 @@
     width: 500px;
     height: 550px;
     margin: 10px;
-    border-color: aqua;
+    border-color: rgb(33, 39, 39);
     box-shadow: black;
     
   }
@@ -25,6 +25,9 @@
   }
   .search-form{
     margin-left: 80px;
+  }
+  .search-label{
+    color: rgb(96, 118, 129);
   }
   #review{
     margin-left: 10px;

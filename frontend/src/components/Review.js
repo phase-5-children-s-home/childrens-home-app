@@ -35,12 +35,12 @@ const ReviewForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
+      <label className='label-text'>
         Your Name:
-        <input type="text" value={name} onChange={handleNameChange} />
+        <input  type="text" value={name} onChange={handleNameChange} />
       </label>
 
-      <label>
+      <label className='label-text'>
         Rating:
         <select value={rating} onChange={handleRatingChange}>
           <option value={0}>Select a rating</option>
@@ -51,7 +51,7 @@ const ReviewForm = () => {
           <option value={5}>5</option>
         </select>
       </label>
-      <label>
+      <label className='label-text'>
         Review:
         <textarea value={review} onChange={handleReviewChange} />
       </label>

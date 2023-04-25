@@ -16,8 +16,7 @@ import Form from './components/Form';
 import About from './components/About';
 import ReviewForm from './components/Review'
 import BookVisitForm from './components/Booksession'
-import Footer from './components/footer';
-
+import Footer from './components/Footer';
 
 function App() {
   const location = useLocation();

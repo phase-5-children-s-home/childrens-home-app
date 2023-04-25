@@ -97,7 +97,7 @@ const CardItem = ({ item }) => {
           <Link to="/review">
             <Button id="review"  variant="info" className="ml-2">Review</Button>
           </Link>
-          <ReviewList homeId={item.id}/>
+          <ReviewList homeId={item.reviews}/>
         </Card.Body>
       )}
     </Card>

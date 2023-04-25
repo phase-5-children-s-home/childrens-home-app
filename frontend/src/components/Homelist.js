@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Homelist.css";
+import ReviewList from "./ReviewList";
 
 const HomeList = () => {
   const [data, setData] = useState([]);
@@ -16,6 +17,14 @@ const HomeList = () => {
       .then((data) => setData(data))
       .catch((error) => console.log(error));
   }, []);
+
+  useEffect(() => {
+    fetch("https://childrens-home-backend.onrender.com/reviews")
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((error) => console.log(error));
+  }, []);
+
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
@@ -88,6 +97,7 @@ const CardItem = ({ item }) => {
           <Link to="/review">
             <Button id="review"  variant="info" className="ml-2">Review</Button>
           </Link>
+          <ReviewList homeId={item.id}/>
         </Card.Body>
       )}
     </Card>

@@ -1,28 +1,28 @@
 import React, { useState } from 'react';
 import './Review.css'
-​
+
 const ReviewForm = () => {
   const [review, setReview] = useState('');
   const [rating, setRating] = useState(0);
   const [name, setName] = useState('');
   const [date, setDate] = useState('');
-​
+
   const handleReviewChange = (event) => {
     setReview(event.target.value);
   };
-​
+
   const handleRatingChange = (event) => {
     setRating(parseInt(event.target.value));
   };
-​
+
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
-​
+
   const handleDateChange = (event) => {
     setDate(event.target.value);
   };
-​
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log({
@@ -32,14 +32,14 @@ const ReviewForm = () => {
       date,
     });
   };
-​
+
   return (
     <form onSubmit={handleSubmit}>
       <label>
         Your Name:
         <input type="text" value={name} onChange={handleNameChange} />
       </label>
-​
+
       <label>
         Rating:
         <select value={rating} onChange={handleRatingChange}>
@@ -59,5 +59,5 @@ const ReviewForm = () => {
     </form>
   );
 };
-​
+
 export default ReviewForm;

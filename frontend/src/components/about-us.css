@@ -1,0 +1,97 @@
+/*################################################################################*/
+/*About us section*/
+.about-us-section{
+    width: 100%;
+    min-height: 100vh;
+  
+}
+
+.about_container{
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 200px;
+}
+.content-section{
+    float: left;
+    width: 55%;
+}
+.image-section{
+    float: right;
+    width: 44%;
+}
+.image-section img{
+    width: 80%;
+    height: auto;
+}
+.titles{
+    text-transform: uppercase;
+    font-size: 28px;
+    color: #192a56;
+    text-decoration: underline;
+}
+.content-section .content h3{
+    margin-top: 20px;
+    color: #192a56;
+    font-size: 21px;
+    font-weight: 300;
+}
+.content-section .content p{
+    margin-top: 10px;
+    font-size: 17px;
+    font-size: 18px;
+    line-height: 1.9;
+}
+.content-section .content .button{
+    margin-top: 30px;
+
+}
+.content-section .content .button a{
+     background-color:#192a56;
+     padding: 12px 40px;
+     text-decoration: none;
+     color: #fefefe;
+     font-size: 23px;
+     letter-spacing: 1.5px;
+     border-radius: 5px;
+}
+.content-section .content .button a:hover{
+    background-color: #fefefe;
+    color: #192a56;
+    border:1px solid #192a56;
+}
+.content-section .social{
+    margin:30px 30px;
+}
+.content-section .social i{
+    color: #192a56;
+    font-size: 30px;
+    padding: 0px 10px;
+}
+.content-section .social i:hover{
+    font-size: 35px;
+}
+/*MEDIA QUERIES ON THE ABOUT US PAGE*/
+@media (max-width: 998px) {
+    .about_container{
+    width: 100%;
+    display: block;
+    margin: auto;
+    padding-top: 150px;
+}
+.content-section{
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+.image-section{
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+}

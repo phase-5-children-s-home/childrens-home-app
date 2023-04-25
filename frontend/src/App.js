@@ -13,8 +13,16 @@ import Homepage from './components/homepage';
 import Navbar from './components/Navbar';
 import HomeList from './components/Homelist';
 import Form from './components/Form';
-import Footer from './components/footer';
 import About from './components/About';
+import ReviewForm from './components/Review'
+import BookVisitForm from './components/Booksession'
+
+import AdminNav from './components/Admin/AdminNav'
+
+
+
+import Footer from './components/Footer'
+
 
 function App() {
   const location = useLocation();
@@ -44,12 +52,18 @@ function App() {
           <Route path="/reset" element={<Passwordreset />} />
 
           <Route exact path="/" element={loggedIn ? < Homepage /> : <Navigate to="/login" />} />
-          <Route path='/homelist' element={loggedIn ? <HomeList/> : <Navigate to="/login" />}/>              
+          <Route path='/homelist' element={loggedIn ? <HomeList/> : <Navigate to="/login" />}/>    
+          <Route path="/about" element={<About />} />
+          
 
           <Route path="/contact" element={<Form />} />
+          <Route path="/review" element={<ReviewForm />} />
+          <Route path="/bookvisit" element={<BookVisitForm />} />
+          <Route path="/adminnav" element={<AdminNav />} />
+          
+
 
           <Route path="/donation" element={loggedIn ? < DonationForm /> : <Navigate to="/login"/>} />
-          <Route path="/about" element={<About />} />
 
           {/* <Route path="/footer" element={<Footer />} /> */}
         </Routes>

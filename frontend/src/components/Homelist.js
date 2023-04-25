@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Card, Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Homelist.css";
+import ReviewList from "./ReviewList";
+import BookVisitForm from "./Booksession";
 
 const HomeList = () => {
   const [data, setData] = useState([]);
@@ -14,6 +16,15 @@ const HomeList = () => {
       .then((data) => setData(data))
       .catch((error) => console.log(error));
   }, []);
+
+
+  useEffect(() => {
+    fetch("https://childrens-home-backend.onrender.com/reviews")
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((error) => console.log(error));
+  }, []);
+
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
@@ -31,7 +42,7 @@ const HomeList = () => {
       <div className="search-form">
         <Form>
           <Form.Group controlId="formSearch">
-            <Form.Label>Search by city or name of homes:</Form.Label>
+            <Form.Label className="search-label">Search by city or name of homes:</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter city or name"
@@ -80,12 +91,13 @@ const CardItem = ({ item }) => {
           <Link to="/donation">
             <Button variant="primary">Donate</Button>
           </Link>
-          <Link to="/book">
+          <Link to="/bookvisit">
             <Button id="book_vist" variant="success" className="ml-2">Book Visit</Button>
           </Link>
           <Link to="/review">
             <Button id="review"  variant="info" className="ml-2">Review</Button>
           </Link>
+          <ReviewList homeId={item.reviews}/>
         </Card.Body>
       )}
     </Card>

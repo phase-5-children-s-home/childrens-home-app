@@ -120,7 +120,7 @@ To use this repo on your machine requires some simple steps
 Running the application is very straight forward. You can use the following steps to run the app.
 
 1. Ensure the ruby gems are setup in your machine
-     ** Make sure you go in the backend directory
+   ##### Make sure you go in the backend directory
      cd backend
     ```{shell}
    bundle install
@@ -137,7 +137,7 @@ Running the application is very straight forward. You can use the following step
     ```
    http://localhost:3000
    ```
-   ** Now go back to the frontend directory to download the dependancies
+   ##### Now go back to the frontend directory to download the dependancies
 5. Open the application from your browser
     ```
    cd ..

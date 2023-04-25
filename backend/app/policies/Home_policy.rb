@@ -1,20 +1,20 @@
-class HomeDetailPolicy < ApplicationPolicy
-    attr_reader :user
+# class HomeDetailPolicy < ApplicationPolicy
+#     attr_reader :user
 
-    def initialize(user)
-        @user = user
+#     def initialize(user)
+#         @user = user
          
-    end
+#     end
 
-    def update? 
-        user.admin?
-    end
+#     def update? 
+#         user.admin?
+#     end
 
-    def show
-        user.admin?
-    end
-    def create?       
-     user && user.admin?
-    end
+#     def show
+#         user.admin?
+#     end
+#     def create?       
+#      user && user.admin?
+#     end
 
-end
+# end

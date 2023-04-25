@@ -7,8 +7,6 @@ import ReviewList from "./ReviewList";
 const HomeList = () => {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  
-
 
   console.log(data)
   useEffect(() => {
@@ -17,6 +15,7 @@ const HomeList = () => {
       .then((data) => setData(data))
       .catch((error) => console.log(error));
   }, []);
+
 
   useEffect(() => {
     fetch("https://childrens-home-backend.onrender.com/reviews")

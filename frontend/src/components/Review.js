@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Review.css'
 
-const ReviewForm = () => {
+const ReviewForm = ({addReview}) => {
   const [review, setReview] = useState('');
   const [rating, setRating] = useState(0);
   const [name, setName] = useState('');
@@ -25,13 +25,29 @@ const ReviewForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log({
+    const newReview = {
       review,
       rating,
       name,
       date,
-    });
+    };
+    fetch('https://childrens-home-backend.onrender.com/reviews', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newReview),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+        addReview(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   };
+  
 
   return (
     <form onSubmit={handleSubmit}>

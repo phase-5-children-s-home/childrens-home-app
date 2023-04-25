@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Review.css';
+import ReviewForm from './Review';
 
 const ReviewList = () => {
   const [reviews, setReviews] = useState([]);
@@ -13,10 +14,15 @@ const ReviewList = () => {
 
   const totalReviews = reviews.length;
 
+  const addReview = (review) => {
+    setReviews([...reviews, review]);
+  };
+
   return (
     <div className="review-list-container">
       <h2>Reviews</h2>
       <p>Total Reviews: {totalReviews}</p>
+      <ReviewForm addReview={addReview}/>
     </div>
   );
 };

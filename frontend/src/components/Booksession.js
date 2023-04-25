@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './Booksession.css'
 
-
 const BookVisitForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');

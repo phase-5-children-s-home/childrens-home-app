@@ -3,7 +3,7 @@
 [![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-# BOOK STORE APP
+# Lets Charity APP
 Our book store app is the ultimate platform for book lovers. With our app, you can easily browse through a vast collection of books and purchase the ones you love.
 
 Our app features a user-friendly interface with easy navigation, making it simple to view book titles and descriptions. We offer a wide variety of books, including fiction, non-fiction, biographies, self-help, and much more. Our extensive catalog features the latest and greatest titles from top publishers.

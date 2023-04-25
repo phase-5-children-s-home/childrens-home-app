@@ -6,7 +6,7 @@ const ReviewList = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch('https://childrens-home-backend.onrender.com/reviews')
+    fetch('https://childrens-home-backend.onrender.com/reviews?homeId=${homeI')
       .then((response) => response.json())
       .then((data) => setReviews(data))
       .catch((error) => console.log(error));
@@ -22,7 +22,7 @@ const ReviewList = () => {
     <div className="review-list-container">
       <h2>Reviews</h2>
       <p>Total Reviews: {totalReviews}</p>
-      <ReviewForm addReview={addReview}/>
+      <ReviewForm addReview={addReview.id}/>
     </div>
   );
 };

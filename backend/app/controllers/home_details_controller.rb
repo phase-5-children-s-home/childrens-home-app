@@ -43,24 +43,30 @@ class HomeDetailsController < ApplicationController
   end
       
     def update
-        home = HomeDetail.find(params[:id])
-      
+      if current_user.admin?
+        home = HomeDetail.find(params[:id])      
         if home.update(home_params)
           app_response(message: "updated successfully", data: home)
         else
           app_response(message: "failed to update", status: :unprocessable_entity)
         end
+      else
+        app_response(message: "You dont ave acces rihts to perform this action", status: :unauthorized)
+      end
     end
      
     def destroy
-
+         
+      if current_user.admin?
         home = HomeDetail.find(params[:id])
-
         if home.destroy
             app_response(message: "deleted successfully")
         else
             app_response(message: "failed to delete")
         end
+      else
+        app_response(message: "You dont have acces rights to perform this action", status: :unauthorized)
+      end
     end
      
      private 

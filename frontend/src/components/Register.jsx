@@ -43,7 +43,7 @@ export const Register = (props) => {
     return(
         <div className="form">
         <div className="auth-form-container">
-          <h2>Register</h2>
+        <h2 className="login-title">Register</h2>
         <form className="register-form" onSubmit={handleSumbit}>
             <label  className="label" form="username">Username</label>
             <input className="input" value={formData.username} name="username" onChange={handleChange} id="username" placeholder="username"/>

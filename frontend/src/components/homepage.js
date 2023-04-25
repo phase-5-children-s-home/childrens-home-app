@@ -5,12 +5,8 @@ import rectangle9 from './images/Rectangle 9.png';
 import rectangle10 from './images/Rectangle 10.png';
 import rectangle11 from './images/Rectangle 11.png';
 
-import Form from './Form';
-import Footer from './Footer';
 
 
-import { Link } from 'react-router-dom';
-import Whatwedo from './Whatwedo'
 
 const Homepage = (props) => {
   const [numPeople, setNumPeople] = useState(0);
@@ -19,7 +15,7 @@ const Homepage = (props) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setNumPeople((numPeople) => {
-        if (numPeople >= 1850) {
+        if (numPeople >= 50) {
           clearInterval(intervalId);
           return numPeople;
         } else {
@@ -135,13 +131,14 @@ const Homepage = (props) => {
       </div> */}
       </div>
 
+
+
       
     </div>
-    
-    {/* <Form /> */}
-    {/* <Footer/> */}
 
+    <a href='https://childrens-home-app.vercel.app/about' >Click here to learn more about us</a>
     </div>
+  
     
   );
 };

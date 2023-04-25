@@ -9,8 +9,8 @@
     margin-left: -65px;
   }
   .mac-book1 {
-    top: -7px;
-    left: -440px;
+    top: -87px;
+    left: -340px;
     width: 1152px;
     height: 700px;
     display: flex;
@@ -29,6 +29,8 @@
     position: absolute;
     border-color: transparent;
     border-radius: 18px;
+    border-color: rgba(0, 0, 0, 1);
+
   }
   .rectangle13 {
     top: 30px;
@@ -48,6 +50,8 @@
     position: absolute;
     border-color: transparent;
     border-radius: 18px;
+    border-color: rgba(0, 0, 0, 1);
+
   }
   .rectangle11 {
     top: 596px;
@@ -57,6 +61,8 @@
     position: absolute;
     border-color: transparent;
     border-radius: 18px;
+    border-color: rgba(0, 0, 0, 1);
+
   }
   .text {
     top: 18px;

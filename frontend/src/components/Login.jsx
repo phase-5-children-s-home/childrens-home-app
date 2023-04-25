@@ -63,7 +63,7 @@ export const Login = ({setIsLoggedIn}) => {
     return(
         <div className="form">
         <div className="auth-form-container">
-        <h2>Login</h2>
+        <h2 className="login-title">Login</h2>
         <form className="login-form" onSubmit={handleSumbit} id="login-form">
             <label className="label" form="email">email</label>
             <input className="input" value={formData.email} onChange={handleChange} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
@@ -84,9 +84,10 @@ export const Login = ({setIsLoggedIn}) => {
                 </div>
               ));
             })}
+        <Link className="login-links" to="/reset"  ><p id="link-btn" >Forgot your password? Reset here</p></Link>
+        <Link className="login-links" to="/register"  ><p id="link-btn" >Don't have an account?Register here</p></Link>
         </form>
-        <Link to="/reset"  ><p id="link-btn" >Forgot your password? Reset here</p></Link>
-        <Link to="/register"  ><p id="link-btn" >Don't have an account?Register here</p></Link>
+
         </div>
         </div>
     )

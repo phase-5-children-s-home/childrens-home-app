@@ -9,7 +9,8 @@
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     background-color: #f9f9f9;
     font-family: Arial, sans-serif;
-    width: 400px;
+    width: 4000px;
+    height: 500px;
   }
   
   .donation-form__title {
@@ -53,6 +54,8 @@
     font-size: 1rem;
     width: 100%;
     background-color: #fff;
+    /* padding-top: 40px; */
+    justify-content: center;
   }
   
   .donation-form__button {
@@ -61,12 +64,13 @@
     border: none;
     font-size: 1rem;
     color: #fff;
-    background-color: #052D0A;
+    background-color: green;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .donation-form__button:hover {
-    background-color: #0069d9;
+    background-color: white;
+    color: green;
   }
   

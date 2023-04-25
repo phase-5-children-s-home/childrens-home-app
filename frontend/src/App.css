@@ -8,11 +8,18 @@
   /* background-color:rgba(0, 0, 0, 0.9) */
   margin-left: -50px;
   background-color: white;
+  /* background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/home/job/Development/code/phase5/childrens-home-app/frontend/src/components/images/child.jpg);
+  background-position: center;
+  background-size: cover; */
 }
+
 .auth-form-container, .login-form, .register-form, .passwordreset-form {
   display: flex;
   flex-direction: column;
-  background-color: rgb(29, 27, 27);
+  background: transparent;
+  backdrop-filter: blur(15px);
+  
+
 }
 
 @media screen and (min-width: 600px) {
@@ -27,7 +34,6 @@
 label {
   text-align: left;
   padding: 0.25rem 0;
-  background-color: rgb(27, 26, 26);
 }
 
 input {
@@ -35,20 +41,40 @@ input {
   padding: 1rem;
   border: none;
   border-radius: 10px;
+  color: grey;
 }
 
-button {
+/* button {
   border: none;
-  background-color: yellow;
+  background-color: rgb(152, 152, 85);
   padding: 20px;
   border-radius: 10px;
   cursor: pointer;
   color: black;
   font-weight: bold;
-}
+} */
 
-.link-btn {
+/* .link-btn {
   background: none;
   color: yellow;
   text-decoration: underline;
+} */
+.login{
+  border-radius: 10px;
+  color: white;
+  background-color: green;
+  text-align: center;
+  justify-content: center;
+}
+/* .login-text{
+  color: azure;
+} */
+
+.login-title{
+  color: black;
+  text-decoration: none;
+}
+
+.login-links{
+  color: rgb(167, 129, 202);
 }

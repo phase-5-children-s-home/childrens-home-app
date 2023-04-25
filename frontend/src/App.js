@@ -13,7 +13,7 @@ import Homepage from './components/homepage';
 import Navbar from './components/Navbar';
 import HomeList from './components/Homelist';
 import Form from './components/Form';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 import About from './components/About';
 
 function App() {

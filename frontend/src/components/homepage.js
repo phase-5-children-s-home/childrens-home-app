@@ -6,7 +6,7 @@ import rectangle10 from './images/Rectangle 10.png';
 import rectangle11 from './images/Rectangle 11.png';
 
 import Form from './Form';
-import Footer from './footer';
+import Footer from './Footer';
 
 
 import { Link } from 'react-router-dom';

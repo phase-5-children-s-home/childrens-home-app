@@ -7,8 +7,9 @@ const HomeList = () => {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
 
+  console.log(data)
   useEffect(() => {
-    fetch("https://api.npoint.io/f2cf33f815ca0db59113/")
+    fetch("https://childrens-home-backend.onrender.com/home_details")
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.log(error));
@@ -19,7 +20,10 @@ const HomeList = () => {
   };
 
   const filteredData = data.filter((item) =>
-    item.city.toLowerCase().includes(searchQuery.toLowerCase())
+    item?.location?.toLowerCase().includes(searchQuery?.toLowerCase())
+    ||
+    // Or by the item name
+    item?.name?.toLowerCase().includes(searchQuery?.toLowerCase())
   );
 
   return (
@@ -27,10 +31,10 @@ const HomeList = () => {
       <div className="search-form">
         <Form>
           <Form.Group controlId="formSearch">
-            <Form.Label>Search by city name:</Form.Label>
+            <Form.Label>Search by city or name of homes:</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter city name"
+              placeholder="Enter city or name"
               value={searchQuery}
               onChange={handleSearchChange}
             />
@@ -62,19 +66,25 @@ const CardItem = ({ item }) => {
     <Card className="card" style={cardStyle}>
       <div onClick={toggleDetails}>
         <Card.Img variant="top" src={item.image_url} className="card-img-top" />
-        <Card.Title>{item.childrens_home_name}</Card.Title>
+        <Card.Title>{item.name}</Card.Title>
       </div>
       {showDetails && (
         <Card.Body>
           <Card.Text>
             <p>Description: {item.description}</p>
-            <p>City: {item.city}</p>
+            <p>Location: {item.location}</p>
             <p>Address: {item.address}</p>
             <p>Email: {item.email}</p>
             <p>Phone: {item.phone_number}</p>
           </Card.Text>
           <Link to="/donation">
             <Button variant="primary">Donate</Button>
+          </Link>
+          <Link to="/book">
+            <Button id="book_vist" variant="success" className="ml-2">Book Visit</Button>
+          </Link>
+          <Link to="/review">
+            <Button id="review"  variant="info" className="ml-2">Review</Button>
           </Link>
         </Card.Body>
       )}

@@ -19,10 +19,11 @@ export const Login = ({setIsLoggedIn}) => {
           [e.target.name]: e.target.value
         });
       }
+
     const handleSumbit = (e) => {
         e.preventDefault()
         setLoading(true)  
-        fetch('https://childrens-home-backend.onrender.com/', {
+        fetch('https://childrens-home-backend.onrender.com/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -34,28 +35,36 @@ export const Login = ({setIsLoggedIn}) => {
         })
         .then(response => {
           if (response.ok) {
+            setLoading(false)
             return response.json();
             // setIsLoggedIn(true);
             // navigate("/profile");
           } else {
+            console.log(response)
             response.json().then((err)=>setErrors(err.errors))
           }
           setLoading(false)
         })
         .then(data => {
           // Store session ID in browser storage
-          saveUser(data.user.id)
-          storeToken(data.token)
+          saveUser(data.data.user.id)
+          storeToken(data.data.token)
+          // Clear the form data
+          document.getElementById("login-form").reset();
+          // Set the logged in state to true
+          setIsLoggedIn(true)
+          // Navigate to the home page
+          navigate('/');
           //  console.log(data.user.id)
-          navigate('/profile');
+          
         })
        ;   
     }
     return(
         <div className="form">
         <div className="auth-form-container">
-        <h2>Login</h2>
-        <form className="login-form" onSubmit={handleSumbit}>
+        <h2 className="login-title">Login</h2>
+        <form className="login-form" onSubmit={handleSumbit} id="login-form">
             <label className="label" form="email">email</label>
             <input className="input" value={formData.email} onChange={handleChange} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
             <label className="label" form="pasword">password</label>
@@ -75,9 +84,10 @@ export const Login = ({setIsLoggedIn}) => {
                 </div>
               ));
             })}
+        <Link className="login-links" to="/reset"  ><p id="link-btn" >Forgot your password? Reset here</p></Link>
+        <Link className="login-links" to="/register"  ><p id="link-btn" >Don't have an account?Register here</p></Link>
         </form>
-        <Link to="/reset"  ><p id="link-btn" >Forgot your password? Reset here</p></Link>
-        <Link to="/register"  ><p id="link-btn" >Don't have an account?Register here</p></Link>
+
         </div>
         </div>
     )

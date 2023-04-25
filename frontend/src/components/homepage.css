@@ -1,0 +1,199 @@
+
+
+/*CORE VALUES  STYLES OF THE WEBSITE STARTS HERE*/
+/*################################################################################*/
+.our-values{
+    background-color: #fefefefe;
+    padding: 0 100px;
+    height: 100vh;
+}
+.title-value h1{
+    color: #192a56;
+    text-align: center;
+    padding-top: 90px;
+    font-weight: 700;
+
+}
+.title-value p{
+    color: #192a56;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    font-weight: 500;
+}
+.card{
+    background-color: #fefefe;
+    width: 290px;
+    padding: 10px;
+    height: 340px;
+    border-radius: 8px;
+    box-shadow: 5px 10px 25px rgba(0,0,0,0.2);
+}
+.card h5{
+    padding:20px 0 ;
+    text-align: center;
+    color: #192a56;
+    font-weight: 700;
+    font-size: 20px;
+}
+.card p{
+    color: #192a56;
+    font-weight: 500;
+    text-align: center;
+    line-height: 23px;
+    padding: 0 2px;
+}
+.values-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width:1000px) {
+    .values-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+@media (max-width:900px) {
+    .values-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+@media (max-width:380px){
+    .title-value p{
+        display: none;
+    }
+     .card p{
+    color: #192a56;
+    font-weight: 200;
+    text-align: center;
+    line-height: 23px;
+    padding: 0 2px;
+    }
+}
+@media (max-width:320px){
+    .card p{
+    color: #192a56;
+    font-weight: 200;
+    text-align: center;
+    line-height: 23px;
+    padding: 0 2px;
+}
+.title-value p{
+    display: none;
+    padding-bottom: 30px;
+}
+.values-container .card5{
+    display: none;
+}
+}
+
+
+/*################################################################################*/
+/*CORE VALUES  STYLES OF THE WEBSITE ENDS HERE*/
+
+.description p{
+    line-height: 25px;
+}
+
+
+/*Contact us*/
+/*CONTACT SECTION CSS*/
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+.body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fefefe;
+    background-color: #fefefe;
+    place-items: center;
+}
+.contact-container{
+    max-width: 960px;
+   
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1.5rem;
+    background: #fefefe;
+    box-shadow: 0 0 1rem hsl(0 0 0 / 16%);
+    border-radius: 0.5rem;
+    overflow: hidden;
+     box-shadow: 5px 10px 25px rgba(0,0,0,0.4);
+}
+.form-container{
+    padding: 20px;
+}
+.form-container h3{
+     font-size: 1.9rem;
+     font-weight: 600;
+     margin-bottom: 1rem;
+     text-align: center;
+     color: #192a56;
+
+}
+.contact-form{
+    display: grid;
+    row-gap: 1rem;
+}
+.contact-form input, .contact-form textarea{
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #192a56;
+    padding: 10px 0.9rem;
+    color: #fefefe;
+    border-radius: 0.4rem;
+}
+ .contact-form textarea{
+    resize: none;
+    height: 200px;
+
+ }
+ .contact-form .send-button{
+    border: none;
+    outline: none;
+    background: #192a56;
+    color: #fefefe;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer; 
+ }
+ .contact-form .send-button:hover{
+    background: hsl(181, 100%, 44%, 0.8);
+    transition: 0.3s all linear;
+ }
+ .map iframe{
+    width: 100%;
+    height: 100%;
+ }
+ /*PAGE RESPONSIVENESS*/
+ @media(max-width:964px){
+    .contact-container{
+        margin: 0 auto;
+        width: 90%;
+    }
+ }
+  @media(max-width:780px){
+    .contact-container{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 5rem !important;
+    }
+    .map iframe{
+        
+    }
+ }

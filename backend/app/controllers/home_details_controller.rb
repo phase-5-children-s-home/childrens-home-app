@@ -1,6 +1,6 @@
 class HomeDetailsController < ApplicationController
    
-    before_action :verify_auth, only: [:create, :update, :destroy]
+    # before_action :verify_auth, only: [:create, :update, :destroy]
   # before_action :set_user, only: [:create, :update, :destroy]
 
 
@@ -12,17 +12,17 @@ class HomeDetailsController < ApplicationController
     def create
       home = HomeDetail.create(home_params)
     
-      # user = User.find_by(id: session[:user_id])
+      user = User.find_by(id: session[:user_id])
       
-      # if user && user.admin?
+       if user && user.admin?
         if home.save 
           app_response(message: "created successfully", status: :created, data: home)
         else
           app_response(message: "failed to create", status: :unprocessable_entity, data: home.errors)
         end
-      # else
-      #   app_response(message: "You are not authorized to perform this action", status: :unauthorized)
-      # end
+       else
+         app_response(message: "You are not authorized to perform this action", status: :unauthorized)
+       end
     end
     
     

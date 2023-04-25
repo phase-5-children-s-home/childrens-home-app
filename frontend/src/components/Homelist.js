@@ -42,7 +42,7 @@ const HomeList = () => {
       <div className="search-form">
         <Form>
           <Form.Group controlId="formSearch">
-            <Form.Label>Search by city or name of homes:</Form.Label>
+            <Form.Label className="search-label">Search by city or name of homes:</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter city or name"
@@ -91,13 +91,13 @@ const CardItem = ({ item }) => {
           <Link to="/donation">
             <Button variant="primary">Donate</Button>
           </Link>
-          <Link to="/book">
+          <Link to="/bookvisit">
             <Button id="book_vist" variant="success" className="ml-2">Book Visit</Button>
           </Link>
           <Link to="/review">
             <Button id="review"  variant="info" className="ml-2">Review</Button>
           </Link>
-          <ReviewList homeId={item.id}/>
+          <ReviewList homeId={item.reviews}/>
         </Card.Body>
       )}
     </Card>

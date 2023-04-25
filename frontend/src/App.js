@@ -16,7 +16,13 @@ import Form from './components/Form';
 import About from './components/About';
 import ReviewForm from './components/Review'
 import BookVisitForm from './components/Booksession'
+
+import AdminNav from './components/Admin/AdminNav'
+
+
+
 import Footer from './components/Footer'
+
 
 function App() {
   const location = useLocation();
@@ -51,6 +57,7 @@ function App() {
           <Route path="/contact" element={<Form />} />
           <Route path="/review" element={<ReviewForm />} />
           <Route path="/bookvisit" element={<BookVisitForm />} />
+          <Route path="/adminnav" element={<AdminNav />} />
           
 
 

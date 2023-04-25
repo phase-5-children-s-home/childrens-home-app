@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
 import './Booksession.css'
-​
+
+
 const BookVisitForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
-​
+
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
-​
+
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
-​
+
   const handleDateChange = (event) => {
     setDate(event.target.value);
   };
-​
+
   const handleTimeChange = (event) => {
     setTime(event.target.value);
   };
-​
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log({
@@ -32,7 +33,7 @@ const BookVisitForm = () => {
       time,
     });
   };
-​
+
   return (
     <form onSubmit={handleSubmit}>
       <label>
@@ -55,5 +56,5 @@ const BookVisitForm = () => {
     </form>
   );
 };
-​
+
 export default BookVisitForm;

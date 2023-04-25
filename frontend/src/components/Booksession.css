@@ -8,14 +8,14 @@ form {
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: rgb(19, 18, 18);
   }
   
   label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #ffffff;
+    color: #0c0c0c;
   }
   
   input,

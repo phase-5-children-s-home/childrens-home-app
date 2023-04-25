@@ -18,9 +18,6 @@ export const Register = (props) => {
       }
     let navigate = useNavigate();
     
-    // useEffect(() => {
-    //   console.log(loading);
-    // }, [loading])
     const handleSumbit = (e) => {
         e.preventDefault()
         fetch('https://childrens-home-backend.onrender.com/users', {
@@ -46,13 +43,13 @@ export const Register = (props) => {
     return(
         <div className="form">
         <div className="auth-form-container">
-          <h2 className="login-title">Register</h2>
+        <h2 className="login-title">Register</h2>
         <form className="register-form" onSubmit={handleSumbit}>
             <label  className="label" form="username">Username</label>
             <input className="input" value={formData.username} name="username" onChange={handleChange} id="username" placeholder="username"/>
             <label className='label' form="email">email</label>
             <input className="input" value={formData.email} onChange={handleChange} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
-            <label className="label" form="pasword">password</label>
+            <label className="label" form="password">password</label>
             <input className="input" value={formData.password} onChange={handleChange}type="password" placeholder="*******" id="password" name="password" />
             { loading ? (<div className="d-flex align-items-center">
                                         <strong>Please Wait...</strong>
@@ -61,17 +58,14 @@ export const Register = (props) => {
                         <button className="login" type="submit">Register</button>
                         )
             }
-         {Object.keys(errors).length > 0 &&
-            Object.entries(errors).map(([key, value]) => {
-              return value.map((error, index) => (
-                <div key={`${key}-${index}`} className="text-danger">
+            {errors.length > 0 &&
+              errors.map((error, index) => (
+                <div key={index} className="text-danger">
                   {error}
                 </div>
-              ));
-            })}
-        <Link className="login-links" to="/login"><p id="link-btn" >Already have an account?Login here</p></Link>
+              ))}
         </form>
-
+        <Link to="/login"><p id="link-btn" >Already have an account?Login here</p></Link>
         </div>
         </div>
     )

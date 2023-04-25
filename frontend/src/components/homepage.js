@@ -7,6 +7,7 @@ import rectangle11 from './images/Rectangle 11.png';
 
 
 
+
 const Homepage = (props) => {
   const [numPeople, setNumPeople] = useState(0);
   const [numTeams, setNumTeams] = useState(0);

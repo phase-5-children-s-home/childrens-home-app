@@ -1,54 +1,79 @@
 import React, { useState } from 'react';
+import './Review.css'
 
-function ChildrensHomeReview() {
-  const [name, setName] = useState('');
-  const [rating, setRating] = useState(0);
+const ReviewForm = ({addReview}) => {
   const [review, setReview] = useState('');
-  const [reviews, setReviews] = useState([]);
+  const [rating, setRating] = useState(0);
+  const [name, setName] = useState('');
+  const [date, setDate] = useState('');
+
+  const handleReviewChange = (event) => {
+    setReview(event.target.value);
+  };
+
+  const handleRatingChange = (event) => {
+    setRating(parseInt(event.target.value));
+  };
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleDateChange = (event) => {
+    setDate(event.target.value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const newReview = {
-      name: name,
-      rating: rating,
-      review: review
-    }
-    setReviews([...reviews, newReview]);
-    setName('');
-    setRating(0);
-    setReview('');
-  }
+      review,
+      rating,
+      name,
+      date,
+    };
+    fetch('https://childrens-home-backend.onrender.com/reviews', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newReview),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+        addReview(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+  
 
   return (
-    <div>
-      <h1>Reviews</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Rating:
-          <input type="number" min="0" max="5" value={rating} onChange={(e) => setRating(parseInt(e.target.value))} />
-        </label>
-        <br />
-        <label>
-          Review:
-          <textarea value={review} onChange={(e) => setReview(e.target.value)} />
-        </label>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
-      {reviews.map((review, index) => (
-        <div key={index}>
-          <h3>{review.name}</h3>
-          <p>Rating: {review.rating}</p>
-          <p>{review.review}</p>
-        </div>
-      ))}
-    </div>
-  );
-}
+    <form onSubmit={handleSubmit}>
+      <label className='label-text'>
+        Your Name:
+        <input  type="text" value={name} onChange={handleNameChange} />
+      </label>
 
-export default ChildrensHomeReview;
+      <label className='label-text'>
+        Rating:
+        <select value={rating} onChange={handleRatingChange}>
+          <option value={0}>Select a rating</option>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+          <option value={5}>5</option>
+        </select>
+      </label>
+      <label className='label-text'>
+        Review:
+        <textarea value={review} onChange={handleReviewChange} />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default ReviewForm;

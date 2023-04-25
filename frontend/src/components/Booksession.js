@@ -35,7 +35,7 @@ const BookVisitForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Book Visit</h1>
+      <h1>Book <span>Visit</span> </h1>
       <label>
         Your Name:
         <input type="text" value={name} onChange={handleNameChange} />

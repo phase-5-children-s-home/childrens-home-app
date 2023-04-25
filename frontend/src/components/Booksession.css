@@ -47,9 +47,11 @@ form {
   }
   
   button[type='submit']:hover {
-    background-color: #005fa3;
+    background-color: #46da0b;
   }
-  
+  span{
+    color: #0077cc;
+  }
   /* Responsive styles */
   @media only screen and (min-width: 768px) {
     form {

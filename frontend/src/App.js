@@ -17,6 +17,8 @@ import Footer from './components/footer';
 import About from './components/About';
 import ReviewForm from './components/Review'
 import BookVisitForm from './components/Booksession'
+import AdminNav from './components/Admin/AdminNav'
+
 
 
 function App() {
@@ -52,6 +54,7 @@ function App() {
           <Route path="/contact" element={<Form />} />
           <Route path="/review" element={<ReviewForm />} />
           <Route path="/bookvisit" element={<BookVisitForm />} />
+          <Route path="/adminnav" element={<AdminNav />} />
           
 
 

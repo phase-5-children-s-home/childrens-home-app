@@ -1,16 +1,14 @@
 .App {
   text-align: center;
   display: flex;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   align-items: center;
   justify-content: center;
   color: black;
-  /* background-color:rgba(0, 0, 0, 0.9) */
   margin-left: -50px;
   background-color: white;
-  /* background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/home/job/Development/code/phase5/childrens-home-app/frontend/src/components/images/child.jpg);
   background-position: center;
-  background-size: cover; */
+  background-size: cover;
 }
 
 .auth-form-container, .login-form, .register-form, .passwordreset-form {

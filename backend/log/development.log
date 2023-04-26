@@ -8216,3 +8216,296 @@ Processing by HomeDetailsController#create as */*
 Completed 401 Unauthorized in 59ms (Views: 7.7ms | ActiveRecord: 11.6ms | Allocations: 8532)
 
 
+Started POST "/home_details" for 127.0.0.1 at 2023-04-26 09:20:38 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: 'include Pundit' is deprecated. Please use 'include Pundit::Authorization' instead.
+ (called from include at /home/levi/phase5/childrens-home-app/backend/app/controllers/application_controller.rb:2)
+Processing by HomeDetailsController#create as */*
+  Parameters: {"home_detail"=>{"name"=>"moringa", "description"=>"family", "address"=>"21768", "location"=>"kisumu", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com"}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.4ms)
+Completed 401 Unauthorized in 128ms (Views: 10.8ms | ActiveRecord: 17.6ms | Allocations: 45104)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-04-26 09:22:16 +0300
+DEPRECATION WARNING: 'include Pundit' is deprecated. Please use 'include Pundit::Authorization' instead.
+ (called from include at /home/levi/phase5/childrens-home-app/backend/app/controllers/application_controller.rb:2)
+Processing by UsersController#register as */*
+  Parameters: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: register, request: #<ActionDispatch::Request:0x00007fb60410d210>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"register", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mUser Create (2.8ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "username", "email", "admin", "password_digest", "reset_password_token", "reset_password_sent_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["firstname", "boo"], ["lastname", "booo"], ["username", "boo"], ["email", "boo@gmail.com"], ["admin", true], ["password_digest", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["created_at", "2023-04-26 06:22:16.733155"], ["updated_at", "2023-04-26 06:22:16.733155"]]
+  ↳ app/controllers/users_controller.rb:7:in `register'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `register'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.53ms)
+Completed 201 Created in 380ms (Views: 1.6ms | ActiveRecord: 14.0ms | Allocations: 5122)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-26 09:22:25 +0300
+Processing by UsersController#login as */*
+  Parameters: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61ca7c978>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61ca7c978>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61ca7c978>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.72ms)
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61ca7c978>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61ca7c978>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61ca7c978>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+Completed 500 Internal Server Error in 701ms (Views: 1.6ms | ActiveRecord: 1.2ms | Allocations: 5129)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:6:in `app_response'
+app/controllers/application_controller.rb:77:in `standard_error'
+Started POST "/login" for 127.0.0.1 at 2023-04-26 09:24:39 +0300
+DEPRECATION WARNING: 'include Pundit' is deprecated. Please use 'include Pundit::Authorization' instead.
+ (called from include at /home/levi/phase5/childrens-home-app/backend/app/controllers/application_controller.rb:2)
+Processing by UsersController#login as */*
+  Parameters: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61c92f548>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61c92f548>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61c92f548>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.96ms)
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61c92f548>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61c92f548>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61c92f548>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+Completed 500 Internal Server Error in 743ms (Views: 3.5ms | ActiveRecord: 5.4ms | Allocations: 7331)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:6:in `app_response'
+app/controllers/application_controller.rb:76:in `standard_error'
+Started POST "/login" for 127.0.0.1 at 2023-04-26 09:27:31 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: 'include Pundit' is deprecated. Please use 'include Pundit::Authorization' instead.
+ (called from include at /home/levi/phase5/childrens-home-app/backend/app/controllers/application_controller.rb:2)
+Processing by UsersController#login as */*
+  Parameters: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61ca2a178>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61ca2a178>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61ca2a178>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.03ms)
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61ca2a178>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61ca2a178>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61ca2a178>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+Completed 500 Internal Server Error in 808ms (Views: 3.8ms | ActiveRecord: 13.9ms | Allocations: 43265)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:6:in `app_response'
+app/controllers/application_controller.rb:76:in `standard_error'
+Started POST "/login" for 127.0.0.1 at 2023-04-26 09:30:12 +0300
+DEPRECATION WARNING: 'include Pundit' is deprecated. Please use 'include Pundit::Authorization' instead.
+ (called from include at /home/levi/phase5/childrens-home-app/backend/app/controllers/application_controller.rb:2)
+Processing by UsersController#login as */*
+  Parameters: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb60832a648>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb60832a648>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb60832a648>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb60832a648>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb60832a648>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb60832a648>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+Completed 500 Internal Server Error in 728ms (Views: 1.4ms | ActiveRecord: 10.1ms | Allocations: 7332)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:6:in `app_response'
+app/controllers/application_controller.rb:76:in `standard_error'
+Started POST "/login" for 127.0.0.1 at 2023-04-26 09:32:15 +0300
+DEPRECATION WARNING: 'include Pundit' is deprecated. Please use 'include Pundit::Authorization' instead.
+ (called from include at /home/levi/phase5/childrens-home-app/backend/app/controllers/application_controller.rb:2)
+Processing by UsersController#login as */*
+  Parameters: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb604113ea8>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb604113ea8>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb604113ea8>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.46ms)
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb604113ea8>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb604113ea8>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb604113ea8>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+Completed 500 Internal Server Error in 727ms (Views: 1.4ms | ActiveRecord: 10.3ms | Allocations: 7333)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:6:in `app_response'
+app/controllers/application_controller.rb:76:in `standard_error'
+Started POST "/login" for 127.0.0.1 at 2023-04-26 09:32:47 +0300
+DEPRECATION WARNING: 'include Pundit' is deprecated. Please use 'include Pundit::Authorization' instead.
+ (called from include at /home/levi/phase5/childrens-home-app/backend/app/controllers/application_controller.rb:2)
+Processing by UsersController#login as */*
+  Parameters: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb6190fb0f0>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb6190fb0f0>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb6190fb0f0>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.8ms)
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb6190fb0f0>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb6190fb0f0>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb6190fb0f0>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+Completed 500 Internal Server Error in 716ms (Views: 1.8ms | ActiveRecord: 6.8ms | Allocations: 7323)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:6:in `app_response'
+app/controllers/application_controller.rb:76:in `standard_error'
+Started POST "/login" for 127.0.0.1 at 2023-04-26 09:33:21 +0300
+DEPRECATION WARNING: 'include Pundit' is deprecated. Please use 'include Pundit::Authorization' instead.
+ (called from include at /home/levi/phase5/childrens-home-app/backend/app/controllers/application_controller.rb:2)
+Processing by UsersController#login as */*
+  Parameters: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb604178010>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb604178010>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb604178010>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.5ms)
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb604178010>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb604178010>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb604178010>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+Completed 500 Internal Server Error in 719ms (Views: 1.3ms | ActiveRecord: 13.6ms | Allocations: 7347)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:6:in `app_response'
+app/controllers/application_controller.rb:76:in `standard_error'
+Started POST "/login" for 127.0.0.1 at 2023-04-26 09:36:06 +0300
+Processing by UsersController#login as */*
+  Parameters: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb60c1bd9c8>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb60c1bd9c8>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb60c1bd9c8>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.48ms)
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb60c1bd9c8>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb60c1bd9c8>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb60c1bd9c8>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+Completed 500 Internal Server Error in 724ms (Views: 1.3ms | ActiveRecord: 8.4ms | Allocations: 7332)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:6:in `app_response'
+app/controllers/application_controller.rb:76:in `standard_error'
+Started POST "/login" for 127.0.0.1 at 2023-04-26 09:36:20 +0300
+Processing by UsersController#login as */*
+  Parameters: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb6190c1c88>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb6190c1c88>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb6190c1c88>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.42ms)
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb6190c1c88>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb6190c1c88>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb6190c1c88>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+Completed 500 Internal Server Error in 731ms (Views: 1.4ms | ActiveRecord: 7.9ms | Allocations: 7305)
+
+
+  
+NoMethodError (undefined method `encode' for #<UsersController:0x00000000024018>):
+  
+app/controllers/users_controller.rb:33:in `login'
+Started POST "/login" for 127.0.0.1 at 2023-04-26 09:38:43 +0300
+Processing by UsersController#login as */*
+  Parameters: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61031ce28>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61031ce28>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007fb61031ce28>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.66ms)
+Completed 200 OK in 384ms (Views: 1.8ms | ActiveRecord: 10.7ms | Allocations: 4160)
+
+
+Started POST "/home_details" for 127.0.0.1 at 2023-04-26 09:39:11 +0300
+Processing by HomeDetailsController#create as */*
+  Parameters: {"home_detail"=>{"name"=>"moringa", "description"=>"family", "address"=>"21768", "location"=>"kisumu", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37:in `current_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_details_controller.rb:15:in `create'
+  [1m[36mHomeDetail Create (3.2ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "moringa"], ["description", "family"], ["image_url", "image.jpg"], ["location", "kisumu"], ["address", "21768"], ["email", "kisumu@gmail.com"], ["phone_number", 115483048], ["created_at", "2023-04-26 06:39:11.963547"], ["updated_at", "2023-04-26 06:39:11.963547"]]
+  ↳ app/controllers/home_details_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_details_controller.rb:15:in `create'
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.5ms)
+Completed 201 Created in 112ms (Views: 5.5ms | ActiveRecord: 22.5ms | Allocations: 27117)
+
+
+Started POST "/home_details" for 127.0.0.1 at 2023-04-26 09:41:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeDetailsController#create as */*
+  Parameters: {"home_detail"=>{"name"=>"moringa", "description"=>"family", "address"=>"21768", "location"=>"kisumu", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37:in `current_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_details_controller.rb:15:in `create'
+  [1m[36mHomeDetail Create (1.0ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "moringa"], ["description", "family"], ["image_url", "image.jpg"], ["location", "kisumu"], ["address", "21768"], ["email", "kisumu@gmail.com"], ["phone_number", 115483048], ["created_at", "2023-04-26 06:41:07.512670"], ["updated_at", "2023-04-26 06:41:07.512670"]]
+  ↳ app/controllers/home_details_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_details_controller.rb:15:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.15ms)
+Completed 201 Created in 144ms (Views: 6.8ms | ActiveRecord: 19.6ms | Allocations: 63781)
+
+

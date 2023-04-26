@@ -21,12 +21,8 @@ class HomeDetailsController < ApplicationController
       else
         app_response(message: "You dont ave acces rihts to perform this action", status: :unauthorized)
       end
-    end
-    
-    
-    
-    
-
+    end   
+  
     def search
       if params[:name].present?
         homes = HomeDetail.where("name LIKE ?", "%#{params[:name]}%")

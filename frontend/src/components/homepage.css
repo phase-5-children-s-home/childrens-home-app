@@ -104,13 +104,13 @@
 
 /*Contact us*/
 /*CONTACT SECTION CSS*/
-*{
+/* *{
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
-}
-.body{
+} */
+/* .body{
     width: 100%;
     height: 100vh;
     display: flex;
@@ -119,7 +119,7 @@
     color: #fefefe;
     background-color: #fefefe;
     place-items: center;
-}
+} */
 .contact-container{
     max-width: 960px;
    
@@ -181,7 +181,7 @@
     height: 100%;
  }
  /*PAGE RESPONSIVENESS*/
- @media(max-width:964px){
+ /* @media(max-width:964px){
     .contact-container{
         margin: 0 auto;
         width: 90%;
@@ -196,4 +196,4 @@
     .map iframe{
         
     }
- }
+ } */

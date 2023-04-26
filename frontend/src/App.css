@@ -1,7 +1,7 @@
-.App {
+/* .App {
   text-align: center;
   display: flex;
-  /* min-height: 100vh; */
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
   color: black;
@@ -9,7 +9,7 @@
   background-color: white;
   background-position: center;
   background-size: cover;
-}
+} */
 
 .auth-form-container, .login-form, .register-form, .passwordreset-form {
   display: flex;

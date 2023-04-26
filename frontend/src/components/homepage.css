@@ -176,10 +176,10 @@
     background: hsl(181, 100%, 44%, 0.8);
     transition: 0.3s all linear;
  }
- .map iframe{
+ /* .map iframe{
     width: 100%;
     height: 100%;
- }
+ } */
  /*PAGE RESPONSIVENESS*/
  /* @media(max-width:964px){
     .contact-container{

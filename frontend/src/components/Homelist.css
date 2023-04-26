@@ -1,7 +1,7 @@
-.home-list-container {
+/* .home-list-container {
     display: flex;
     flex-direction: column;
-  }
+  } */
   
   .card-section {
     display: flex;
@@ -24,7 +24,7 @@
     object-fit: cover;
   }
   .search-form{
-    margin-left: 160px;
+    margin-left:67px;
   }
   .search-label{
     color: rgb(96, 118, 129);

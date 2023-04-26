@@ -1,6 +1,7 @@
 class HomeDetailsController < ApplicationController
    
       before_action :current_user, only: [:create, :update, :destroy]
+
   # before_action :set_user, only: [:create, :update, :destroy]
 
 
@@ -14,6 +15,7 @@ class HomeDetailsController < ApplicationController
         if current_user.admin?
         home = HomeDetail.create(home_params)
         if home.save
+
           app_response(message: "created successfully", status: :created, data: home)
         else
           app_response(message: "failed to create", status: :unprocessable_entity, data: home.errors)
@@ -21,8 +23,9 @@ class HomeDetailsController < ApplicationController
       else
         app_response(message: "You dont ave acces rihts to perform this action", status: :unauthorized)
       end
+
     end   
-  
+
     def search
       if params[:name].present?
         homes = HomeDetail.where("name LIKE ?", "%#{params[:name]}%")

@@ -8509,3 +8509,36 @@ Processing by HomeDetailsController#create as */*
 Completed 201 Created in 144ms (Views: 6.8ms | ActiveRecord: 19.6ms | Allocations: 63781)
 
 
+Started POST "/home_details" for 127.0.0.1 at 2023-04-26 09:46:23 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeDetailsController#create as */*
+  Parameters: {"home_detail"=>{"name"=>"moringa", "description"=>"family", "address"=>"21768", "location"=>"kisumu", "image_url"=>"image.jpg", "phone_number"=>"0115483048", "email"=>"kisumu@gmail.com"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37:in `current_user'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/home_details_controller.rb:16:in `create'
+  [1m[36mHomeDetail Create (2.1ms)[0m  [1m[32mINSERT INTO "home_details" ("name", "description", "image_url", "location", "address", "email", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "moringa"], ["description", "family"], ["image_url", "image.jpg"], ["location", "kisumu"], ["address", "21768"], ["email", "kisumu@gmail.com"], ["phone_number", 115483048], ["created_at", "2023-04-26 06:46:23.577261"], ["updated_at", "2023-04-26 06:46:23.577261"]]
+  ↳ app/controllers/home_details_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/home_details_controller.rb:16:in `create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:37:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.01ms)
+Completed 201 Created in 231ms (Views: 7.0ms | ActiveRecord: 24.1ms | Allocations: 63849)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-04-26 09:46:31 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f5930d9d830>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f5930d9d830>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'boo' OR email = 'boo@gmail.com') ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `login'
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: login, request: #<ActionDispatch::Request:0x00007f5930d9d830>, params: {"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "password"=>"[FILTERED]", "email"=>"boo@gmail.com", "admin"=>true, "controller"=>"users", "action"=>"login", "user"=>{"firstname"=>"boo", "lastname"=>"booo", "username"=>"boo", "email"=>"boo@gmail.com", "admin"=>true}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.46ms)
+Completed 200 OK in 433ms (Views: 5.8ms | ActiveRecord: 8.5ms | Allocations: 40076)
+
+

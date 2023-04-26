@@ -33,9 +33,9 @@ form input, textarea{
   border: 1px solid #ddd;
 }
 
-form span{
+/* form span{
   color: royalblue;
-}
+} */
 
 form button{
   height: 38px;

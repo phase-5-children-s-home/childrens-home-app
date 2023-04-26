@@ -1,4 +1,4 @@
-/* .App {
+.App {
   text-align: center;
   display: flex;
   min-height: 100vh;
@@ -9,7 +9,7 @@
   background-color: white;
   background-position: center;
   background-size: cover;
-} */
+}
 
 .auth-form-container, .login-form, .register-form, .passwordreset-form {
   display: flex;
@@ -20,14 +20,14 @@
 
 }
 
-@media screen and (min-width: 600px) {
+/* @media screen and (min-width: 600px) {
   .auth-form-container {
     padding: 5rem;
     border: 1px solid white;
     border-radius: 10px;
     margin: 0.5rem;
   }
-}
+} */
 
 label {
   text-align: left;

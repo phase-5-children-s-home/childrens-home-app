@@ -151,7 +151,7 @@ const Homepage = (props) => {
       </p>
     </div>
     <div class="values-container">
-       <div class="card card1">
+       <div class="card_card1">
             <h5>Compassion</h5>
             <p>
             At Let's Charity, we value compassion and empathy towards children in need. 
@@ -160,7 +160,7 @@ const Homepage = (props) => {
             </p>
         </div>
 
-        <div class="card card1">
+        <div class="card_card1">
             <h5>Transparency</h5>
             <p>
             We believe in transparency and honesty in all our operations.
@@ -170,7 +170,7 @@ const Homepage = (props) => {
             </p>
         </div>
 
-        <div class="card card1">
+        <div class="card_card1">
             <h5>Collabarion</h5>
             <p>
             We value collaboration and partnership, working closely with children's homes, 

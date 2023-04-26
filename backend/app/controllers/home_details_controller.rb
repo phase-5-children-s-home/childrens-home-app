@@ -24,11 +24,7 @@ class HomeDetailsController < ApplicationController
         app_response(message: "You dont ave acces rihts to perform this action", status: :unauthorized)
       end
 
-    end
-    
-    
-    
-    
+    end   
 
     def search
       if params[:name].present?

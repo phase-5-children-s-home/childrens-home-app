@@ -1,3 +1,4 @@
+
 :root {
     --colorOne: #03045e;
     --colorTwo: #0077b6;
@@ -21,9 +22,9 @@
 .navbar a {
     color: var(--colorThree);
     text-decoration: none;
-    margin-right: 5%;
-    align-items: center;
-    justify-content: center;
+    /* margin-right: 2%; */
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 
 .navbar a::after{
@@ -47,9 +48,7 @@
 
 .title {
     font-family: Dancing Script;
-    /* align-items: center; */
-    /* text-align: center; */
-    margin-right: 30%;
+    margin-right: 15%;
     font-size: 50px;
     font-weight: 900;
 }

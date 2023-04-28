@@ -1,0 +1,94 @@
+/*CONTACT SECTION CSS*/
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+.body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fefefe;
+    background-color: #fefefe;
+    place-items: center;
+}
+.contact-container{
+    max-width: 960px;
+   
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1.5rem;
+    background: #fefefe;
+    box-shadow: 0 0 1rem hsl(0 0 0 / 16%);
+    border-radius: 0.5rem;
+    overflow: hidden;
+     box-shadow: 5px 10px 25px rgba(0,0,0,0.4);
+}
+.form-container{
+    padding: 20px;
+}
+.form-container h3{
+     font-size: 1.9rem;
+     font-weight: 600;
+     margin-bottom: 1rem;
+     text-align: center;
+     color: #192a56;
+
+}
+.contact-form{
+    display: grid;
+    row-gap: 1rem;
+}
+.contact-form input, .contact-form textarea{
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #192a56;
+    padding: 10px 0.9rem;
+    color: #fefefe;
+    border-radius: 0.4rem;
+}
+ .contact-form textarea{
+    resize: none;
+    height: 200px;
+
+ }
+ .contact-form .send-button{
+    border: none;
+    outline: none;
+    background: #192a56;
+    color: #fefefe;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer; 
+ }
+ .contact-form .send-button:hover{
+    background: hsl(181, 100%, 44%, 0.8);
+    transition: 0.3s all linear;
+ }
+ .map iframe{
+    width: 100%;
+    height: 100%;
+ }
+ /*PAGE RESPONSIVENESS*/
+ @media(max-width:964px){
+    .contact-container{
+        margin: 0 auto;
+        width: 90%;
+    }
+ }
+  @media(max-width:780px){
+    .contact-container{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 5rem !important;
+    }
+    .map iframe{
+        
+    }
+ }

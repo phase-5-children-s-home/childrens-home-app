@@ -74,11 +74,11 @@ const ReviewForm = ({ addReview }) => {
           Rating:
           <select value={rating} onChange={handleRatingChange}>
             <option value={0}>Select a rating</option>
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
+            <option value={1}>1 stars</option>
+            <option value={2}>2 stars</option>
+            <option value={3}>3 stars</option>
+            <option value={4}>4 stars</option>
+            <option value={5}>5 stars</option>
           </select>
         </label>
         <label className='label-text'>
@@ -96,7 +96,7 @@ const ReviewForm = ({ addReview }) => {
               <span>{review.date}</span>
             </div>
             <div className='review-body'>
-              <p>{review.review}</p>
+              <p>{review.comment}</p>
               <p>Rating: {review.rating}</p>
             </div>
           </div>

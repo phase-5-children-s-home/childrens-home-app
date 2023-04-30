@@ -64,6 +64,7 @@ const ReviewForm = ({ addReview }) => {
 
   return (
     <div>
+      <h2>Reviews ({reviews.length})</h2>
       <form onSubmit={handleSubmit}>
         <label className='label-text'>
           Your Name:

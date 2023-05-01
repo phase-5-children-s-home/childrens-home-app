@@ -64,7 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_123045) do
     t.string "lastname"
     t.string "username", null: false
     t.string "email", null: false
-    t.boolean "admin", default: false
+    t.boolean "admin", default: true
     t.string "password_digest", null: false
     t.string "reset_password_token"
     t.string "reset_password_sent_at"

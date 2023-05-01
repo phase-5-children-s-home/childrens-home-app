@@ -10,9 +10,12 @@ function ModalPopup() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+
+      <button onClick={handleShow}how type="submit">Submit</button>
+
+      {/* <Button variant="primary" onClick={handleShow}>
         Launch static backdrop modal
-      </Button>
+      </Button> */}
 
       <Modal
         show={show}
@@ -21,11 +24,10 @@ function ModalPopup() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Book Visit Saved!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          I will not close if you click outside me. Don not even try to press
-          escape key.
+          Your booking has been received and saved Successfully!
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Booksession.css'
+import ModalPopup from './ModalPopup';
 
 const BookVisitForm = () => {
   const [name, setName] = useState('');
@@ -36,14 +37,14 @@ const BookVisitForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <h1>Book <span>Visit</span> </h1>
-      <label>
+      {/* <label>
         Your Name:
         <input type="text" value={name} onChange={handleNameChange} />
-      </label>
-      <label>
+      </label> */}
+      {/* <label>
         Childrens home name:
         <input type="text" value={name} onChange={handleNameChange} />
-      </label>
+      </label> */}
       <label>
         Your Email:
         <input type="email" value={email} onChange={handleEmailChange} />
@@ -56,7 +57,8 @@ const BookVisitForm = () => {
         Time of Visit:
         <input type="time" value={time} onChange={handleTimeChange} />
       </label>
-      <button type="submit">Submit</button>
+
+      <ModalPopup />
     </form>
   );
 };

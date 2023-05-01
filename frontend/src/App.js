@@ -8,7 +8,7 @@ import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-
 import { AuthProvider } from 'react-auth-kit';
 import { Register } from './components/Register';
 import { isUserLoggedIn } from './components/utils/Auth';
-import DonationForm from './components/DonationForm';
+// import DonationForm from './components/DonationForm';
 import Homepage from './components/homepage';
 import Navbar from './components/Navbar';
 import HomeList from './components/Homelist';
@@ -18,6 +18,10 @@ import ReviewForm from './components/Review'
 import BookVisitForm from './components/Booksession'
 
 import AdminNav from './components/Admin/AdminNav'
+
+import Success from "./components/Success"
+import Cancel from "./components/Cancel"
+import Checkout from "./components/Checkout";
 
 
 
@@ -63,7 +67,9 @@ function App() {
           
 
 
-          <Route path="/donation" element={loggedIn ? < DonationForm /> : <Navigate to="/login"/>} />
+          <Route path="/donation" element={loggedIn ? < Checkout /> : <Navigate to="/login"/>} />
+          <Route path="success" element={<Success/>} />
+          <Route path="cancel" element={<Cancel/>} />
 
           {/* <Route path="/footer" element={<Footer />} /> */}
         </Routes>

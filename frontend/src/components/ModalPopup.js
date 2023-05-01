@@ -10,9 +10,9 @@ function ModalPopup() {
 
   return (
     <>
-      {/* <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow}>
         Launch static backdrop modal
-      </Button> */}
+      </Button>
 
       <Modal
         show={show}

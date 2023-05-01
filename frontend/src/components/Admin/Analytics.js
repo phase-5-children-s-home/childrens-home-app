@@ -7,22 +7,22 @@ const Analytics = () => {
   const [usersData, setUsersData] = useState([]);
 
   useEffect(() => {
-    fetch('/api/visits')
+    fetch('https://childrens-home-backend.onrender.com/visits')
       .then(response => response.json())
       .then(data => setVisitsData(data))
       .catch(error => console.log(error));
 
-    fetch('/api/reviews')
+    fetch('https://childrens-home-backend.onrender.com/reviews')
       .then(response => response.json())
       .then(data => setReviewsData(data))
       .catch(error => console.log(error));
 
-    fetch('/api/homes')
+    fetch('https://childrens-home-backend.onrender.com/home_details')
       .then(response => response.json())
       .then(data => setHomesData(data))
       .catch(error => console.log(error));
 
-    fetch('/api/users')
+    fetch('https://childrens-home-backend.onrender.com/users')
       .then(response => response.json())
       .then(data => setUsersData(data))
       .catch(error => console.log(error));

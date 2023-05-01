@@ -1,0 +1,190 @@
+/*TEAM  SECTION  STYLES OF THE WEBSITE STARTS HERE*/
+/*################################################################################*/
+
+.team{
+    
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #fefefefe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+     padding-top: 50px;
+}
+.team-content{
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px, auto));
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: px;
+   
+}
+.team-content img{
+    width: 70%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.center{
+    color:#192a56;
+    font-size: 4rem;
+    text-align: center;
+}
+.box{
+    padding: 16px;
+    background: #192a56;
+    border-radius: 15px;
+    transition: all .38s ease;
+     box-shadow: 0 10px 5px rgba(0,0,0,0.2);
+}
+.box h3{
+    font-size: 23px;
+    font-weight: 600;
+    color: #fefefe;
+    margin-bottom: 8px;
+}
+.box h5{
+    font-size: 15px;
+    font-weight: 600;
+    color: #b7b4bb;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+.box p{
+    color: #fefefe;
+}
+.phone .hide{
+    display: none;
+}
+@media(max-width:1800px){
+    .btm{
+        display: none;
+    background: radial-gradient(#beb3d1, #7c7583);
+    height: 134vh;
+}
+.team{
+      padding-top: 20px;
+}
+}
+@media(max-width:500px){
+    .center{
+    color: #fefefe;
+    font-size: 1rem;
+    text-align: center;
+}
+    .btm{
+        display: none;
+    background: radial-gradient(#beb3d1, #7c7583);
+    height: 134vh;
+}
+.team-content{
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px, auto));
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    
+}
+.team-content img{
+    width: 90%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+.team{
+      padding-top: 20px;
+}
+.box h5{
+    display: none;
+}
+.box .takeout{
+    display: none;
+}
+
+}
+@media(max-width:380px){
+    .center{
+    color:#192a56;
+    font-size: 1rem;
+    text-align: center;
+}
+.team-content{
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px, auto));
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    
+}
+.team-content img{
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+.team{
+      padding-top: 40px;
+}
+
+}
+
+@media(max-width:350px){
+    .center{
+    color:#192a56;
+    font-size: 1rem;
+    text-align: center;
+}
+.team-content{
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px, auto));
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    
+}
+.team-content img{
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 5px;
+}
+.team{
+      padding-top: 800px;
+}
+
+.btm{
+   background: radial-gradient(#281c3e, #0f0518);
+    height: 100vh;
+}
+}
+
+/*################################################################################*/
+/*TEAM  SECTION  STYLES OF THE WEBSITE ENDS HERE*/
+.claim{
+    background-color: #b7b4bb;
+    height: 100vh;
+
+}
+.btm{
+    background: #0f0518;
+    height: 34vh;
+}

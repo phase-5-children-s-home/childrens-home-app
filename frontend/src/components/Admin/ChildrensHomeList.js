@@ -7,7 +7,7 @@ const ChildrensHomeList = () => {
   const [selectedHome, setSelectedHome] = useState(null);
 
   useEffect(() => {
-    fetch('/api/homes')
+    fetch('https://childrens-home-backend.onrender.com/home_details')
       .then(response => response.json())
       .then(data => setHomes(data))
       .catch(error => console.log(error));
@@ -19,7 +19,8 @@ const ChildrensHomeList = () => {
   }
 
   const handleConfirmDelete = () => {
-    fetch(`/api/homes/${selectedHome.id}`, { method: 'DELETE' })
+    if (selectedHome) {
+    fetch(`https://childrens-home-backend.onrender.com/home_details/${selectedHome.id}`, { method: 'DELETE' })
       .then(response => response.json())
       .then(data => {
         setHomes(homes.filter(home => home.id !== selectedHome.id));
@@ -27,6 +28,7 @@ const ChildrensHomeList = () => {
         setShowModal(false);
       })
       .catch(error => console.log(error));
+    }
   }
 
   return (

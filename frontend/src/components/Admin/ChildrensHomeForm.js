@@ -8,18 +8,40 @@ const ChildrensHomeForm = ({ addHome }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+  
+    // Create a new home object from form input values
     const newHome = {
-      name,
-      location,
-      description,
-      donations_needed: donationsNeeded
+      name: name,
+      description: description,
+      location: location,
+      capacity: parseInt(capacity),
+      donations_needed: donationsNeeded,
+      image: image,
     };
-    addHome(newHome);
-    setName('');
-    setLocation('');
-    setDescription('');
-    setDonationsNeeded(false);
+  
+    // Send POST request to backend API to create new home
+    fetch('https://childrens-home-backend.onrender.com/home_details', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newHome),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Call addHome function passed as a prop to update state
+        addHome(data);
+        // Reset form input values to defaults
+        setName('');
+        setDescription('');
+        setLocation('');
+        setCapacity(1);
+        setDonationsNeeded(false);
+        setImage('');
+      })
+      .catch((error) => console.log(error));
   };
+  
 
   return (
     <form onSubmit={handleSubmit}>

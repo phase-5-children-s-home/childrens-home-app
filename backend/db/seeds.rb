@@ -13,7 +13,11 @@
 # puts "Database erased, waiting to seed  new data ✅"
 
 puts "🏕 Seeding new Data..."
-# User.create!(email: "Super@gmail.com" , password:"1234",username:"admin", admin: true)
+
+puts "creating admin"
+User.create!(email: "admin2@gmail.com" , password:"admin", username:"admin", admin: true)
+puts "Done creating admin"
+
 HomeDetail.create(name: "Cottolengo Centre", description: "Cottolengo Centre is a  home for the abandoned and HIV positive children. This centre serves the abandoned and neglected. It was founded by the local fathers and sisters of  Saint Giussepe Cottolengo.", image_url: "https://cottolengokenya.org/wp-content/uploads/2022/03/Heritage-of-Bl.-Maria-Carola-Cecchin.png", address: "123 kinembe rd", email: "cottolengos@gmail.com", phone_number: "0720996089", location: "Mombasa")
 HomeDetail.create(name: "Imani Children’s Home", description: "Imani Children’s home caters for over 350 orphaned, abandoned, neglected children by giving them basic needs and equipping them to be able members of the society.", image_url: "https://theflowerhub.net/wp-content/uploads/2021/07/WhatsApp-Image-2021-06-30-at-12.28.58-PM-8.jpeg", address: "PW98+58X, Nairobi", email: "imanihome@gmail.com", phone_number: "0716630900",  location: "Nairobi")
 HomeDetail.create(name: "Rehema Home", description: "Rehema (mercy in Swahili) rescues orphaned and abandoned children in Nairobi, gives them a home and a family. Currently, there are over a hundred kids at Rehema, half of whom are HIV positive.", image_url: "https://images.squarespace-cdn.com/content/v1/557332e4e4b0601c9ccb9a6e/1440638693391-89K441KTXZ2IBA93L1RD/image-asset.jpeg?format=500w", address: "Mukima Drive", email: "info@rehemahome.org", phone_number: "0722853265", location: "Mombasa")

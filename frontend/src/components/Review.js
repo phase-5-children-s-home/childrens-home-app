@@ -44,7 +44,7 @@ const ReviewForm = ({ addReview }) => {
       name,
       date,
     };
-    fetch('https://childrens-home-backend.onrender.com/reviews', {
+    fetch('https://childrens-home-backend.onrender.com/reviews/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Homelist.css";
+import ReviewForm from "./Review";
 import ReviewList from "./ReviewList";
 import BookVisitForm from "./Booksession";
 
@@ -19,7 +20,7 @@ const HomeList = () => {
 
 
   useEffect(() => {
-    fetch("https://childrens-home-backend.onrender.com/reviews")
+    fetch("https://childrens-home-backend.onrender.com/reviews/")
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => console.log(error));
@@ -97,7 +98,13 @@ const CardItem = ({ item }) => {
           <Link to="/review">
             <Button id="review"  variant="info" className="ml-2">Review</Button>
           </Link>
-          {/* <ReviewList homeId={item.reviews}/> */}
+          {item.reviews.map(review => (
+        <div key={review.id}>
+          <p>Rating: {review.rating}</p>
+          <p>Comment: {review.comment}</p>
+        </div>
+      ))}
+
         </Card.Body>
       )}
     </Card>

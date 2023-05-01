@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,300;0,600;1,700&family=Sen:wght@400;700;800&family=Special+Elite&display=swap');
+
+
 form {
     display: flex;
     flex-direction: column;
@@ -41,13 +44,15 @@ form {
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px;
     cursor: pointer;
     transition: background-color 0.2s;
+    font-weight: bold;
   }
   
   button[type='submit']:hover {
-    background-color: #46da0b;
+    background-color: white;
+    color: #0c0c0c;
   }
   span{
     color: #0077cc;

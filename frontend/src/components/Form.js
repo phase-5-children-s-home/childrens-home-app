@@ -2,6 +2,7 @@
 import './contact.css'
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { Modal } from 'react-bootstrap';
 
 
 const Form = () => {

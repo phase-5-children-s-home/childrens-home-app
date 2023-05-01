@@ -5,7 +5,7 @@ const UserList = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('/api/users')
+    fetch('https://childrens-home-backend.onrender.com/users')
       .then(response => response.json())
       .then(data => setUsers(data))
       .catch(error => console.log(error));

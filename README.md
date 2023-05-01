@@ -14,12 +14,12 @@ With Let's Charity, users can make a real difference in the lives of children in
 
 ## Screenshot
 
-<img src="images/bookstoreReact.png" width="1000">
+<img src="frontend/src/components/images/childhomecover.png">
 
 ## Entity Relationship Diagram(ERD)
 This ERD is here to demonstrate the relationship between the model entities.
 
-<img src="images/booksERD.png" width="1000">
+<img src="frontend/src/components/images/childERD.png" width="1000">
 
 ## Pre-Requisites
 In order to use this repository you will need the following:
@@ -179,54 +179,66 @@ Database schema definitions.
 | COLUMN        | DATA TYPE | DESCRIPTION                           | 
 |---------------|-----------|---------------------------------------|
 | id            | Integer   | Unique identifier.                    |
-| name          | String    | User's name.                       |
+| name          | String    | User's name.                          |
 | password_hash | String    | User's password hashed with `BCrypt`. |
+| admin         | boolean   | If the user is an admin.              |
 | updated_at    | Date      | The date the user was updated.        |
 | createdAt     | Date      | The date the user was created.        |
 
 
-#### BOOKS
+#### HOME DETAILS
 | COLUMN      | DATA TYPE                                       | DESCRIPTION                            | 
 |-------------|-------------------------------------------------|----------------------------------------|
 | id          | Integer                                         | Unique identifier.                     |
-| title       | String                                          | The name of the project.               |
-| description | String                                          | A short description about the project. |
-| price | Integer | The price of the book. |
-| author | String | The author of the book. |
-| createdAt   | Date                                            | The date the book was created.         |
+| name       | String                                          | The name of the home.               |
+| description | String                                          | A short description about the home. |
+| image_url | String | ann image. |
+| address | String | The adress  of the home. |
+| email | String | The author of the book. |
+| phone_number | integer | The phone number of the home. |
+| location | String | The location of the home. |
+| createdAt   | Date                                            | The date the home deatils were created.         |
 
-#### ORDERS
+#### REVIEWS
 | COLUMN      | DATA TYPE                                       | DESCRIPTION                            | 
 |-------------|-------------------------------------------------|----------------------------------------|
 | id          | Integer                                         | Unique identifier.                     |
 | user_id       | Integer                                          | The user's id |
-| book_id | Integer                                         | The book's unique identifier. |
-| quantity | Integer | The number of books. |
-| total_price | Integer | The accumulative price of the books. |
-| createdAt   | Date                                            | The date the ordder was created.     
+| home_detail_id | Integer                                         | The home's unique identifier. |
+| rating | Integer | The ratings of books. |
+| comment | string | The review the user will write. |
+| createdAt   | Date                                            | The date the review was created.     
 
-#### AUTHOR
+#### VISIT
 | COLUMN        | DATA TYPE | DESCRIPTION                           | 
 |---------------|-----------|---------------------------------------|
 | id            | Integer   | Unique identifier.                    |
-| name          | String    | Author's name.                        |
-| bio           | String    | Short info about the author.          |
-| createdAt     | Date      | The date the author was created.      |
+| user_id            | Integer   | User's unique identifier.        |
+| home_detail_id            | Integer   | The home's unique identifier. |
+| name          | String    | User's name.                        |
+| visit_date           | date_time    | Date and time of visit.     |
+| createdAt     | Date      | The date the booking was created.      |
 
-#### CATEGORIES
+#### DONATIONS
 | COLUMN        | DATA TYPE | DESCRIPTION                           | 
 |---------------|-----------|---------------------------------------|
 | id            | Integer   | Unique identifier.                    |
-| name          | String    | Author's name.                        |
-| description   | String    | A short description about tcategory.  |
-| createdAt     | Date      | The date the category was created.    |
+| user_id            | Integer   | User's unique identifier.        |
+| home_detail_id            | Integer   | The home's unique identifier. |
+| name          | String    | User's name.                        |
+| email  | String    | User's email.  |
+| amount        | integer    | The amount  to sennd.                        |
+| payment_method         | String    | Payment method used.                        |
+| createdAt     | Date      | The date the donation was created.    |
 
 # Authors
 This project was contributed to by:
 - [Job Waweru](https://github.com/Jobwawesh/)
-- [Kevin Kimutai](https://github.com/kevinkkimutai)
-- [Ivan Kainga](https://github.com/KahingaK)
-- [Ian Orieko](https://github.com/orgs/phase4-group-project/people/ianrich69420)
+- [Levy Kipkoech](https://github.com/levykipkoech)
+- [Gregory Lubano](https://github.com/elvismabisi)
+- [Alex Tanui](https://github.com/AlexTanui)
+- [Vincent Chisaka](https://github.com/VincentChisaka)
+- [Kidhri Salim](https://github.com/al-hajjar)
 
 
 # License

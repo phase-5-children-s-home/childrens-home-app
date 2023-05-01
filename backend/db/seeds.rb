@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-puts "Destroying Data..."
+# puts "Destroying Data..."
 
-HomeDetail.destroy_all
+# HomeDetail.destroy_all
 
-puts "Database erased, waiting to seed  new data ✅"
+# puts "Database erased, waiting to seed  new data ✅"
 
 puts "🏕 Seeding new Data..."
 # User.create!(email: "Super@gmail.com" , password:"1234",username:"admin", admin: true)

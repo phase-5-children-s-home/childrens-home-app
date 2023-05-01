@@ -16,6 +16,8 @@ function Navbar({logout}) {
         <a href='/about'>About</a>
         <a href='/contact'>Contact</a>
         <a href='/donation'>Donations</a>
+        <a href='/admin'>Admin</a>
+
         <button className='logout' onClick={logout}>Logout</button>'
     </div>
   )

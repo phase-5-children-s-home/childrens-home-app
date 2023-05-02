@@ -3,18 +3,24 @@ import { Card, Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Homelist.css";
 import ReviewForm from "./Review";
-import ReviewList from "./ReviewList";
 import BookVisitForm from "./Booksession";
 
 const HomeList = () => {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  
 
   console.log(data)
   useEffect(() => {
     fetch("https://childrens-home-backend.onrender.com/home_details")
       .then((response) => response.json())
-      .then((data) => setData(data))
+      .then((data) => {
+        console.log(data)
+        setData(data)
+        localStorage.setItem('id', data.id)
+        console.log(localStorage.setItem('id', data.id))
+        console.log(data.id)
+      })
       .catch((error) => console.log(error));
   }, []);
 

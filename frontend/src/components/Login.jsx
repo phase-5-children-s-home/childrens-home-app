@@ -44,7 +44,10 @@ export const Login = ({ setIsLoggedIn }) => {
         setLoading(false);
         // Store session ID in browser storage
         saveUser(data.data.user.id);
+        console.log(data.data.user.id)
         storeToken(data.data.token);
+        console.log(data.data.token)
+        console.log(data)
         // Clear the form data
         document.getElementById("login-form").reset();
         // Set the logged in state to true

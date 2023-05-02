@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { saveUser, storeToken } from "./utils/Auth";
+// import { childplay } from "./child-play.jpg"
+import './Login.css'
 
 export const Login = ({ setIsLoggedIn }) => {
   const [errors, setErrors] = useState([]);
@@ -70,6 +72,10 @@ export const Login = ({ setIsLoggedIn }) => {
 
   return (
     <div className="form">
+      <div className="heading-1">WELCOME TO LETS CHARITY APP</div>
+      <div className="child-image">
+      <img src={require('./child-play.jpg')} alt="pic" height={200} width={300} />
+      </div>
       <div className="auth-form-container">
         <h2 className="login-title">Login</h2>
         <form className="login-form" onSubmit={handleSumbit} id="login-form">

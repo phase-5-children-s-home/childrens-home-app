@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { getUser } from "./utils/Auth";
 
 const Review = ({ home_detail_id, setReviews, reviews, onAddReview, setShowForm }) => {
   const [comment, setComment] = useState('');
@@ -77,7 +76,7 @@ const Review = ({ home_detail_id, setReviews, reviews, onAddReview, setShowForm 
       <form onSubmit={handleSubmit}>
         <label className='label-text'>
           Your Name:
-          <input type='text' value={name} onChange={handleNameChange} />
+          {/* <input type='text' value={name} onChange={handleNameChange} /> */}
         </label>
 
 

@@ -17,7 +17,7 @@ import About from './components/About';
 import ReviewForm from './components/Review'
 import BookVisitForm from './components/Booksession'
 
-import AdminNav from './components/Admin/AdminNav'
+import AdminDashboard from './components/Admin/AdminDashboard';
 
 import Success from "./components/Success"
 import Cancel from "./components/Cancel"
@@ -63,7 +63,7 @@ function App() {
           <Route path="/contact" element={<Form />} />
           <Route path="/review" element={<ReviewForm />} />
           <Route path="/bookvisit" element={<BookVisitForm />} />
-          <Route path="/adminnav" element={<AdminNav />} />
+          <Route path="/admin" element={<AdminDashboard />} />
           
 
 

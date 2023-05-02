@@ -80,6 +80,7 @@ const Review = ({ home_detail_id, setReviews, reviews, onAddReview, setShowForm 
           <input type='text' value={name} onChange={handleNameChange} />
         </label>
 
+
             {errors > 0 && (
                 <div className="bg-red-100 border mb-4 border-red-400 text-red-700 px-4 py-3 rounded ">
                   <strong className="font-bold">Error:</strong>

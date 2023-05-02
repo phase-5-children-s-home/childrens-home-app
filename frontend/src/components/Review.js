@@ -1,110 +1,127 @@
-import React, { useState, useEffect } from 'react';
-import './Review.css';
+import React, { useState } from 'react';
+import axios from 'axios';
 
-const ReviewForm = ({ addReview }) => {
-  const [review, setReview] = useState('');
-  const [rating, setRating] = useState(0);
-  const [name, setName] = useState('');
-  const [date, setDate] = useState('');
-  const [reviews, setReviews] = useState([]);
+const Review = ({ home_detail_id, setReviews, reviews, onAddReview, setShowForm }) => {
+  const [comment, setComment] = useState('');
+  const [rating, setRating] = useState('');
+  const [errors, setErrors] = useState([]);
 
-  useEffect(() => {
-    fetch('https://childrens-home-backend.onrender.com/reviews')
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Success:', data);
-        setReviews(data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  }, []);
+  const user = localStorage.getItem('uid');
 
-  const handleReviewChange = (event) => {
-    setReview(event.target.value);
+  const home = localStorage.getItem('id');
+
+  
+  const [review, setReview] = useState({
+    rating: "",
+    comment: "",
+    user_id: user,
+    home_detail_id: 424
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setReview((prevOrder) => ({
+      ...prevOrder,
+      [name]: value,
+    }));
   };
 
-  const handleRatingChange = (event) => {
-    setRating(parseInt(event.target.value));
-  };
+  // const handleCommentChange = (event) => {
+  //   setComment(event.target.value);
+  // };
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
+  // const handleRatingChange = (event) => {
+  //   setRating(event.target.value);
+  // };
 
-  const handleDateChange = (event) => {
-    setDate(event.target.value);
-  };
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newReview = {
-      review,
-      rating,
-      name,
-      date,
-    };
-    fetch('https://childrens-home-backend.onrender.com/reviews/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newReview),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Success:', data);
-        addReview(data);
-        setReviews([...reviews, data]);
+    
+
+    // const formData = new FormData();
+    // formData.append('review[getUser]', getUser);
+    // console.log(formData)
+    // formData.append('review[home_detail_id]', home_detail_id);
+    // formData.append('review[comment]', comment);
+    // formData.append('review[rating]', rating);
+
+    axios.post('https://childrens-home-backend.onrender.com/reviews', review)
+      .then((response) => {
+        if (response.status === 201) {
+          console.log(response.data.data)
+          setReview(response.data.data)
+
+          // console.log(formData)
+          // setHomeDetail(response.data);
+          // setComment('');
+          // setRating('');
+          // onAddReview();
+          // setShowForm(false);
+          // setReviews([...reviews, response.data.review]);
+        }
       })
       .catch((error) => {
-        console.error('Error:', error);
+        console.log(error);
+        setErrors(error.response.data.errors)
       });
   };
 
   return (
+    // <div className='flex justify-center m-10'>
+    //   <form className="p-3 bg-blue-50 rounded-md w-full " onSubmit={handleSubmit}>
     <div>
       <h2>Reviews ({reviews.length})</h2>
       <form onSubmit={handleSubmit}>
         <label className='label-text'>
           Your Name:
-          <input type='text' value={name} onChange={handleNameChange} />
+          {/* <input type='text' value={name} onChange={handleNameChange} /> */}
         </label>
 
-        <label className='label-text'>
-          Rating:
-          <select value={rating} onChange={handleRatingChange}>
-            <option value={0}>Select a rating</option>
-            <option value={1}>1 stars</option>
-            <option value={2}>2 stars</option>
-            <option value={3}>3 stars</option>
-            <option value={4}>4 stars</option>
-            <option value={5}>5 stars</option>
+
+            {errors > 0 && (
+                <div className="bg-red-100 border mb-4 border-red-400 text-red-700 px-4 py-3 rounded ">
+                  <strong className="font-bold">Error:</strong>
+                  <ul className="list-disc ml-4">
+                    {errors.map((error, index) => (
+                      <li key={index}>{error}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+        <div className="mb-4">
+          <label htmlFor="comment" className="block mb-2 font-semibold text-gray-700">Comment</label>
+          <textarea
+            id="comment"
+            name="comment"
+            className="w-full p-2 border border-gray-400 rounded-md"
+            value={review.comment}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="rating" className="block mb-2 font-semibold text-gray-700">Rating (optional)</label>
+          <select
+            id="rating"
+            name="rating"
+            className="w-full p-2 border border-gray-400 rounded-md"
+            value={review.rating}
+            onChange={handleChange}
+          >
+            <option value="">--Select rating--</option>
+            <option value="1">1 star</option>
+            <option value="2">2 stars</option>
+            <option value="3">3 stars</option>
+            <option value="4">4 stars</option>
+            <option value="5">5 stars</option>
           </select>
-        </label>
-        <label className='label-text'>
-          Review:
-          <textarea value={review} onChange={handleReviewChange} />
-        </label>
-        <button type='submit'>Submit</button>
+        </div>
+        <button type="submit" className="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
       </form>
-
-      <div className='reviews'>
-        {reviews.map((review) => (
-          <div key={review.id} className='review'>
-            <div className='review-header'>
-              <h3>{review.name}</h3>
-              <span>{review.date}</span>
-            </div>
-            <div className='review-body'>
-              <p>{review.comment}</p>
-              <p>Rating: {review.rating}</p>
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };
 
-export default ReviewForm;
+export default Review;

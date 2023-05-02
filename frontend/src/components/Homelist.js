@@ -106,7 +106,7 @@ const CardItem = ({ item }) => {
           </Link>
           {item.reviews.map(review => (
         <div key={review.id}>
-          <p>Rating: {review.rating}</p>
+          <p className="fa fa-star">: {review.rating}</p>
           <p>Comment: {review.comment}</p>
         </div>
       ))}
